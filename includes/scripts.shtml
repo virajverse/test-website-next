@@ -1,0 +1,350 @@
+    <script src="/js/jquery-3.7.1.min.js" defer></script>
+
+    <script src="/js/bootstrap.min.js" defer></script>
+
+    <script src="/js/validator.min.js" defer></script>
+
+    <script src="/js/jquery.slicknav.js" defer></script>
+
+    <script src="/js/swiper-bundle.min.js" defer></script>
+
+    <script src="/js/jquery.waypoints.min.js" defer></script>
+    <script src="/js/jquery.counterup.min.js" defer></script>
+
+    <script src="/js/jquery.magnific-popup.min.js" defer></script>
+
+    <script src="/js/SmoothScroll.js" defer></script>
+
+    <script src="/js/isotope.min.js" defer></script>
+
+    <script src="/js/parallaxie.js" defer></script>
+
+    <script src="/js/gsap.min.js" defer></script>
+    <script src="/js/magiccursor.js" defer></script>
+
+    <script src="/js/SplitText.min.js" defer></script>
+    <script src="/js/ScrollTrigger.min.js" defer></script>
+
+    <script src="/js/jquery.mb.YTPlayer.min.js" defer></script>
+
+    <script src="/js/typed.js" defer></script>
+
+    <script src="/js/wow.min.js" defer></script>
+
+    <script src="/js/function.js" defer></script>
+
+    <script>
+      // ---- Popup frequency control (localStorage) ----
+      // Rules:
+      //   Submit ho gaya      -> 60 din tak popup band  (df_lead_done)
+      //   Sirf close kiya     -> 1 din tak popup band   (df_popup_closed)
+      //   Dono clear          -> 60 sec baad auto-open
+      (function () {
+        var DAY = 24 * 60 * 60 * 1000;
+        var LEAD_BLOCK  = 60 * DAY;   // submit ke baad
+        var CLOSE_BLOCK = 1  * DAY;   // sirf close ke baad
+
+        function isBlocked() {
+          try {
+            var lead = parseInt(localStorage.getItem('df_lead_done') || '0', 10);
+            if (lead && (Date.now() - lead) < LEAD_BLOCK) return true;
+
+            var closed = parseInt(localStorage.getItem('df_popup_closed') || '0', 10);
+            if (closed && (Date.now() - closed) < CLOSE_BLOCK) return true;
+          } catch (e) {}
+          return false;
+        }
+
+        // Auto Open After 60 Seconds (sirf tab jab block na ho)
+        window.addEventListener("load", function () {
+          if (isBlocked()) return;
+          setTimeout(function () {
+            if (isBlocked()) return;      // 60 sec ke andar user ne submit/close kiya to bhi mat kholo
+            if (typeof openDemoPopup === 'function') openDemoPopup();
+          }, 60000);
+        });
+      })();
+    </script>
+
+    <script>
+      const header = document.querySelector(".header-sticky");
+      if (header) {
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 80) {
+            header.classList.add("active");
+          } else {
+            header.classList.remove("active");
+            header.classList.remove("hide");
+          }
+        });
+      }
+    </script>
+
+<!-- faq schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What services does DigifyNext offer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "DigifyNext offers SEO, paid media, social media marketing, performance marketing, website design and development, landing pages, content support, branding and campaign reporting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How soon can we expect results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Paid campaigns can start generating early signals within days, while SEO usually needs a few months of consistent work. We focus on quick learnings and steady long-term growth."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with brands outside India?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. DigifyNext supports brands targeting local, national and global audiences with strategies adapted to their market, industry and customer journey."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you report campaign performance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We share clear updates around traffic, rankings, enquiries, ad spend, cost per lead, conversions and recommended next actions."
+      }
+    }
+  ]
+}
+</script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+
+    {
+      "@type": "Organization",
+      "@id": "https://digifynext.com/#organization",
+      "name": "DigifyNext",
+      "url": "https://digifynext.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://digifynext.com/images/logo.png"
+      },
+      "description": "DigifyNext is a leading SEO Company and Digital Marketing Agency in India providing SEO, Performance Marketing, Social Media Marketing, Branding, Website Development and Online Reputation Management services.",
+      "telephone": "+91-9599524455",
+      "email": "hello@digifynext.com",
+      "sameAs": [
+        "https://www.facebook.com/",
+        "https://www.instagram.com/",
+        "https://www.linkedin.com/"
+   
+      ]
+    },
+
+    {
+      "@type": "WebSite",
+      "@id": "https://digifynext.com/#website",
+      "url": "https://digifynext.com/",
+      "name": "DigifyNext",
+      "publisher": {
+        "@id": "https://digifynext.com/#organization"
+      },
+      "inLanguage": "en-IN"
+    },
+
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://digifynext.com/#business",
+      "name": "DigifyNext",
+      "url": "https://digifynext.com/",
+      "image": "https://digifynext.com/wp-content/uploads/logo.png",
+      "telephone": "+91-9599524455",
+      "email": "hello@digifynext.com",
+      "priceRange": "₹₹",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Your Office Address",
+        "addressLocality": "Noida",
+        "addressRegion": "Uttar Pradesh",
+        "postalCode": "201301",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "28.5700",
+        "longitude": "77.3200"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "10:00",
+        "closes": "19:00"
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "India"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Delhi NCR"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Digital Marketing Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SEO Services"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Performance Marketing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Google Ads"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Meta Ads"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Social Media Marketing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Branding & Creative"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Website Development"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Online Reputation Management"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Content Marketing"
+            }
+          }
+        ]
+      }
+    }
+
+  ]
+}
+</script>
+
+<script id="fx-mega-js">
+(function(){
+  "use strict";
+  function ready(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', fn); else fn(); }
+  ready(function(){
+    /* ---- Desktop mega ---- */
+    var trigger = document.querySelector('.fxm-trigger');
+    var wrap = document.getElementById('fxmWrap');
+    if(trigger && wrap){
+      var hideT;
+      function open(){ clearTimeout(hideT); wrap.classList.add('open'); }
+      function scheduleClose(){ hideT = setTimeout(function(){ wrap.classList.remove('open'); }, 180); }
+      trigger.addEventListener('mouseenter', open);
+      trigger.addEventListener('mouseleave', scheduleClose);
+      wrap.addEventListener('mouseenter', open);
+      wrap.addEventListener('mouseleave', scheduleClose);
+      // tab switching
+      var tabs = wrap.querySelectorAll('.fxm-tab');
+      var panes = wrap.querySelectorAll('.fxm-pane');
+      function show(id){
+        tabs.forEach(function(t){ t.classList.toggle('active', t.dataset.tab===id); });
+        panes.forEach(function(p){ p.classList.toggle('active', p.id==='fxm-'+id); });
+      }
+      tabs.forEach(function(t){
+        t.addEventListener('mouseenter', function(){ show(t.dataset.tab); });
+        t.addEventListener('click', function(e){ e.preventDefault(); show(t.dataset.tab); });
+      });
+    }
+ 
+    /* ---- Mobile sidebar ---- */
+    var drawer = document.getElementById('fxsDrawer');
+    var overlay = document.getElementById('fxsOverlay');
+    var closeBtn = document.getElementById('fxsClose');
+    var toggle = document.querySelector('.navbar-toggle');
+    function openDrawer(){ drawer.classList.add('open'); overlay.classList.add('open'); drawer.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+    function closeDrawer(){ drawer.classList.remove('open'); overlay.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+    if(toggle){
+      // stop the theme's SlickNav from also firing
+      toggle.addEventListener('click', function(e){ e.preventDefault(); e.stopImmediatePropagation(); openDrawer(); }, true);
+    }
+    if(overlay) overlay.addEventListener('click', closeDrawer);
+    if(closeBtn) closeBtn.addEventListener('click', closeDrawer);
+    // accordions
+    document.querySelectorAll('.fxs-acc-head').forEach(function(h){
+      h.addEventListener('click', function(){ h.parentElement.classList.toggle('open'); });
+    });
+    document.querySelectorAll('.fxs-subacc-head').forEach(function(h){
+      h.addEventListener('click', function(){ h.parentElement.classList.toggle('open'); });
+    });
+    // close drawer when a real link is tapped
+    drawer && drawer.querySelectorAll('a[href]:not([href="#"])').forEach(function(a){
+      a.addEventListener('click', function(){ closeDrawer(); });
+    });
+  });
+})();
+</script>
+    <script>
+      // Safety: agar WOW.js kisi wajah se init na ho (slow/blocked), 3.5s baad
+      // saare hidden .wow elements dikha do — taaki content invisible na rahe aur CLS na bigde.
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          document.querySelectorAll('.wow').forEach(function (el) {
+            var s = window.getComputedStyle(el);
+            if (parseFloat(s.opacity) === 0) {
+              el.style.visibility = 'visible';
+              el.style.opacity = '1';
+            }
+          });
+        }, 3500);
+      });
+    </script>

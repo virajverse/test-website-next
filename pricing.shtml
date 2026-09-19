@@ -1,0 +1,1424 @@
+<!doctype html>
+<html lang="zxx">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pricing | Digital Marketing Packages in India | DigifyNext</title>
+    <meta name="description" content="Transparent digital marketing pricing from DigifyNext — SEO, PPC, social media, web development, and content packages in INR. Plans for every business size." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://digifynext.com/pricing" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://digifynext.com/pricing" />
+    <meta property="og:title" content="Pricing | Digital Marketing Packages in India | DigifyNext" />
+    <meta property="og:description" content="Transparent SEO, PPC, social media, web, and content pricing in INR. Plans for every business size." />
+    <meta property="og:site_name" content="DigifyNext" />
+    <meta property="og:image" content="https://digifynext.com/images/logo_black.png" />
+    <meta property="og:locale" content="en_IN" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pricing | DigifyNext" />
+    <meta name="twitter:description" content="Transparent digital marketing pricing in INR — SEO, PPC, social, web, content." />
+    <meta name="twitter:image" content="https://digifynext.com/images/logo.png" />
+
+    <!--#include virtual="/includes/head-css.shtml" -->
+    
+    <style id="pr-styles">
+
+:root{
+  --pr-accent:#FC6D10; --pr-accent-text:#000; --pr-radius:18px;
+  --pr-glass:rgb(255 255 255 / 4%); --pr-bd:rgba(255,255,255,.08); --pr-bd2:rgba(255,255,255,.12);
+  --pr-ease:cubic-bezier(.22,.61,.36,1);
+}
+.pr-page-wrap section{ padding:80px 0; }
+.pr-intro-head{ max-width:760px; text-align:start; }
+.pr-intro-head p{ opacity:.82; line-height:1.8; }
+
+/* tabs */
+.pr-tabs{ display:flex; flex-wrap:wrap; gap:10px; justify-content:start; margin:44px 0 8px; }
+.pr-tab{ padding:11px 24px; border-radius:100px; border:1px solid var(--pr-bd2); background:transparent; color:#fff; font-size:13.5px; font-weight:600; cursor:pointer; transition:all .3s var(--pr-ease); display:inline-flex; align-items:center; gap:9px; }
+.pr-tab i{ font-size:13px; opacity:.85; }
+.pr-tab:hover{ border-color:var(--pr-accent); color:var(--pr-accent); }
+.pr-tab:hover i{ color:var(--pr-accent); }
+.pr-tab.active{ background:var(--pr-accent); color:var(--pr-accent-text); border-color:var(--pr-accent); }
+.pr-tab.active i{ color:var(--pr-accent-text); }
+
+/* billing note */
+.pr-note{ text-align:start; opacity:.6; font-size:12.5px; margin-bottom:40px; }
+
+/* panels */
+.pr-panel{ display:none; }
+.pr-panel.active{ display:block; animation:prFade .4s var(--pr-ease); }
+@keyframes prFade{ from{ opacity:0; transform:translateY(8px);} to{ opacity:1; transform:none;} }
+
+/* plan grid */
+.pr-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; align-items:stretch; }
+.pr-plan{ border:1px solid var(--pr-bd); border-radius:var(--pr-radius); background:var(--pr-glass); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); padding:34px 30px; display:flex; flex-direction:column; transition:all .4s var(--pr-ease); position:relative; }
+.pr-plan:hover{ border-color:rgba(252,109,16,.45); transform:translateY(-6px); box-shadow:0 18px 40px rgba(0,0,0,.28); }
+.pr-plan.featured{ border-color:rgba(252,109,16,.6); background:rgba(252,109,16,.05); }
+.pr-plan.featured::before{ content:"Most Popular"; position:absolute; top:-12px; left:50%; transform:translateX(-50%); background:var(--pr-accent); color:var(--pr-accent-text); font-size:11px; font-weight:800; letter-spacing:.05em; padding:5px 16px; border-radius:100px; white-space:nowrap; }
+.pr-plan-name{ font-size:14px; text-transform:uppercase; letter-spacing:.08em; font-weight:700; color:var(--pr-accent); margin-bottom:14px; }
+.pr-plan-price{ display:flex; align-items:flex-end; gap:6px; margin-bottom:6px; }
+.pr-plan-price .cur{ font-size:20px; font-weight:700; opacity:.9; margin-bottom:6px; }
+.pr-plan-price .amt{ font-size:42px; font-weight:800; line-height:1; }
+.pr-plan-price .per{ font-size:13px; opacity:.65; margin-bottom:6px; }
+.pr-plan-sub{ font-size:13px; opacity:.7; margin-bottom:24px; line-height:1.5; min-height:38px; }
+.pr-plan-feats{ list-style:none; margin:0 0 28px; padding:0; display:flex; flex-direction:column; gap:12px; flex:1; }
+.pr-plan-feats li{ display:flex; gap:11px; align-items:flex-start; font-size:13.5px; line-height:1.5; opacity:.86; }
+.pr-plan-feats li i{ color:var(--pr-accent); font-size:12px; margin-top:4px; flex:0 0 auto; }
+.pr-plan-feats li.off{ opacity:.35; }
+.pr-plan-feats li.off i{ color:#888; }
+.pr-plan-btn{ margin-top:auto; }
+.pr-plan-btn a{ display:block; text-align:center; padding:13px 20px; border-radius:100px; font-weight:700; font-size:14px; transition:all .3s var(--pr-ease); border:1px solid var(--pr-bd2); color:#fff; }
+.pr-plan-btn a:hover{ border-color:var(--pr-accent); color:var(--pr-accent); }
+.pr-plan.featured .pr-plan-btn a{ background:var(--pr-accent); color:var(--pr-accent-text); border-color:var(--pr-accent); }
+.pr-plan.featured .pr-plan-btn a:hover{ filter:brightness(1.08); }
+
+/* custom strip */
+.pr-custom{ margin-top:26px; border:1px dashed var(--pr-bd2); border-radius:var(--pr-radius); padding:26px 30px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; background:var(--pr-glass); }
+.pr-custom h4{ margin:0 0 4px; font-size:17px; }
+.pr-custom p{ margin:0; font-size:13.5px; opacity:.72; }
+
+.pr-cta-inner{ position:relative; overflow:hidden; border:1px solid var(--pr-bd); border-radius:24px; background:var(--pr-glass); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); padding:clamp(40px,6vw,64px); text-align:center; }
+.pr-cta-inner::before{ content:""; position:absolute; width:380px; height:380px; border-radius:50%; background:radial-gradient(circle, rgba(252,109,16,.24), transparent 68%); top:-190px; right:-120px; pointer-events:none; }
+.pr-cta-inner > *{ position:relative; z-index:1; }
+.pr-cta-inner .lead{ max-width:700px; margin:14px auto 26px; line-height:1.75; opacity:.85; }
+.pr-plan-badge {
+    display: inline-block;
+    background: #1f9d55;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1;
+    padding: 4px 9px;
+    margin-top: 8px;
+    text-transform: uppercase;
+}
+
+.pr-plan-badge.premium {
+    background: #17233a;
+}
+
+@media (max-width:1199px){ .pr-grid{ grid-template-columns:1fr; max-width:460px; margin:0 auto; } }
+@media (max-width:991px){ .pr-page-wrap section{ padding:60px 0; } }
+@media (max-width:767px){ .pr-custom{ flex-direction:column; text-align:center; } .seo-sec{padding: 15px;} }
+@media (prefers-reduced-motion:reduce){ .pr-plan,.pr-tab,.pr-panel.active{ transition:none !important; animation:none !important; } }
+
+    </style>
+    <!-- ===== SEO Package extra styles — added 2026-07-27 ===== -->
+    <style id="seo-extra-styles">
+      .seo-extra{ margin-top:70px; }
+      .seo-extra .section-title{ margin-bottom:34px; }
+      .seo-extra .section-title p{ max-width:720px; margin:14px 0; opacity:.8; line-height:1.7; }
+
+      /* comparison table */
+      .seo-cmp-wrap{ border:1px solid var(--pr-bd); border-radius:16px; overflow:auto; background:var(--pr-glass); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); }
+      .seo-cmp{ width:100%; border-collapse:collapse; min-width:720px; }
+      .seo-cmp th,.seo-cmp td{ padding:14px 18px; text-align:left; font-size:13.5px; border-bottom:1px solid var(--pr-bd); }
+      .seo-cmp thead th{ position:sticky; top:0; background:#141414; font-size:15px; font-weight:700; z-index:1; border-bottom:1px solid var(--pr-bd2); }
+      .seo-cmp thead th.seo-cmp-hl{ color:var(--pr-accent); }
+      .seo-cmp td.seo-cmp-hl,.seo-cmp th.seo-cmp-hl{ background:rgba(252,109,16,.05); }
+      .seo-cmp-label{ font-weight:600; opacity:.92; }
+      .seo-cmp td:not(.seo-cmp-label){ opacity:.82; }
+      .seo-cmp-section td{ background:rgba(252,109,16,.09); color:var(--pr-accent); font-weight:800; font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; padding:11px 18px; }
+      .seo-yes{ color:var(--pr-accent); font-weight:800; }
+      .seo-no{ opacity:.35; }
+      .seo-cmp tbody tr:hover td{ background:rgba(255,255,255,.02); }
+      .seo-cmp tbody tr:hover td.seo-cmp-hl{ background:rgba(252,109,16,.08); }
+
+      /* deliverables chips */
+      .seo-deliver-block{ border:1px solid var(--pr-bd); border-radius:16px; background:var(--pr-glass); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); padding:28px 30px; margin-bottom:18px; }
+      .seo-deliver-block h4{ font-size:16.5px; margin:0 0 18px; display:flex; align-items:center; gap:10px; }
+      .seo-deliver-block h4 i{ color:var(--pr-accent); font-size:15px; }
+      .seo-chips{ display:flex; flex-wrap:wrap; gap:9px; }
+      .seo-chips span{ font-size:12.5px; padding:7px 14px; border-radius:8px; border:1px solid var(--pr-bd2); background:rgba(255,255,255,.03); opacity:.85; transition:all .25s var(--pr-ease); }
+      .seo-chips span:hover{ border-color:rgba(252,109,16,.45); color:var(--pr-accent); opacity:1; }
+
+
+      /* detailed deliverable sections */
+      .seo-sec-list{ display:flex; flex-direction:column; gap:16px; }
+      .seo-sec{ border:1px solid var(--pr-bd); border-radius:16px; background:var(--pr-glass); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); padding:28px 30px; }
+      .seo-sec-head{ display:flex; align-items:center; gap:14px; margin-bottom:6px; }
+      .seo-sec-num{ font-size:13px; font-weight:800; color:var(--pr-accent); opacity:.7; font-variant-numeric:tabular-nums; }
+      .seo-sec-icon{ width:38px; height:38px; border-radius:10px; display:flex; align-items:center; justify-content:center; background:rgba(252,109,16,.1); border:1px solid rgba(252,109,16,.35); color:var(--pr-accent); font-size:15px; flex:0 0 auto; }
+      .seo-sec-head h4{ margin:0; font-size:17px; }
+      .seo-sec-note{ font-size:13px; opacity:.7; line-height:1.6; margin:4px 0 0; padding-left:52px; }
+      .seo-tier-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:20px; }
+      .seo-tier-grid.one{ grid-template-columns:1fr; max-width:520px; }
+      .seo-tier{ border:1px solid var(--pr-bd); border-radius:12px; padding:18px 20px; background:rgba(255,255,255,.02); }
+      .seo-tier-growth{ border-color:rgba(252,109,16,.4); background:rgba(252,109,16,.04); }
+      .seo-tier h5{ margin:0 0 12px; font-size:12px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; color:var(--pr-accent); }
+      .seo-tier ul{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; }
+      .seo-tier li{ font-size:12.5px; line-height:1.5; opacity:.85; padding-left:16px; position:relative; }
+      .seo-tier li::before{ content:"›"; position:absolute; left:0; color:var(--pr-accent); font-weight:800; }
+      @media (max-width:991px){ .seo-tier-grid{ grid-template-columns:1fr; } .seo-sec-note{ padding-left:0; } }
+
+      @media (max-width:767px){
+        .seo-extra{ margin-top:52px; }
+        .seo-deliver-block{ padding:22px 20px; }
+      }
+      
+    </style>
+
+  </head>
+  <body>
+
+    <!--#include virtual="/includes/header.shtml" -->
+
+    <div class="page-header parallaxie">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header-box">
+              <h1 class="text-anime-style-3" data-cursor="-opaque">Pricing</h1>
+              <nav class="wow fadeInUp">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="/">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Pricing</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="pr-page-wrap">
+
+      <section class="pr-pricing">
+        <div class="container">
+          <div class="section-title section-title-center">
+            <span class="section-sub-title wow fadeInUp">Simple, Transparent Pricing</span>
+            <h2 class="text-anime-style-3" data-cursor="-opaque">Plans Built Around Your Goals</h2>
+          </div>
+          <div class="pr-intro-head wow fadeInUp" data-wow-delay="0.2s">
+            <p>Pick the service you need and choose a plan that fits your stage. Every plan is flexible — you can scale up, combine services, or ask for something custom. No hidden fees, no long lock-ins.</p>
+          </div>
+
+          <div class="pr-tabs wow fadeInUp" data-wow-delay="0.3s">
+          <button class="pr-tab active" data-tab="seo"><i class="fa-solid fa-magnifying-glass-chart"></i>SEO</button>
+          <button class="pr-tab" data-tab="ppc-ads"><i class="fa-solid fa-rectangle-ad"></i>PPC / Ads</button>
+          <button class="pr-tab" data-tab="social-media"><i class="fa-solid fa-hashtag"></i>Social Media</button>
+          <button class="pr-tab" data-tab="web-development"><i class="fa-solid fa-laptop-code"></i>Web Development</button>
+          <button class="pr-tab" data-tab="content"><i class="fa-solid fa-pen-nib"></i>Content</button>
+          <button class="pr-tab" data-tab="combo"><i class="fa-solid fa-layer-group"></i>Combo</button>
+          </div>
+          <p class="pr-note">All prices in INR. Monthly plans billed monthly · GST applicable · Ad spend (for PPC) is separate.</p>
+
+          <div class="pr-panel active" id="tab-seo">
+            <div class="pr-grid">
+
+  <!-- Starter -->
+  <div class="pr-plan wow fadeInUp">
+    <div class="pr-plan-name">Starter</div>
+
+    <div class="pr-plan-price">
+      <span class="cur">₹</span>
+      <span class="amt">20,999</span>
+      <span class="per">/mo</span>
+    </div>
+
+    <p class="pr-plan-sub">Build Your Search Foundation</p>
+
+    <ul class="pr-plan-feats">
+      <li><i class="fa-solid fa-check"></i>Up to 15 target keywords</li>
+      <li><i class="fa-solid fa-check"></i>10 pages On-Page SEO</li>
+      <li><i class="fa-solid fa-check"></i>Technical SEO audit</li>
+      <li><i class="fa-solid fa-check"></i>2 SEO blogs/month</li>
+      <li><i class="fa-solid fa-check"></i>8–12 quality link-building activities</li>
+      <li><i class="fa-solid fa-check"></i>Competitor analysis</li>
+      <li><i class="fa-solid fa-check"></i>Google Business Profile optimization</li>
+      <li><i class="fa-solid fa-check"></i>Basic AEO</li>
+      <li><i class="fa-solid fa-check"></i>Google Search Console &amp; GA4</li>
+      <li><i class="fa-solid fa-check"></i>Monthly SEO report</li>
+    </ul>
+
+    <div class="pr-plan-btn">
+      <a href="#" onclick="openDemoPopup&&openDemoPopup(); return false;">
+        Get Started <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+
+  <!-- Growth -->
+  <div class="pr-plan featured wow fadeInUp">
+    <div class="pr-plan-name">Growth</div>
+
+    <div class="pr-plan-badge">MOST POPULAR</div>
+
+    <div class="pr-plan-price">
+      <span class="cur">₹</span>
+      <span class="amt">30,999</span>
+      <span class="per">/mo</span>
+    </div>
+
+    <p class="pr-plan-sub">Accelerate Your Organic Growth</p>
+
+    <ul class="pr-plan-feats">
+      <li><i class="fa-solid fa-check"></i>Up to 30 target keywords</li>
+      <li><i class="fa-solid fa-check"></i>20 pages On-Page SEO</li>
+      <li><i class="fa-solid fa-check"></i>Advanced Technical SEO</li>
+      <li><i class="fa-solid fa-check"></i>4 SEO blogs/month</li>
+      <li><i class="fa-solid fa-check"></i>15–20 quality link-building activities</li>
+      <li><i class="fa-solid fa-check"></i>Detailed competitor analysis</li>
+      <li><i class="fa-solid fa-check"></i>Content gap analysis</li>
+      <li><i class="fa-solid fa-check"></i>Advanced Local SEO</li>
+      <li><i class="fa-solid fa-check"></i>Schema implementation</li>
+      <li><i class="fa-solid fa-check"></i>AEO + Basic GEO</li>
+      <li><i class="fa-solid fa-check"></i>Google AI Overview opportunities</li>
+      <li><i class="fa-solid fa-check"></i>GA4 + Search Console monitoring</li>
+      <li><i class="fa-solid fa-check"></i>Monthly performance analysis</li>
+      <li><i class="fa-solid fa-check"></i>Monthly strategy call</li>
+    </ul>
+
+    <div class="pr-plan-btn">
+      <a href="#" onclick="openDemoPopup&&openDemoPopup(); return false;">
+        Get Started <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+
+  <!-- Pro -->
+  <div class="pr-plan wow fadeInUp">
+    <div class="pr-plan-name">Pro</div>
+
+    <!-- <div class="pr-plan-badge premium">PREMIUM</div> -->
+
+    <div class="pr-plan-price">
+      <span class="cur">₹</span>
+      <span class="amt">40,999</span>
+      <span class="per">/mo</span>
+    </div>
+
+    <p class="pr-plan-sub">Dominate Competitive Search</p>
+
+    <ul class="pr-plan-feats">
+      <li><i class="fa-solid fa-check"></i>Up to 50 target keywords</li>
+      <li><i class="fa-solid fa-check"></i>35 pages On-Page SEO</li>
+      <li><i class="fa-solid fa-check"></i>Comprehensive Technical SEO</li>
+      <li><i class="fa-solid fa-check"></i>6 advanced SEO blogs/month</li>
+      <li><i class="fa-solid fa-check"></i>25–30 quality link-building activities</li>
+      <li><i class="fa-solid fa-check"></i>Advanced competitor &amp; backlink gap analysis</li>
+      <li><i class="fa-solid fa-check"></i>Advanced Local SEO</li>
+      <li><i class="fa-solid fa-check"></i>Advanced Schema &amp; Entity SEO</li>
+      <li><i class="fa-solid fa-check"></i>AEO + GEO optimization</li>
+      <li><i class="fa-solid fa-check"></i>AI Overview / AI Search optimization</li>
+      <li><i class="fa-solid fa-check"></i>Topic cluster &amp; topical authority strategy</li>
+      <li><i class="fa-solid fa-check"></i>Conversion-focused SEO</li>
+      <li><i class="fa-solid fa-check"></i>Advanced GA4 &amp; GSC analysis</li>
+      <li><i class="fa-solid fa-check"></i>Monthly strategy &amp; growth plan</li>
+      <li><i class="fa-solid fa-check"></i>Dedicated SEO manager</li>
+      <li><i class="fa-solid fa-check"></i>Priority support</li>
+    </ul>
+
+    <div class="pr-plan-btn">
+      <a href="#" onclick="openDemoPopup&&openDemoPopup(); return false;">
+        Get Started <i class="fa-solid fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+          <!-- SEO Comparison Table -->
+          <div class="seo-extra">
+            <div class="section-title section-title-center">
+              <span class="section-sub-title wow fadeInUp">Side By Side</span>
+              <h2 class="text-anime-style-3" data-cursor="-opaque">Complete Feature Comparison</h2>
+            </div>
+            <div class="seo-cmp-wrap wow fadeInUp">
+              <table class="seo-cmp">
+                <thead>
+                  <tr>
+                    <th>SEO Deliverables</th>
+                    <th>🚀 Starter</th>
+                    <th class="seo-cmp-hl">⭐ Growth</th>
+                    <th>👑 Pro</th>
+                  </tr>
+                </thead>
+                <tbody>
+              <tr class="seo-cmp-section">
+                <td colspan="4">Strategy & Research</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Monthly Investment</td>
+                <td>₹15,999/mo</td>
+                <td class="seo-cmp-hl">₹25,999/mo</td>
+                <td>₹35,999/mo</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Best For</td>
+                <td>Small / Local Business</td>
+                <td class="seo-cmp-hl">Growing Businesses</td>
+                <td>Competitive / Established Brands</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Target Keywords</td>
+                <td>Up to 15</td>
+                <td class="seo-cmp-hl">Up to 30</td>
+                <td>Up to 50</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Keyword Research & Mapping</td>
+                <td><span class="seo-yes">✓</span></td>
+                <td class="seo-cmp-hl"><span class="seo-yes">✓</span></td>
+                <td><span class="seo-yes">✓</span> Advanced</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Competitor Analysis</td>
+                <td>Basic</td>
+                <td class="seo-cmp-hl">Detailed</td>
+                <td>Advanced + Gap Analysis</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">SEO Strategy & Roadmap</td>
+                <td><span class="seo-yes">✓</span></td>
+                <td class="seo-cmp-hl"><span class="seo-yes">✓</span></td>
+                <td><span class="seo-yes">✓</span> Dedicated</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Website SEO Audit</td>
+                <td><span class="seo-yes">✓</span></td>
+                <td class="seo-cmp-hl"><span class="seo-yes">✓</span></td>
+                <td><span class="seo-yes">✓</span> Comprehensive</td>
+              </tr>
+              <tr class="seo-cmp-section">
+                <td colspan="4">Technical SEO</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Technical SEO Audit</td>
+                <td><span class="seo-yes">✓</span></td>
+                <td class="seo-cmp-hl"><span class="seo-yes">✓</span></td>
+                <td><span class="seo-yes">✓</span> Advanced</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Technical Fix Recommendations</td>
+                <td>Up to 10 issues</td>
+                <td class="seo-cmp-hl">Up to 20 issues</td>
+                <td>Comprehensive</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Core Web Vitals Review</td>
+                <td><span class="seo-yes">✓</span></td>
+                <td class="seo-cmp-hl"><span class="seo-yes">✓</span></td>
+                <td><span class="seo-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Mobile SEO</td>
+                <td><span class="seo-yes">✓</span></td>
+                <td class="seo-cmp-hl"><span class="seo-yes">✓</span></td>
+                <td><span class="seo-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">URL / Site Architecture</td>
+                <td>Basic</td>
+                <td class="seo-cmp-hl">Advanced</td>
+                <td>Advanced</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Indexing & Crawl Optimization</td>
+                <td><span class="seo-yes">✓</span></td>
+                <td class="seo-cmp-hl"><span class="seo-yes">✓</span></td>
+                <td><span class="seo-yes">✓</span></td>
+              </tr>
+              <tr class="seo-cmp-section">
+                <td colspan="4">On-Page SEO</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">On-Page SEO</td>
+                <td>Up to 10 pages</td>
+                <td class="seo-cmp-hl">Up to 20 pages</td>
+                <td>Up to 35 pages</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Title & Meta Optimization</td>
+                <td><span class="seo-yes">✓</span></td>
+                <td class="seo-cmp-hl"><span class="seo-yes">✓</span></td>
+                <td><span class="seo-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Heading / Content Optimization</td>
+                <td><span class="seo-yes">✓</span></td>
+                <td class="seo-cmp-hl"><span class="seo-yes">✓</span></td>
+                <td><span class="seo-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Image SEO / Alt Tags</td>
+                <td><span class="seo-yes">✓</span></td>
+                <td class="seo-cmp-hl"><span class="seo-yes">✓</span></td>
+                <td><span class="seo-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Internal Linking</td>
+                <td>Basic</td>
+                <td class="seo-cmp-hl">Advanced</td>
+                <td>Advanced + Silos</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Schema Markup</td>
+                <td>Basic</td>
+                <td class="seo-cmp-hl">Advanced</td>
+                <td>Advanced + Custom</td>
+              </tr>
+              <tr class="seo-cmp-section">
+                <td colspan="4">Tracking & Local SEO</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Google Search Console</td>
+                <td>Setup + Monitoring</td>
+                <td class="seo-cmp-hl">Full Monitoring</td>
+                <td>Advanced Monitoring</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Google Analytics / GA4</td>
+                <td>Setup</td>
+                <td class="seo-cmp-hl">Monitoring</td>
+                <td>Advanced Analysis</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Google Business Profile</td>
+                <td>Optimization</td>
+                <td class="seo-cmp-hl">Optimization + Management</td>
+                <td>Advanced Local SEO</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Local SEO</td>
+                <td>Basic</td>
+                <td class="seo-cmp-hl">Advanced</td>
+                <td>Advanced Multi-location</td>
+              </tr>
+              <tr class="seo-cmp-section">
+                <td colspan="4">Content</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">SEO Content</td>
+                <td>2 Blogs/mo</td>
+                <td class="seo-cmp-hl">4 Blogs/mo</td>
+                <td>6 Blogs/mo</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Existing Content Optimization</td>
+                <td>2 pages/mo</td>
+                <td class="seo-cmp-hl">4 pages/mo</td>
+                <td>6 pages/mo</td>
+              </tr>
+              <tr class="seo-cmp-section">
+                <td colspan="4">Off-Page SEO</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Off-Page SEO</td>
+                <td><span class="seo-yes">✓</span></td>
+                <td class="seo-cmp-hl"><span class="seo-yes">✓</span></td>
+                <td><span class="seo-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Quality Link Building</td>
+                <td>8–12 links/mo</td>
+                <td class="seo-cmp-hl">15–20 links/mo</td>
+                <td>25–30 quality links/mo</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Guest Posting / Outreach</td>
+                <td><span class="seo-no">—</span></td>
+                <td class="seo-cmp-hl">2/mo</td>
+                <td>4/mo</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Business / Local Citations</td>
+                <td>5/mo</td>
+                <td class="seo-cmp-hl">10/mo</td>
+                <td>15/mo</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Competitor Backlink Analysis</td>
+                <td><span class="seo-no">—</span></td>
+                <td class="seo-cmp-hl"><span class="seo-yes">✓</span></td>
+                <td><span class="seo-yes">✓</span> Advanced</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Broken Link Opportunities</td>
+                <td><span class="seo-no">—</span></td>
+                <td class="seo-cmp-hl"><span class="seo-yes">✓</span></td>
+                <td><span class="seo-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Digital PR / Brand Mentions</td>
+                <td><span class="seo-no">—</span></td>
+                <td class="seo-cmp-hl"><span class="seo-no">—</span></td>
+                <td><span class="seo-yes">✓</span></td>
+              </tr>
+              <tr class="seo-cmp-section">
+                <td colspan="4">AI Search — AEO / GEO</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">AEO – Answer Engine Optimization</td>
+                <td>Basic</td>
+                <td class="seo-cmp-hl">Advanced</td>
+                <td>Advanced</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">GEO – AI Search Optimization</td>
+                <td><span class="seo-no">—</span></td>
+                <td class="seo-cmp-hl">Basic</td>
+                <td>Advanced</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">AI Overview / ChatGPT Visibility</td>
+                <td><span class="seo-no">—</span></td>
+                <td class="seo-cmp-hl"><span class="seo-yes">✓</span></td>
+                <td><span class="seo-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">FAQ Optimization</td>
+                <td><span class="seo-yes">✓</span></td>
+                <td class="seo-cmp-hl"><span class="seo-yes">✓</span></td>
+                <td>Advanced</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Conversion / CTR Recommendations</td>
+                <td>Basic</td>
+                <td class="seo-cmp-hl">Advanced</td>
+                <td>Advanced</td>
+              </tr>
+              <tr class="seo-cmp-section">
+                <td colspan="4">Reporting & Support</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Monthly Ranking Report</td>
+                <td><span class="seo-yes">✓</span></td>
+                <td class="seo-cmp-hl"><span class="seo-yes">✓</span></td>
+                <td><span class="seo-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Traffic & Lead Analysis</td>
+                <td>Basic</td>
+                <td class="seo-cmp-hl">Detailed</td>
+                <td>Advanced</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Monthly SEO Action Plan</td>
+                <td><span class="seo-yes">✓</span></td>
+                <td class="seo-cmp-hl"><span class="seo-yes">✓</span></td>
+                <td><span class="seo-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Client Strategy Call</td>
+                <td><span class="seo-no">—</span></td>
+                <td class="seo-cmp-hl">Monthly</td>
+                <td>Monthly</td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Dedicated SEO Manager</td>
+                <td><span class="seo-no">—</span></td>
+                <td class="seo-cmp-hl"><span class="seo-no">—</span></td>
+                <td><span class="seo-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td class="seo-cmp-label">Support</td>
+                <td>Email/WhatsApp</td>
+                <td class="seo-cmp-hl">Email/WhatsApp</td>
+                <td>Priority Support</td>
+              </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- What We Actually Deliver -->
+          <div class="seo-extra">
+            <div class="section-title section-title-center">
+              <span class="section-sub-title wow fadeInUp">Beyond The Checklist</span>
+              <h2 class="text-anime-style-3" data-cursor="-opaque">What We Actually Deliver</h2>
+              <p class="wow fadeInUp" data-wow-delay="0.2s">Simply listing "On-Page SEO, Off-Page SEO, Technical SEO" doesn't make a package feel strong. Here is exactly what's included at each tier.</p>
+            </div>
+
+            <div class="seo-deliver-block wow fadeInUp">
+              <h4><i class="fa-solid fa-circle-check"></i> Included In Every Package — We Check</h4>
+              <div class="seo-chips">
+                <span>Google Search Console errors</span>
+                <span>Indexing issues</span>
+                <span>Crawlability</span>
+                <span>Robots.txt</span>
+                <span>XML Sitemap</span>
+                <span>Canonical tags</span>
+                <span>404 errors</span>
+                <span>Redirect errors</span>
+                <span>Broken links</span>
+                <span>Duplicate pages</span>
+                <span>Duplicate content</span>
+                <span>HTTPS / security</span>
+                <span>Mobile usability</span>
+                <span>Page speed</span>
+                <span>Core Web Vitals</span>
+                <span>URL structure</span>
+                <span>Breadcrumbs</span>
+                <span>Pagination</span>
+                <span>Orphan pages</span>
+                <span>Internal linking</span>
+                <span>Image optimization</span>
+                <span>JavaScript rendering issues</span>
+                <span>Schema implementation</span>
+                <span>Search Console coverage</span>
+              </div>
+            </div>
+
+            <div class="seo-deliver-block wow fadeInUp">
+              <h4><i class="fa-solid fa-file-lines"></i> Per Optimized Page, We Cover</h4>
+              <div class="seo-chips">
+                <span>SEO Title</span>
+                <span>Meta Description</span>
+                <span>H1 optimization</span>
+                <span>H2/H3 structure</span>
+                <span>Primary keyword placement</span>
+                <span>Semantic keyword optimization</span>
+                <span>Search intent alignment</span>
+                <span>Content structure</span>
+                <span>Internal links</span>
+                <span>External references where appropriate</span>
+                <span>Image ALT tags</span>
+                <span>Image filename optimization</span>
+                <span>URL optimization</span>
+                <span>CTA recommendations</span>
+                <span>FAQ section recommendations</span>
+                <span>Schema recommendations</span>
+              </div>
+            </div>
+
+            <div class="seo-deliver-block wow fadeInUp">
+              <h4><i class="fa-solid fa-chart-line"></i> Every Report Includes</h4>
+              <div class="seo-chips">
+                <span>Keyword ranking movement</span>
+                <span>Organic traffic</span>
+                <span>Organic clicks</span>
+                <span>Organic impressions</span>
+                <span>CTR</span>
+                <span>Indexed pages</span>
+                <span>Search Console issues</span>
+                <span>Backlinks acquired</span>
+                <span>Content published</span>
+                <span>Pages optimized</span>
+                <span>Technical fixes</span>
+                <span>Top-performing pages</span>
+                <span>Ranking losses</span>
+                <span>Ranking gains</span>
+                <span>Competitor movement</span>
+                <span>Next month's action plan</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SEO Deliverables — detailed breakdown -->
+          <div class="seo-extra">
+            <div class="section-title section-title-center">
+              <span class="section-sub-title wow fadeInUp">The Full Breakdown</span>
+              <h2 class="text-anime-style-3" data-cursor="-opaque">Every Deliverable, Tier By Tier</h2>
+              <p class="wow fadeInUp" data-wow-delay="0.2s">Exactly what's included in each area of work, and how it scales from Starter to Pro.</p>
+            </div>
+            <div class="seo-sec-list">
+            <div class="seo-sec wow fadeInUp">
+              <div class="seo-sec-head">
+                <span class="seo-sec-num">01</span>
+                <div class="seo-sec-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <h4>Keyword Research & Strategy</h4>
+              </div>
+              <div class="seo-tier-grid">
+                <div class="seo-tier seo-tier-starter">
+                  <h5>Starter — Up to 15 Keywords</h5>
+                  <ul>
+                    <li>Business/service-related keyword research</li>
+                    <li>Primary & secondary keyword selection</li>
+                    <li>Search intent analysis</li>
+                    <li>Location-based keyword research</li>
+                    <li>Keyword difficulty analysis</li>
+                    <li>Search volume analysis</li>
+                    <li>Keyword-to-page mapping</li>
+                    <li>Initial keyword ranking baseline</li>
+                  </ul>
+                </div>
+                <div class="seo-tier seo-tier-growth">
+                  <h5>Growth — Up to 30 Keywords</h5>
+                  <ul>
+                    <li>Everything in Starter, plus:</li>
+                    <li>Competitor keyword analysis</li>
+                    <li>Long-tail keyword research</li>
+                    <li>Commercial intent keywords</li>
+                    <li>Local intent keywords</li>
+                    <li>Keyword gap analysis</li>
+                    <li>Cannibalization check</li>
+                  </ul>
+                </div>
+                <div class="seo-tier seo-tier-pro">
+                  <h5>Pro — Up to 50 Keywords</h5>
+                  <ul>
+                    <li>Everything in Growth, plus:</li>
+                    <li>Competitor keyword gap analysis</li>
+                    <li>High-conversion keyword opportunities</li>
+                    <li>Topic cluster planning</li>
+                    <li>Supporting semantic keywords</li>
+                    <li>AI-search query research</li>
+                    <li>AEO/GEO keyword opportunities</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="seo-sec wow fadeInUp">
+              <div class="seo-sec-head">
+                <span class="seo-sec-num">02</span>
+                <div class="seo-sec-icon"><i class="fa-solid fa-user-secret"></i></div>
+                <h4>Competitor Analysis</h4>
+              </div>
+              <div class="seo-tier-grid">
+                <div class="seo-tier seo-tier-starter">
+                  <h5>Starter</h5>
+                  <ul>
+                    <li>Top 3 competitors</li>
+                    <li>Competitor keyword overview</li>
+                    <li>Basic backlink overview</li>
+                    <li>Competitor page structure review</li>
+                  </ul>
+                </div>
+                <div class="seo-tier seo-tier-growth">
+                  <h5>Growth</h5>
+                  <ul>
+                    <li>Top 5 competitors</li>
+                    <li>Keyword gap analysis</li>
+                    <li>Content gap analysis</li>
+                    <li>Backlink gap analysis</li>
+                    <li>Competitor top-ranking pages</li>
+                    <li>Competitor title/meta analysis</li>
+                    <li>Competitor local SEO analysis</li>
+                  </ul>
+                </div>
+                <div class="seo-tier seo-tier-pro">
+                  <h5>Pro</h5>
+                  <ul>
+                    <li>Top 7–10 competitors</li>
+                    <li>Full keyword gap analysis</li>
+                    <li>Content opportunity mapping</li>
+                    <li>Backlink opportunity mapping</li>
+                    <li>Competitor authority analysis</li>
+                    <li>SERP feature analysis</li>
+                    <li>Competitor AI-search visibility</li>
+                    <li>Competitor conversion/landing-page analysis</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="seo-sec wow fadeInUp">
+              <div class="seo-sec-head">
+                <span class="seo-sec-num">03</span>
+                <div class="seo-sec-icon"><i class="fa-solid fa-gears"></i></div>
+                <h4>Technical SEO</h4>
+              </div>
+              <p class="seo-sec-note">Included in full across every package — competitors treat technical audits as a core deliverable, and so do we.</p>
+              <div class="seo-tier-grid one">
+                <div class="seo-tier seo-tier-pro">
+                  <h5>Pro Also Includes</h5>
+                  <ul>
+                    <li>Advanced crawl analysis</li>
+                    <li>Log/crawl behaviour recommendations where applicable</li>
+                    <li>JavaScript SEO review</li>
+                    <li>Core Web Vitals improvement roadmap</li>
+                    <li>Indexation strategy</li>
+                    <li>Site architecture restructuring recommendations</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="seo-sec wow fadeInUp">
+              <div class="seo-sec-head">
+                <span class="seo-sec-num">04</span>
+                <div class="seo-sec-icon"><i class="fa-solid fa-file-lines"></i></div>
+                <h4>On-Page SEO</h4>
+              </div>
+              <p class="seo-sec-note">Number of pages optimized per month scales with each tier.</p>
+              <div class="seo-tier-grid">
+                <div class="seo-tier seo-tier-starter">
+                  <h5>Starter</h5>
+                  <ul>
+                    <li>10 pages / month</li>
+                  </ul>
+                </div>
+                <div class="seo-tier seo-tier-growth">
+                  <h5>Growth</h5>
+                  <ul>
+                    <li>20 pages / month</li>
+                  </ul>
+                </div>
+                <div class="seo-tier seo-tier-pro">
+                  <h5>Pro</h5>
+                  <ul>
+                    <li>35 pages / month</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="seo-sec wow fadeInUp">
+              <div class="seo-sec-head">
+                <span class="seo-sec-num">05</span>
+                <div class="seo-sec-icon"><i class="fa-solid fa-pen-nib"></i></div>
+                <h4>SEO Content</h4>
+              </div>
+              <p class="seo-sec-note">This section is what clearly differentiates the tiers from one another.</p>
+              <div class="seo-tier-grid">
+                <div class="seo-tier seo-tier-starter">
+                  <h5>Starter — 2 Blogs/Month</h5>
+                  <ul>
+                    <li>2 SEO blogs</li>
+                    <li>Approx. 800–1,000 words/blog</li>
+                    <li>Keyword-focused</li>
+                    <li>Search-intent based</li>
+                    <li>Meta title & description</li>
+                    <li>Internal linking</li>
+                    <li>FAQ section</li>
+                    <li>SEO formatting</li>
+                  </ul>
+                </div>
+                <div class="seo-tier seo-tier-growth">
+                  <h5>Growth — 4 Blogs/Month</h5>
+                  <ul>
+                    <li>4 SEO blogs</li>
+                    <li>Approx. 1,000–1,300 words</li>
+                    <li>Commercial + informational topics</li>
+                    <li>Competitor content gap targeting</li>
+                    <li>Internal linking</li>
+                    <li>FAQ/schema recommendations</li>
+                  </ul>
+                </div>
+                <div class="seo-tier seo-tier-pro">
+                  <h5>Pro — 6 Blogs/Month</h5>
+                  <ul>
+                    <li>6 advanced SEO articles</li>
+                    <li>Approx. 1,200–1,500 words</li>
+                    <li>Topic cluster strategy</li>
+                    <li>Pillar + supporting content</li>
+                    <li>Content refresh</li>
+                    <li>Entity/semantic optimization</li>
+                    <li>AEO-focused sections</li>
+                    <li>AI-search-friendly formatting</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="seo-sec wow fadeInUp">
+              <div class="seo-sec-head">
+                <span class="seo-sec-num">06</span>
+                <div class="seo-sec-icon"><i class="fa-solid fa-link"></i></div>
+                <h4>Off-Page SEO / Link Building</h4>
+              </div>
+              <p class="seo-sec-note">Framed as quality link-building activities — quality and relevance are the headline, not guaranteed backlink counts.</p>
+              <div class="seo-tier-grid">
+                <div class="seo-tier seo-tier-starter">
+                  <h5>Starter — 8–12 Activities/mo</h5>
+                  <ul>
+                    <li>Business listings</li>
+                    <li>Local citations</li>
+                    <li>Relevant directories</li>
+                    <li>Profile creation</li>
+                    <li>Content promotion</li>
+                    <li>Niche-relevant outreach</li>
+                    <li>Basic backlink monitoring</li>
+                  </ul>
+                </div>
+                <div class="seo-tier seo-tier-growth">
+                  <h5>Growth — 15–20 Activities/mo</h5>
+                  <ul>
+                    <li>Relevant business listings</li>
+                    <li>Local citations</li>
+                    <li>Niche directories</li>
+                    <li>Guest-post opportunities</li>
+                    <li>Blogger outreach</li>
+                    <li>Competitor backlink opportunities</li>
+                    <li>Broken-link opportunities</li>
+                    <li>Brand mentions</li>
+                  </ul>
+                </div>
+                <div class="seo-tier seo-tier-pro">
+                  <h5>Pro — 25–30 Activities/mo</h5>
+                  <ul>
+                    <li>High-quality outreach</li>
+                    <li>Guest posting</li>
+                    <li>Niche edits where appropriate</li>
+                    <li>Competitor backlink gap</li>
+                    <li>Broken link building</li>
+                    <li>Digital PR opportunities</li>
+                    <li>Brand mentions</li>
+                    <li>Authority-building campaigns</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="seo-sec wow fadeInUp">
+              <div class="seo-sec-head">
+                <span class="seo-sec-num">07</span>
+                <div class="seo-sec-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <h4>Local SEO</h4>
+              </div>
+              <div class="seo-tier-grid">
+                <div class="seo-tier seo-tier-starter">
+                  <h5>Starter</h5>
+                  <ul>
+                    <li>Google Business Profile optimization</li>
+                    <li>NAP consistency</li>
+                    <li>Local keyword mapping</li>
+                    <li>Basic citation building</li>
+                    <li>Location page recommendations</li>
+                  </ul>
+                </div>
+                <div class="seo-tier seo-tier-growth">
+                  <h5>Growth</h5>
+                  <ul>
+                    <li>GBP optimization</li>
+                    <li>GBP category/service optimization</li>
+                    <li>Local citations</li>
+                    <li>Local keyword tracking</li>
+                    <li>Review strategy recommendations</li>
+                    <li>Location landing-page optimization</li>
+                    <li>Local competitor analysis</li>
+                  </ul>
+                </div>
+                <div class="seo-tier seo-tier-pro">
+                  <h5>Pro</h5>
+                  <ul>
+                    <li>Multi-location SEO</li>
+                    <li>Advanced GBP optimization</li>
+                    <li>Local competitor tracking</li>
+                    <li>Local landing pages</li>
+                    <li>Citation cleanup</li>
+                    <li>Review/reputation strategy</li>
+                    <li>Local schema</li>
+                    <li>Map visibility monitoring</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="seo-sec wow fadeInUp">
+              <div class="seo-sec-head">
+                <span class="seo-sec-num">08</span>
+                <div class="seo-sec-icon"><i class="fa-solid fa-robot"></i></div>
+                <h4>AEO + GEO / AI Search Optimization</h4>
+              </div>
+              <p class="seo-sec-note">A strong differentiator — competitors are only just beginning to offer this. AI search visibility is an optimization objective, not a guarantee.</p>
+              <div class="seo-tier-grid">
+                <div class="seo-tier seo-tier-starter">
+                  <h5>Starter — Basic AEO</h5>
+                  <ul>
+                    <li>FAQ optimization</li>
+                    <li>Question-based keywords</li>
+                    <li>Featured snippet opportunities</li>
+                    <li>FAQ schema recommendations</li>
+                  </ul>
+                </div>
+                <div class="seo-tier seo-tier-growth">
+                  <h5>Growth — AEO + Basic GEO</h5>
+                  <ul>
+                    <li>Conversational queries</li>
+                    <li>Question-based content</li>
+                    <li>AI Overview opportunities</li>
+                    <li>FAQ optimization</li>
+                    <li>Entity optimization</li>
+                    <li>Structured content</li>
+                  </ul>
+                </div>
+                <div class="seo-tier seo-tier-pro">
+                  <h5>Pro — Advanced AEO + GEO</h5>
+                  <ul>
+                    <li>ChatGPT search visibility opportunities</li>
+                    <li>Google AI Overview optimization</li>
+                    <li>Perplexity-oriented content structure</li>
+                    <li>Entity/brand optimization</li>
+                    <li>Conversational query targeting</li>
+                    <li>Citation-worthy content development</li>
+                    <li>Topical authority</li>
+                    <li>AI-search competitor analysis</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="seo-sec wow fadeInUp">
+              <div class="seo-sec-head">
+                <span class="seo-sec-num">09</span>
+                <div class="seo-sec-icon"><i class="fa-solid fa-chart-column"></i></div>
+                <h4>Monthly Reporting</h4>
+              </div>
+              <p class="seo-sec-note">Every package includes reporting. Growth and Pro also include lead/conversion tracking in the monthly report.</p>
+            </div>
+            <div class="seo-sec wow fadeInUp">
+              <div class="seo-sec-head">
+                <span class="seo-sec-num">10</span>
+                <div class="seo-sec-icon"><i class="fa-solid fa-bullseye"></i></div>
+                <h4>Conversion-Focused SEO</h4>
+              </div>
+              <p class="seo-sec-note">What makes this feel like more than a typical SEO agency.</p>
+              <div class="seo-tier-grid">
+                <div class="seo-tier seo-tier-growth">
+                  <h5>Growth</h5>
+                  <ul>
+                    <li>CTA recommendations</li>
+                    <li>Landing page suggestions</li>
+                    <li>Internal conversion paths</li>
+                    <li>CTR improvement suggestions</li>
+                    <li>High-intent page optimization</li>
+                  </ul>
+                </div>
+                <div class="seo-tier seo-tier-pro">
+                  <h5>Pro</h5>
+                  <ul>
+                    <li>Conversion funnel review</li>
+                    <li>Landing page SEO</li>
+                    <li>CTA optimization</li>
+                    <li>Form optimization recommendations</li>
+                    <li>Conversion tracking review</li>
+                    <li>High-performing page expansion strategy</li>
+                    <li>CRO recommendations</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+
+
+          </div>
+          <div class="pr-panel" id="tab-ppc-ads">
+            <div class="pr-grid">
+              <div class="pr-plan wow fadeInUp">
+                <div class="pr-plan-name">Starter</div>
+                <div class="pr-plan-price"><span class="cur">₹</span><span class="amt">15,000</span><span class="per">/mo</span></div>
+                <p class="pr-plan-sub">Testing paid ads with a modest budget.</p>
+                <ul class="pr-plan-feats">
+                  <li><i class="fa-solid fa-check"></i>1 ad platform (Google or Meta)</li>
+                  <li><i class="fa-solid fa-check"></i>Up to ₹50k ad spend managed</li>
+                  <li><i class="fa-solid fa-check"></i>2 campaigns setup</li>
+                  <li><i class="fa-solid fa-check"></i>Conversion tracking setup</li>
+                  <li><i class="fa-solid fa-check"></i>Monthly report</li>
+                  <li class="off"><i class="fa-solid fa-xmark"></i>Landing page consultation</li>
+                  <li class="off"><i class="fa-solid fa-xmark"></i>A/B creative testing</li>
+                  <li class="off"><i class="fa-solid fa-xmark"></i>Dedicated ads manager</li>
+                </ul>
+                <div class="pr-plan-btn">
+                  <a href="#" onclick="openDemoPopup&&openDemoPopup(); return false;">Get Started</a>
+                </div>
+              </div>
+              <div class="pr-plan featured wow fadeInUp">
+                <div class="pr-plan-name">Growth</div>
+                <div class="pr-plan-price"><span class="cur">₹</span><span class="amt">28,000</span><span class="per">/mo</span></div>
+                <p class="pr-plan-sub">Scaling campaigns across platforms.</p>
+                <ul class="pr-plan-feats">
+                  <li><i class="fa-solid fa-check"></i>2 ad platforms</li>
+                  <li><i class="fa-solid fa-check"></i>Up to ₹2L ad spend managed</li>
+                  <li><i class="fa-solid fa-check"></i>5 campaigns setup</li>
+                  <li><i class="fa-solid fa-check"></i>Conversion tracking setup</li>
+                  <li><i class="fa-solid fa-check"></i>Bi-weekly report</li>
+                  <li><i class="fa-solid fa-check"></i>Landing page consultation</li>
+                  <li><i class="fa-solid fa-check"></i>A/B creative testing</li>
+                  <li class="off"><i class="fa-solid fa-xmark"></i>Dedicated ads manager</li>
+                </ul>
+                <div class="pr-plan-btn">
+                  <a href="#" onclick="openDemoPopup&&openDemoPopup(); return false;">Get Started</a>
+                </div>
+              </div>
+              <div class="pr-plan wow fadeInUp">
+                <div class="pr-plan-name">Pro</div>
+                <div class="pr-plan-price"><span class="cur">₹</span><span class="amt">50,000</span><span class="per">/mo</span></div>
+                <p class="pr-plan-sub">Aggressive growth, multi-channel.</p>
+                <ul class="pr-plan-feats">
+                  <li><i class="fa-solid fa-check"></i>All platforms (Google/Meta/YT)</li>
+                  <li><i class="fa-solid fa-check"></i>Up to ₹8L ad spend managed</li>
+                  <li><i class="fa-solid fa-check"></i>Unlimited campaigns</li>
+                  <li><i class="fa-solid fa-check"></i>Advanced conversion tracking</li>
+                  <li><i class="fa-solid fa-check"></i>Weekly report</li>
+                  <li><i class="fa-solid fa-check"></i>Landing page design included</li>
+                  <li><i class="fa-solid fa-check"></i>A/B creative testing</li>
+                  <li><i class="fa-solid fa-check"></i>Dedicated ads manager</li>
+                </ul>
+                <div class="pr-plan-btn">
+                  <a href="#" onclick="openDemoPopup&&openDemoPopup(); return false;">Get Started</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pr-panel" id="tab-social-media">
+            <div class="pr-grid">
+              <div class="pr-plan wow fadeInUp">
+                <div class="pr-plan-name">Starter</div>
+                <div class="pr-plan-price"><span class="cur">₹</span><span class="amt">10,000</span><span class="per">/mo</span></div>
+                <p class="pr-plan-sub">Building a consistent social presence.</p>
+                <ul class="pr-plan-feats">
+                  <li><i class="fa-solid fa-check"></i>2 platforms</li>
+                  <li><i class="fa-solid fa-check"></i>12 posts/month</li>
+                  <li><i class="fa-solid fa-check"></i>Basic creative design</li>
+                  <li><i class="fa-solid fa-check"></i>Caption & hashtag strategy</li>
+                  <li><i class="fa-solid fa-check"></i>Monthly report</li>
+                  <li class="off"><i class="fa-solid fa-xmark"></i>Reels/short video (2/mo)</li>
+                  <li class="off"><i class="fa-solid fa-xmark"></i>Community management</li>
+                  <li class="off"><i class="fa-solid fa-xmark"></i>Paid promotion strategy</li>
+                </ul>
+                <div class="pr-plan-btn">
+                  <a href="#" onclick="openDemoPopup&&openDemoPopup(); return false;">Get Started</a>
+                </div>
+              </div>
+              <div class="pr-plan featured wow fadeInUp">
+                <div class="pr-plan-name">Growth</div>
+                <div class="pr-plan-price"><span class="cur">₹</span><span class="amt">20,000</span><span class="per">/mo</span></div>
+                <p class="pr-plan-sub">Active brands wanting engagement.</p>
+                <ul class="pr-plan-feats">
+                  <li><i class="fa-solid fa-check"></i>3 platforms</li>
+                  <li><i class="fa-solid fa-check"></i>20 posts/month</li>
+                  <li><i class="fa-solid fa-check"></i>Premium creative design</li>
+                  <li><i class="fa-solid fa-check"></i>Caption & hashtag strategy</li>
+                  <li><i class="fa-solid fa-check"></i>Bi-weekly report</li>
+                  <li><i class="fa-solid fa-check"></i>Reels/short video (4/mo)</li>
+                  <li><i class="fa-solid fa-check"></i>Community management</li>
+                  <li class="off"><i class="fa-solid fa-xmark"></i>Paid promotion strategy</li>
+                </ul>
+                <div class="pr-plan-btn">
+                  <a href="#" onclick="openDemoPopup&&openDemoPopup(); return false;">Get Started</a>
+                </div>
+              </div>
+              <div class="pr-plan wow fadeInUp">
+                <div class="pr-plan-name">Pro</div>
+                <div class="pr-plan-price"><span class="cur">₹</span><span class="amt">38,000</span><span class="per">/mo</span></div>
+                <p class="pr-plan-sub">Brands treating social as a growth channel.</p>
+                <ul class="pr-plan-feats">
+                  <li><i class="fa-solid fa-check"></i>4+ platforms</li>
+                  <li><i class="fa-solid fa-check"></i>30 posts/month</li>
+                  <li><i class="fa-solid fa-check"></i>Premium creative + motion</li>
+                  <li><i class="fa-solid fa-check"></i>Full content strategy</li>
+                  <li><i class="fa-solid fa-check"></i>Weekly report</li>
+                  <li><i class="fa-solid fa-check"></i>Reels/short video (8/mo)</li>
+                  <li><i class="fa-solid fa-check"></i>Community management</li>
+                  <li><i class="fa-solid fa-check"></i>Paid promotion strategy</li>
+                </ul>
+                <div class="pr-plan-btn">
+                  <a href="#" onclick="openDemoPopup&&openDemoPopup(); return false;">Get Started</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pr-panel" id="tab-web-development">
+            <div class="pr-grid">
+              <div class="pr-plan wow fadeInUp">
+                <div class="pr-plan-name">Basic</div>
+                <div class="pr-plan-price"><span class="cur">₹</span><span class="amt">25,000</span><span class="per">one-time</span></div>
+                <p class="pr-plan-sub">Simple, professional business website.</p>
+                <ul class="pr-plan-feats">
+                  <li><i class="fa-solid fa-check"></i>Up to 5 pages</li>
+                  <li><i class="fa-solid fa-check"></i>Responsive design</li>
+                  <li><i class="fa-solid fa-check"></i>Basic SEO setup</li>
+                  <li><i class="fa-solid fa-check"></i>Contact form + WhatsApp</li>
+                  <li><i class="fa-solid fa-check"></i>2 rounds of revisions</li>
+                  <li class="off"><i class="fa-solid fa-xmark"></i>CMS / blog setup</li>
+                  <li class="off"><i class="fa-solid fa-xmark"></i>E-commerce features</li>
+                  <li class="off"><i class="fa-solid fa-xmark"></i>Speed optimization</li>
+                </ul>
+                <div class="pr-plan-btn">
+                  <a href="#" onclick="openDemoPopup&&openDemoPopup(); return false;">Get Started</a>
+                </div>
+              </div>
+              <div class="pr-plan featured wow fadeInUp">
+                <div class="pr-plan-name">Business</div>
+                <div class="pr-plan-price"><span class="cur">₹</span><span class="amt">55,000</span><span class="per">one-time</span></div>
+                <p class="pr-plan-sub">Feature-rich site built to convert.</p>
+                <ul class="pr-plan-feats">
+                  <li><i class="fa-solid fa-check"></i>Up to 15 pages</li>
+                  <li><i class="fa-solid fa-check"></i>Responsive design</li>
+                  <li><i class="fa-solid fa-check"></i>Advanced on-page SEO</li>
+                  <li><i class="fa-solid fa-check"></i>Contact + lead forms</li>
+                  <li><i class="fa-solid fa-check"></i>4 rounds of revisions</li>
+                  <li><i class="fa-solid fa-check"></i>CMS / blog setup</li>
+                  <li class="off"><i class="fa-solid fa-xmark"></i>E-commerce (up to 50 products)</li>
+                  <li><i class="fa-solid fa-check"></i>Speed optimization</li>
+                </ul>
+                <div class="pr-plan-btn">
+                  <a href="#" onclick="openDemoPopup&&openDemoPopup(); return false;">Get Started</a>
+                </div>
+              </div>
+              <div class="pr-plan wow fadeInUp">
+                <div class="pr-plan-name">Custom</div>
+                <div class="pr-plan-price"><span class="cur">₹</span><span class="amt">1,20,000</span><span class="per">onwards</span></div>
+                <p class="pr-plan-sub">Full custom builds & web apps.</p>
+                <ul class="pr-plan-feats">
+                  <li><i class="fa-solid fa-check"></i>Unlimited pages</li>
+                  <li><i class="fa-solid fa-check"></i>Custom UI/UX design</li>
+                  <li><i class="fa-solid fa-check"></i>Advanced SEO architecture</li>
+                  <li><i class="fa-solid fa-check"></i>Custom forms & integrations</li>
+                  <li><i class="fa-solid fa-check"></i>Unlimited revisions (scope)</li>
+                  <li><i class="fa-solid fa-check"></i>Custom CMS / dashboard</li>
+                  <li><i class="fa-solid fa-check"></i>Full e-commerce</li>
+                  <li><i class="fa-solid fa-check"></i>Speed + security hardening</li>
+                </ul>
+                <div class="pr-plan-btn">
+                  <a href="#" onclick="openDemoPopup&&openDemoPopup(); return false;">Get Started</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pr-panel" id="tab-content">
+            <div class="pr-grid">
+              <div class="pr-plan wow fadeInUp">
+                <div class="pr-plan-name">Starter</div>
+                <div class="pr-plan-price"><span class="cur">₹</span><span class="amt">8,000</span><span class="per">/mo</span></div>
+                <p class="pr-plan-sub">Regular content to stay active.</p>
+                <ul class="pr-plan-feats">
+                  <li><i class="fa-solid fa-check"></i>4 blog articles/month</li>
+                  <li><i class="fa-solid fa-check"></i>SEO-optimized writing</li>
+                  <li><i class="fa-solid fa-check"></i>Up to 800 words each</li>
+                  <li><i class="fa-solid fa-check"></i>1 round of edits</li>
+                  <li><i class="fa-solid fa-check"></i>Basic keyword research</li>
+                  <li class="off"><i class="fa-solid fa-xmark"></i>Social media captions</li>
+                  <li class="off"><i class="fa-solid fa-xmark"></i>Website/landing copy</li>
+                  <li class="off"><i class="fa-solid fa-xmark"></i>Content strategy plan</li>
+                </ul>
+                <div class="pr-plan-btn">
+                  <a href="#" onclick="openDemoPopup&&openDemoPopup(); return false;">Get Started</a>
+                </div>
+              </div>
+              <div class="pr-plan featured wow fadeInUp">
+                <div class="pr-plan-name">Growth</div>
+                <div class="pr-plan-price"><span class="cur">₹</span><span class="amt">16,000</span><span class="per">/mo</span></div>
+                <p class="pr-plan-sub">Content that builds authority.</p>
+                <ul class="pr-plan-feats">
+                  <li><i class="fa-solid fa-check"></i>8 blog articles/month</li>
+                  <li><i class="fa-solid fa-check"></i>SEO-optimized writing</li>
+                  <li><i class="fa-solid fa-check"></i>Up to 1200 words each</li>
+                  <li><i class="fa-solid fa-check"></i>2 rounds of edits</li>
+                  <li><i class="fa-solid fa-check"></i>Full keyword research</li>
+                  <li><i class="fa-solid fa-check"></i>Social media captions (15/mo)</li>
+                  <li><i class="fa-solid fa-check"></i>Website/landing copy</li>
+                  <li class="off"><i class="fa-solid fa-xmark"></i>Content strategy plan</li>
+                </ul>
+                <div class="pr-plan-btn">
+                  <a href="#" onclick="openDemoPopup&&openDemoPopup(); return false;">Get Started</a>
+                </div>
+              </div>
+              <div class="pr-plan wow fadeInUp">
+                <div class="pr-plan-name">Pro</div>
+                <div class="pr-plan-price"><span class="cur">₹</span><span class="amt">30,000</span><span class="per">/mo</span></div>
+                <p class="pr-plan-sub">A full content engine.</p>
+                <ul class="pr-plan-feats">
+                  <li><i class="fa-solid fa-check"></i>16 blog articles/month</li>
+                  <li><i class="fa-solid fa-check"></i>SEO + GEO optimized</li>
+                  <li><i class="fa-solid fa-check"></i>Long-form (2000+ words)</li>
+                  <li><i class="fa-solid fa-check"></i>Unlimited edits (scope)</li>
+                  <li><i class="fa-solid fa-check"></i>Full keyword + topic research</li>
+                  <li><i class="fa-solid fa-check"></i>Social media captions (30/mo)</li>
+                  <li><i class="fa-solid fa-check"></i>Website/landing copy</li>
+                  <li><i class="fa-solid fa-check"></i>Content strategy plan</li>
+                </ul>
+                <div class="pr-plan-btn">
+                  <a href="#" onclick="openDemoPopup&&openDemoPopup(); return false;">Get Started</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pr-panel" id="tab-combo">
+            <div class="pr-grid">
+              <div class="pr-plan wow fadeInUp">
+                <div class="pr-plan-name">Launch</div>
+                <div class="pr-plan-price"><span class="cur">₹</span><span class="amt">35,000</span><span class="per">/mo</span></div>
+                <p class="pr-plan-sub">New businesses needing everything basic.</p>
+                <ul class="pr-plan-feats">
+                  <li><i class="fa-solid fa-check"></i>SEO (Starter)</li>
+                  <li><i class="fa-solid fa-check"></i>Social media (Starter)</li>
+                  <li><i class="fa-solid fa-check"></i>Content (4 blogs/mo)</li>
+                  <li><i class="fa-solid fa-check"></i>Monthly strategy call</li>
+                  <li><i class="fa-solid fa-check"></i>Combined monthly report</li>
+                  <li class="off"><i class="fa-solid fa-xmark"></i>Paid ads management</li>
+                  <li class="off"><i class="fa-solid fa-xmark"></i>Dedicated account manager</li>
+                  <li class="off"><i class="fa-solid fa-xmark"></i>Priority support</li>
+                </ul>
+                <div class="pr-plan-btn">
+                  <a href="#" onclick="openDemoPopup&&openDemoPopup(); return false;">Get Started</a>
+                </div>
+              </div>
+              <div class="pr-plan featured wow fadeInUp">
+                <div class="pr-plan-name">Scale</div>
+                <div class="pr-plan-price"><span class="cur">₹</span><span class="amt">65,000</span><span class="per">/mo</span></div>
+                <p class="pr-plan-sub">Growing brands going all-in.</p>
+                <ul class="pr-plan-feats">
+                  <li><i class="fa-solid fa-check"></i>SEO (Growth)</li>
+                  <li><i class="fa-solid fa-check"></i>Social media (Growth)</li>
+                  <li><i class="fa-solid fa-check"></i>Content (8 blogs/mo)</li>
+                  <li><i class="fa-solid fa-check"></i>Bi-weekly strategy call</li>
+                  <li><i class="fa-solid fa-check"></i>Combined report</li>
+                  <li><i class="fa-solid fa-check"></i>Paid ads management</li>
+                  <li><i class="fa-solid fa-check"></i>Dedicated account manager</li>
+                  <li class="off"><i class="fa-solid fa-xmark"></i>Priority support</li>
+                </ul>
+                <div class="pr-plan-btn">
+                  <a href="#" onclick="openDemoPopup&&openDemoPopup(); return false;">Get Started</a>
+                </div>
+              </div>
+              <div class="pr-plan featured wow fadeInUp">
+                <div class="pr-plan-name">Dominate</div>
+                <div class="pr-plan-price"><span class="cur">₹</span><span class="amt">1,20,000</span><span class="per">/mo</span></div>
+                <p class="pr-plan-sub">Market leaders who want it all.</p>
+                <ul class="pr-plan-feats">
+                  <li><i class="fa-solid fa-check"></i>SEO (Pro)</li>
+                  <li><i class="fa-solid fa-check"></i>Social media (Pro)</li>
+                  <li><i class="fa-solid fa-check"></i>Content (16 blogs/mo)</li>
+                  <li><i class="fa-solid fa-check"></i>Weekly strategy call</li>
+                  <li><i class="fa-solid fa-check"></i>Custom dashboard + reporting</li>
+                  <li><i class="fa-solid fa-check"></i>Full paid ads management</li>
+                  <li><i class="fa-solid fa-check"></i>Dedicated account manager</li>
+                  <li><i class="fa-solid fa-check"></i>Priority support</li>
+                </ul>
+                <div class="pr-plan-btn">
+                  <a href="#" onclick="openDemoPopup&&openDemoPopup(); return false;">Get Started</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pr-custom wow fadeInUp">
+            <div>
+              <h4>Need something custom?</h4>
+              <p>Bigger scope, multiple services, or a unique requirement — we'll build a plan around exactly what you need.</p>
+            </div>
+            <a href="#" class="btn-default" onclick="openDemoPopup&&openDemoPopup(); return false;">Request a Custom Quote</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="pr-cta bg-section">
+        <div class="container">
+          <div class="pr-cta-inner wow fadeInUp">
+            <div class="section-title section-title-center" style="margin-bottom:0;">
+              <span class="section-sub-title">Not Sure Which Plan Fits?</span>
+              <h2 class="text-anime-style-3" data-cursor="-opaque">Let's Figure It Out Together</h2>
+            </div>
+            <p class="lead">Book a free consultation and we'll recommend the right plan based on your goals, budget, and where your business is right now.</p>
+            <a href="#" class="btn-default" onclick="openDemoPopup&&openDemoPopup(); return false;">Book Your Free Consultation</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!--#include virtual="/includes/footer.shtml" -->
+
+    <!--#include virtual="/includes/popup.shtml" -->
+
+    <!--#include virtual="/includes/scripts.shtml" -->
+
+    <script>
+      (function () {
+        var tabs = document.querySelectorAll('.pr-tab');
+        var panels = document.querySelectorAll('.pr-panel');
+        tabs.forEach(function (t) {
+          t.addEventListener('click', function () {
+            tabs.forEach(function (x){ x.classList.remove('active'); });
+            panels.forEach(function (p){ p.classList.remove('active'); });
+            t.classList.add('active');
+            var id = 'tab-' + t.getAttribute('data-tab');
+            var panel = document.getElementById(id);
+            if (panel) panel.classList.add('active');
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "digifynext",
+  "version": "1.0.0",
+  "description": "DigifyNext Agency Website",
+  "main": "build-static.js",
+  "scripts": {
+    "build": "node build-static.js"
+  }
+}

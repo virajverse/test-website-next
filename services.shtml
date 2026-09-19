@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+      name="viewport"
+    />
+    <meta
+      content="DigifyNext is a performance-focused digital marketing agency helping brands grow through SEO, paid media, social media, content, conversion-focused websites and measurable growth strategy."
+      name="description"
+    />
+    <meta
+      content="DigifyNext, digital marketing agency, growth marketing agency, SEO agency, Google Ads management, social media marketing, performance marketing, website development"
+      name="keywords"
+    />
+    <meta content="DigifyNext" name="author" />
+
+    <title>DigifyNext - Growth Marketing & Digital Performance Agency</title>
+
+    <!--#include virtual="/includes/head-css.shtml" -->
+  </head>
+<body>
+    <div class="preloader">
+      <div class="loading-container">
+        <div class="loading"></div>
+        <div id="loading-icon"><img width="204" height="163" alt="" src="images/favicon.png" /></div>
+      </div>
+    </div>
+
+    <!--#include virtual="/includes/header.shtml" -->
+
+<!-- Page Header Start -->
+    <div class="page-header parallaxie">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Page Header Box Start -->
+                    <div class="page-header-box">
+                        <h1 class="text-anime-style-3" data-cursor="-opaque">Digital Marketing Services</h1>
+                        <nav class="wow fadeInUp" >
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Digital Marketing Services</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <!-- Page Header Box End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+   
+    <!-- Page Services Start -->
+    <div class="our-services-prime bg-section">
+      <div class="container">
+        <div class="row section-row align-items-end">
+          <div class="col-xl-6">
+            <div class="section-title">
+              <span class="section-sub-title wow fadeInUp">Our Services</span>
+              <h2 class="text-anime-style-3" data-cursor="-opaque">
+                Digital Marketing Services Built To Move The Right Metrics
+              </h2>
+            </div>
+          </div>
+          <div class="col-xl-6">
+            <div class="section-content-btn">
+              <div
+                class="section-title-content wow fadeInUp"
+                data-wow-delay="0.2s"
+              >
+                <p>
+                  From discoverability to conversion, we plan and execute
+                  digital channels that help your brand attract better traffic,
+                  generate qualified leads and improve marketing performance
+                  over time.
+                </p>
+              </div>
+
+              <div class="section-btn wow fadeInUp" data-wow-delay="0.4s">
+                <a class="btn-default" href="services">Explore Our Services</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="service-item-list-prime">
+              <div class="services-item-prime box-border-gradiant wow fadeInUp">
+                <!-- <div class="serviceimagewrap">
+    <video autoplay muted playsinline loop id="myvideo" width="100%" height="100%"><source src="images/seossvideo.mp4" type="video/mp4"></video>
+</div> -->
+                <div class="serviceimagewrap">
+                  <img width="577" height="433" src="images/seoservice.png" alt="" />
+                </div>
+
+                <div class="service-item-body-prime">
+                  <div class="service-item-content-prime">
+                    <h2><a href="#">Search Engine Optimization</a></h2>
+                    <p>
+                      Build long-term visibility with technical SEO, content
+                      strategy and search experiences that bring high-intent
+                      visitors to your brand.
+                    </p>
+                  </div>
+
+                  <div class="service-item-btn-prime">
+                    <a class="readmore-btn" href="seo-services-company-delhi">View Details</a>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="services-item-prime box-border-gradiant wow fadeInUp"
+                data-wow-delay="0.2s"
+              >
+                <div class="serviceimagewrap">
+                  <img width="1536" height="1024" src="images/aisearch.png" alt="" />
+                </div>
+
+                <div class="service-item-body-prime">
+                  <div class="service-item-content-prime">
+                    <h2><a href="#">AI Search &amp; GEO Optimization</a></h2>
+                    <p>
+                      Get found inside ChatGPT, Gemini and Google AI Overviews
+                      with content, entities and structured data built so AI
+                      systems can understand and recommend your brand.
+                    </p>
+                  </div>
+
+                  <div class="service-item-btn-prime">
+                    <a class="readmore-btn" href="ai-search-geo-seo-services-company-delhi">View Details</a>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="services-item-prime box-border-gradiant wow fadeInUp"
+                data-wow-delay="0.2s"
+              >
+                <div class="serviceimagewrap">
+                  <img width="577" height="433" src="images/performanceservice.png" alt="" />
+                </div>
+
+                <div class="service-item-body-prime">
+                  <div class="service-item-content-prime">
+                    <h2><a href="#">Performance Marketing</a></h2>
+                    <p>
+                      Connect media, creative, landing pages and analytics to
+                      scale campaigns with sharper targeting and stronger
+                      conversion journeys.
+                    </p>
+                  </div>
+
+                  <div class="service-item-btn-prime">
+                    <a class="readmore-btn" href="performance-marketing-company-delhi">View Details</a>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="services-item-prime box-border-gradiant wow fadeInUp"
+                data-wow-delay="0.4s"
+              >
+                <div class="serviceimagewrap">
+                  <img width="577" height="433" src="images/brandingservice.png" alt="" />
+                </div>
+
+                <div class="service-item-body-prime">
+                  <div class="service-item-content-prime">
+                    <h2><a href="#">Branding &amp; Creative</a></h2>
+                    <p>
+                      Create brand systems, ad creatives and content assets that
+                      look professional, feel consistent and support campaign
+                      performance.
+                    </p>
+                  </div>
+
+                  <div class="service-item-btn-prime">
+                    <a class="readmore-btn" href="brand-creative-design-services-delhi">View Details</a>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="services-item-prime box-border-gradiant wow fadeInUp"
+                data-wow-delay="0.4s"
+              >
+                <div class="serviceimagewrap">
+                  <img width="1448" height="1086" src="images/orm.png" alt="" />
+                </div>
+
+                <div class="service-item-body-prime">
+                  <div class="service-item-content-prime">
+                    <h2><a href="#">Online Reputation Management</a></h2>
+                    <p>
+                      Shape what people see when they search your brand — through
+                      review management, positive-content strategy and stronger
+                      search results that build trust and credibility.
+                    </p>
+                  </div>
+
+                  <div class="service-item-btn-prime">
+                    <a class="readmore-btn" href="#">View Details</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="services-item-prime box-border-gradiant wow fadeInUp">
+                <div class="serviceimagewrap">
+                  <img width="577" height="433" src="images/webservice.png" alt="" />
+                </div>
+
+                <div class="service-item-body-prime">
+                  <div class="service-item-content-prime">
+                    <h2><a href="#">Website Design &amp; Development</a></h2>
+                    <p>
+                      Design responsive websites and landing pages that
+                      communicate clearly, load fast and turn visitors into
+                      meaningful enquiries.
+                    </p>
+                  </div>
+
+                  <div class="service-item-btn-prime">
+                    <a class="readmore-btn" href="#">View Details</a>
+                  </div>
+                </div>
+              </div>
+
+              
+
+              
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="section-footer-text wow fadeInUp" data-wow-delay="0.2s">
+              <p>
+                Strategy, creative and performance working together for
+                sustainable growth
+              </p>
+              <ul class="section-footer-border-list">
+                <li>Built Around <b>Measurable</b> Outcomes</li>
+                <li>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <b><span class="counter">4.9</span>/5</b>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Page Services End -->
+
+    <!-- Intro Video Section Start -->
+    <div class="intro-video dark-section bg-section parallaxie">
+        <!-- Intro Video Box Start -->
+        <div class="intro-video-box">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-7">
+                        <!-- Intro Video Content Box Start -->
+                        <div class="intro-video-content-box">
+                            <!-- Section Title Start -->
+                            <div class="section-title">
+                                <span class="section-sub-title wow fadeInUp">Growth Approach</span>
+                                <h2 class="text-anime-style-3" data-cursor="-opaque">See how strategy, creativity and performance work together</h2>
+                            </div>
+                            <!-- Section Title End -->
+
+                            <!-- Intro Video Circle Start -->
+                            <div class="intro-video-circle wow fadeInUp" data-wow-delay="0.2s">
+                                <a aria-label="Play video" href="#" class="popup-video">
+                                    <img src="images/watch-video-circle.svg" alt="">
+                                </a>
+                            </div>
+                            <!-- Intro Video Circle End -->
+                        </div>
+                        <!-- Intro Video Content Box End -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Intro Video Box End -->
+
+        <!-- Scrolling Ticker Section Start -->
+        <div class="our-scrolling-ticker">
+            <!-- Scrolling Ticker Start -->
+            <div class="scrolling-ticker-box">
+                <div class="scrolling-content">
+                    <span><img src="images/icon-asterisk-white.svg" alt="">SEO Strategy</span>
+                    <span><img src="images/icon-asterisk-white.svg" alt="">Performance Marketing</span>
+                    <span><img src="images/icon-asterisk-white.svg" alt="">Brand Positioning</span>
+                    <span><img src="images/icon-asterisk-white.svg" alt="">AI Search Optimization</span>
+                </div>
+                <div class="scrolling-content">
+                    <span><img src="images/icon-asterisk-white.svg" alt="">SEO Strategy</span>
+                    <span><img src="images/icon-asterisk-white.svg" alt="">Performance Marketing</span>
+                    <span><img src="images/icon-asterisk-white.svg" alt="">Brand Positioning</span>
+                    <span><img src="images/icon-asterisk-white.svg" alt="">AI Search Optimization</span>
+                </div>
+            </div>
+            <!-- Scrolling Ticker End -->
+        </div>
+        <!-- Scrolling Ticker Section End -->
+    </div>
+    <!-- Intro Video Section End -->
+
+    <!-- Core Feature Section Start -->
+    <div class="core-feature">
+        <div class="container">
+            <div class="row section-row align-items-center">
+                <div class="col-xl-6">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                        <span class="section-sub-title wow fadeInUp">Why DigifyNext</span>
+                        <h2 class="text-anime-style-3" data-cursor="-opaque">Digital growth needs more than isolated services</h2>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+
+                <div class="col-xl-6">
+                    <!-- Section Content Button Start -->
+                    <div class="section-content-btn">
+                        <!-- Section Title Content Start -->
+                        <div class="section-title-content wow fadeInUp" data-wow-delay="0.2s">
+                            <p>We connect every part of your digital presence — search, ads, website, content, creative and reputation — so your marketing works as one clear growth system.</p>
+                        </div>
+                        <!-- Section Title Content End -->
+    
+                        <!-- Section Button Start -->
+                        <div class="section-btn wow fadeInUp" data-wow-delay="0.4s">
+                            <a href="contact" class="btn-default">Contact Us</a>
+                        </div>
+                        <!-- Section Button End -->
+                    </div>   
+                    <!-- Section Content Button End -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Core Feature List Box Start -->
+                    <div class="core-feature-list-box">
+                        <!-- Core Feature Box Start -->
+                        <div class="core-feature-box box-1 box-border-gradiant wow fadeInUp">
+                            <div class="core-feature-image">
+                                <figure>
+                                    <img width="413" height="230" src="images/core-feature-image-1.png" alt="">
+                                </figure>
+                            </div>
+                            <div class="core-feature-body-content">
+                                <h2>Connected Channel Strategy</h2>
+                                <p>Every campaign, creative asset and landing page is planned to support the same business objective.</p>
+                            </div>
+                        </div>
+                        <!-- Core Feature Box End -->
+
+                        <!-- Core Feature Box Start -->
+                        <div class="core-feature-box box-2 wow fadeInUp" data-wow-delay="0.2s">
+                            <!-- Core Feature Image Start -->
+                            <div class="core-feature-image">
+                                <figure>
+                                    <img width="414" height="485" src="images/core-feature-image.jpg" alt="">
+                                </figure>
+                            </div>
+                            <!-- Core Feature Image End -->
+                        </div>
+                        <!-- Core Feature Box End -->
+
+                        <!-- Core Feature Box Start -->
+                        <div class="core-feature-box box-3 box-border-gradiant wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="icon-box">
+                                <img src="images/icon-core-feature-1.svg" alt="">
+                            </div>
+                            <div class="core-feature-body-content">
+                                <h2><span class="counter">360</span>° Growth Thinking</h2>
+                                <p>We combine creativity, technology, and strategic thinking to deliver digital solutions that help businesses.</p>
+                                <ul>
+                                    <li>Search, Ads, Branding, ORM & Web</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Core Feature Box End -->
+
+                        <!-- Core Feature Box Start -->
+                        <div class="core-feature-box box-4 wow fadeInUp" data-wow-delay="0.6s">
+                            <!-- Core Feature Cta Review Box Start -->
+                            <div class="core-feature-cta-review-box">
+                                <!-- Satisfy Client images Start -->
+                                <div class="satisfy-client-images">
+                                    <div class="satisfy-client-image">
+                                        <figure class="image-anime">
+                                            <img width="70" height="70" src="images/author-2.jpg" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="satisfy-client-image">
+                                        <figure class="image-anime">
+                                            <img width="70" height="70" src="images/author-1.jpg" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="satisfy-client-image">
+                                        <figure class="image-anime">
+                                            <img width="70" height="70" src="images/author-3.jpg" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="satisfy-client-image">
+                                        <figure class="image-anime">
+                                            <img width="70" height="70" src="images/author-4.jpg" alt="">
+                                        </figure>
+                                    </div>
+                                </div>
+                                <!-- Satisfy Client images End -->
+
+                                <!-- Google Rating Box Start -->
+                                <div class="google-rating-box">
+                                    <div class="google-rating-logo">
+                                        <img src="images/icon-google.svg" alt="">
+                                    </div>
+                                    <div class="google-rating-info">
+                                        <div class="google-rating-info-header">
+                                            <h2><span class="counter">4.9</span>/5</h2>
+                                            <span class="google-rating-star"><i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i><i class="fa fa-solid fa-star"></i></span>
+                                        </div>
+                                        <p>Based on 2500 reviews</p>
+                                    </div>
+                                </div>
+                                <!-- Google Rating Box Start -->
+                            </div>
+                            <!-- Core Feature Cta Review Box End -->
+
+                            <!-- Core Feature Review Content Start -->
+                            <div class="core-feature-review-content">
+                                <p>“ Strategy, creative direction and performance marketing come together to build digital growth that can be measured. ”</p>
+                            </div>
+                            <!-- Core Feature Review Content End -->
+                        </div>
+                        <!-- Core Feature Box Start -->
+
+                        <!-- Core Feature Box Start -->
+                        <div class="core-feature-box box-5 wow fadeInUp" data-wow-delay="0.8s">
+                            <!-- Core Feature Contact Item Start -->
+                            <div class="core-feature-contact-item">
+                                <div class="icon-box">
+                                    <img src="images/icon-headphone-white.svg" alt="">
+                                </div>
+                                <div class="core-feature-title">
+                                    <h2>Contact Us</h2>
+                                </div>
+                            </div>
+                            <!-- Core Feature Contact Item End -->
+
+                            <!-- Core Feature Contact Content Start -->
+                            <div class="core-feature-contact-content">
+                                <p>Have a growth goal in mind? Let’s choose the right digital service mix for your business.</p>
+                            </div>
+                            <!-- Core Feature Contact Content End -->
+                        </div>
+                        <!-- Core Feature Box Start -->
+                    </div>
+                    <!-- Core Feature List Box End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Core Feature Section End -->
+
+    <!-- Our Faq Section Start -->
+    <div class="our-faqs bg-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6">
+                    <!-- FAQ Content Start -->
+                    <div class="faq-content">
+                        <!-- Section Title Start -->
+                        <div class="section-title">
+                            <span class="section-sub-title wow fadeInUp">Frequently Asked Questions</span>
+                            <h2 class="text-anime-style-3" data-cursor="-opaque">Questions businesses ask before choosing a growth partner</h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.2s">Here are clear answers about how our services work, how we plan campaigns and how DigifyNext approaches measurable digital growth.</p>
+                        </div>
+                        <!-- Section Title End -->
+
+                        <!-- Contact Us Circle Start -->
+                        <div class="contact-us-circle wow fadeInUp" data-wow-delay="0.4s">
+                            <a aria-label="Contact us" href="contact">
+                                <img src="images/contact-us-circle.svg" alt="">
+                            </a>
+                        </div>
+                        <!-- Contact Us Circle End -->
+                    </div>
+                    <!-- FAQ Content End -->
+                </div>
+
+                <div class="col-xl-6">
+                    <!-- FAQ Accordion Start -->
+                    <div class="faqs-accordion" id="accordion">
+                        <div class="accordion-item wow fadeInUp">
+                            <h2 class="accordion-header" id="heading1">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                    1. Which DigifyNext service is right for my business?
+                                </button>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse" role="region" aria-labelledby="heading1" data-bs-parent="#accordion">
+                                <div class="accordion-body">
+                                    <p>It depends on your current stage. If you need visibility, SEO and GEO are ideal. If you need faster enquiries, PPC and performance marketing work well. If trust and recall are weak, branding, ORM and website improvements can make a major difference.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
+                            <h2 class="accordion-header" id="heading2">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                                    2. Can you manage SEO, ads, creatives and website together?
+                                </button>
+                            </h2>
+                            <div id="collapse2" class="accordion-collapse collapse show" role="region" aria-labelledby="heading2" data-bs-parent="#accordion">
+                                <div class="accordion-body">
+                                    <p>Yes. We often work across multiple channels so your campaigns, landing pages, content and brand communication support each other instead of working in isolation.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
+                            <h2 class="accordion-header" id="heading3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                    3. Do you offer custom marketing plans?
+                                </button>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" role="region" aria-labelledby="heading3" data-bs-parent="#accordion">
+                                <div class="accordion-body">
+                                    <p>Yes. Every plan is built around your goals, audience, industry, competition and budget. We do not force every business into the same package.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.6s">
+                            <h2 class="accordion-header" id="heading4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                    4. How do you measure success?
+                                </button>
+                            </h2>
+                            <div id="collapse4" class="accordion-collapse collapse" role="region" aria-labelledby="heading4" data-bs-parent="#accordion">
+                                <div class="accordion-body">
+                                    <p>We track practical business metrics such as traffic quality, rankings, enquiries, cost per lead, conversion rate, campaign ROI and brand engagement.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.6s">
+                            <h2 class="accordion-header" id="heading5">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                    5. Do you work with brands outside India?
+                                </button>
+                            </h2>
+                            <div id="collapse5" class="accordion-collapse collapse" role="region" aria-labelledby="heading5" data-bs-parent="#accordion">
+                                <div class="accordion-body">
+                                    <p>Yes. DigifyNext creates digital marketing strategies for businesses targeting local, national and international audiences.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- FAQ Accordion End -->
+                </div>
+
+                <div class="col-lg-12">
+                    <!-- Faq Counter Items List Start -->
+                    <div class="faq-counter-items-list box-border-gradiant">
+                        <!-- Faq Counter Item Start -->
+                        <div class="faq-counter-item">
+                            <div class="faq-counter-item-header">
+                                <h2><span class="counter">6</span></h2>
+                                <h3>Core Digital Growth Services</h3>
+                            </div>
+                            <div class="faq-counter-item-body">
+                                <p>SEO, GEO, PPC, Branding, ORM and Website Development under one strategic approach.</p>
+                            </div>
+                        </div>
+                        <!-- Faq Counter Item End -->
+
+                        <!-- Faq Counter Item Start -->
+                        <div class="faq-counter-item">
+                            <div class="faq-counter-item-header">
+                                <h2><span class="counter">98</span>%</h2>
+                                <h3>Transparent Campaign Reporting</h3>
+                            </div>
+                            <div class="faq-counter-item-body">
+                                <p>We focus on clear metrics, practical insights and next-step recommendations.</p>
+                            </div>
+                        </div>
+                        <!-- Faq Counter Item End -->
+
+                        <!-- Faq Counter Item Start -->
+                        <div class="faq-counter-item">
+                            <div class="faq-counter-item-header">
+                                <h2><span class="counter">360</span></h2>
+                                <h3>Degree Growth Support</h3>
+                            </div>
+                            <div class="faq-counter-item-body">
+                                <p>Strategy, creative, content, website and performance teams aligned around your goals.</p>
+                            </div>
+                        </div>
+                        <!-- Faq Counter Item End -->
+                    </div>
+                    <!-- Faq Counter Items List End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Our Faq Section End -->
+
+    <div class="our-testimonials-prime bg-section">
+      <div class="container">
+        <div class="row section-row">
+          <div class="col-lg-12">
+            <div class="section-title section-title-center">
+              <span class="section-sub-title wow fadeInUp"
+                >Client Testimonials</span
+              >
+              <h2 class="text-anime-style-3" data-cursor="-opaque">
+                What Clients Value About Working With DigifyNext
+              </h2>
+              <p class="wow fadeInUp" data-wow-delay="0.2s">
+                We bring strategy, creative thinking and performance discipline
+                together so brands can make smarter decisions and grow with
+                confidence.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="testimonial-slider-prime">
+              <div class="swiper">
+                <div class="swiper-wrapper" data-cursor-text="Drag">
+  <!-- Testimonial 1 -->
+  <div class="swiper-slide">
+    <div class="testimonial-item-prime box-border-gradiant">
+      <div class="testimonial-item-content-prime">
+        <h2>"DigifyNext completely transformed our lead pipeline."</h2>
+        <p>
+          Within three months of running Google Ads with them, our cost per
+          lead dropped by nearly 40% and the quality of enquiries improved
+          significantly. They understood the real estate buyer journey and
+          built campaigns around it.
+        </p>
+      </div>
+
+      <div class="testimonial-item-body-prime">
+        <div class="testimonial-author-box-prime">
+          <div class="testimonial-author-image-prime">
+            <figure>
+              <img width="70" height="70" src="images/author-1.jpg" alt="Rajesh Malhotra" />
+            </figure>
+          </div>
+
+          <div class="testimonial-author-content-prime">
+            <h2>Rajesh Malhotra</h2>
+            <p>Director, Skyline Properties Pvt. Ltd. — Noida</p>
+          </div>
+        </div>
+
+        <div class="testimonial-item-quote-prime">
+          <img src="images/testimonial-quote-prime.svg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonial 2 -->
+  <div class="swiper-slide">
+    <div class="testimonial-item-prime box-border-gradiant">
+      <div class="testimonial-item-content-prime">
+        <h2>
+          "We had a website but it wasn't bringing any patients."
+        </h2>
+        <p>
+          DigifyNext did a full SEO overhaul and within four months we were
+          ranking on page one for key treatments in our city. Appointment
+          enquiries have more than doubled since we started working with them.
+        </p>
+      </div>
+
+      <div class="testimonial-item-body-prime">
+        <div class="testimonial-author-box-prime">
+          <div class="testimonial-author-image-prime">
+            <figure>
+              <img width="70" height="70" src="images/author-2.jpg" alt="Dr. Priya Nambiar" />
+            </figure>
+          </div>
+
+          <div class="testimonial-author-content-prime">
+            <h2>Dr. Priya Nambiar</h2>
+            <p>Founder, Nambiar Wellness Clinic — Bengaluru</p>
+          </div>
+        </div>
+
+        <div class="testimonial-item-quote-prime">
+          <img src="images/testimonial-quote-prime.svg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonial 3 -->
+  <div class="swiper-slide">
+    <div class="testimonial-item-prime box-border-gradiant">
+      <div class="testimonial-item-content-prime">
+        <h2>
+          "Our admission enquiries used to be entirely word-of-mouth."
+        </h2>
+        <p>
+          DigifyNext set up our Google Ads and social media campaigns before
+          the admission season and we received over 300 qualified enquiries
+          in six weeks. The reporting was clear and the team was always
+          available.
+        </p>
+      </div>
+
+      <div class="testimonial-item-body-prime">
+        <div class="testimonial-author-box-prime">
+          <div class="testimonial-author-image-prime">
+            <figure>
+              <img width="70" height="70" src="images/author-3.jpg" alt="Sunita Agarwal" />
+            </figure>
+          </div>
+
+          <div class="testimonial-author-content-prime">
+            <h2>Sunita Agarwal</h2>
+            <p>Principal & Trustee, Sunrise Academy — Lucknow</p>
+          </div>
+        </div>
+
+        <div class="testimonial-item-quote-prime">
+          <img src="images/testimonial-quote-prime.svg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonial 4 -->
+  <div class="swiper-slide">
+    <div class="testimonial-item-prime box-border-gradiant">
+      <div class="testimonial-item-content-prime">
+        <h2>
+          "We had tried running ads ourselves but were burning budget with very little return."
+        </h2>
+        <p>
+          DigifyNext restructured our entire performance marketing setup —
+          new creatives, better targeting, sharper landing pages — and our
+          ROAS improved from 1.8x to 4.2x in two months.
+        </p>
+      </div>
+
+      <div class="testimonial-item-body-prime">
+        <div class="testimonial-author-box-prime">
+          <div class="testimonial-author-image-prime">
+            <figure>
+              <img width="70" height="70" src="images/author-4.jpg" alt="Karan Mehta" />
+            </figure>
+          </div>
+
+          <div class="testimonial-author-content-prime">
+            <h2>Karan Mehta</h2>
+            <p>Co-Founder, UrbanRoots (D2C Home Décor Brand) — Delhi</p>
+          </div>
+        </div>
+
+        <div class="testimonial-item-quote-prime">
+          <img src="images/testimonial-quote-prime.svg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+              </div>
+            </div>
+
+            <div class="section-footer-text wow fadeInUp" data-wow-delay="0.2s">
+              <p>
+                Strategy, creative and performance working together for
+                sustainable growth
+              </p>
+              <ul class="section-footer-border-list">
+                <li>Built Around <b>Measurable</b> Outcomes</li>
+                <li>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <b><span class="counter">4.9</span>/5</b>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--#include virtual="/includes/footer.shtml" -->
+
+    <!-- Jquery Library File -->
+    <!--#include virtual="/includes/popup.shtml" -->
+
+    <!--#include virtual="/includes/scripts.shtml" -->
+  </body>
+
+</html>

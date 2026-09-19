@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Best SEO Company in Delhi, Best SEO Services in Delhi, TOP SEO Agency in Delhi | DigifyNext</title>
+
+    <!-- Meta Description -->
+    <meta name="description" content="Looking for the best SEO company in Delhi? DigifyNext offers result-driven SEO services in Delhi to improve Google rankings, increase organic traffic, and generate quality leads for your business." />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://digifynext.com/seo-services-company-delhi" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="DigifyNext" />
+    <meta property="og:title" content="Best SEO Company in Delhi, Best SEO Services in Delhi, TOP SEO Agency in Delhi | DigifyNext" />
+    <meta property="og:description" content="Looking for the best SEO company in Delhi? DigifyNext offers result-driven SEO services in Delhi to improve Google rankings, increase organic traffic, and generate quality leads for your business." />
+    <meta property="og:url" content="https://digifynext.com/seo-services-company-delhi" />
+    <meta property="og:image" content="https://digifynext.com/images/logo_black.png" />
+    <meta property="og:image:alt" content="Best SEO Company in Delhi - DigifyNext" />
+    <meta property="og:locale" content="en_IN" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://digifynext.com/seo-services-company-delhi" />
+    <meta name="twitter:title" content="Best SEO Company in Delhi, Best SEO Services in Delhi, TOP SEO Agency in Delhi | DigifyNext" />
+    <meta name="twitter:description" content="Looking for the best SEO company in Delhi? DigifyNext offers result-driven SEO services in Delhi to improve Google rankings, increase organic traffic, and generate quality leads for your business." />
+    <meta name="twitter:image" content="https://digifynext.com/images/logo.png" />
+    <meta name="twitter:image:alt" content="Best SEO Company in Delhi - DigifyNext" />
+    <link rel="stylesheet" href="css/seo.css">
+    <!--#include virtual="/includes/head-css.shtml" -->
+  </head>
+<body>
+    <div class="preloader">
+      <div class="loading-container">
+        <div class="loading"></div>
+        <div id="loading-icon"><img width="204" height="163" alt="" src="images/favicon.png" /></div>
+      </div>
+    </div>
+
+    <!--#include virtual="/includes/header.shtml" -->
+
+<div class="page-header parallaxie">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-header-box brand-hero-copy">
+                        <span class="section-sub-title wow fadeInUp">SEO Services</span>
+                        <h1 class="text-anime-style-3" data-cursor="-opaque">Grow Organically. Build Authority. Stay Ahead.</h1>
+                        <p class="wow fadeInUp" data-wow-delay="0.2s">DigifyNext delivers strategic SEO solutions that help your business rank higher, earn genuine trust, and achieve sustainable growth.</p>
+                        <div class="brand-hero-buttons wow fadeInUp" data-wow-delay="0.4s">
+                            <a href="#" class="btn-default" onclick="openDemoPopup(); return false;">Let's Grow Together</a>
+                            <a href="#" class="btn-default btn-highlighted" onclick="openDemoPopup(); return false;">Get a Free SEO Audit</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="seo-page-wrap">
+
+        <!-- Intro Section -->
+        <section class="seo-intro">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <div class="seo-intro-media wow fadeInLeft">
+                            <img width="1667" height="1667" src="images/seo/seo.jpg" alt="SEO strategy and organic search growth">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="section-title">
+                            <span class="section-sub-title wow fadeInUp">Sustainable Growth</span>
+                            <h2 class="text-anime-style-3" data-cursor="-opaque">Get Found Where Your Customers Are Searching</h2>
+                        </div>
+                        <p class="wow fadeInUp" data-wow-delay="0.1s">Search engines have changed dramatically in recent years. Ranking on the first page of Google is no longer simply a matter of adding the right keywords to your website. Businesses today need a well-rounded SEO strategy that addresses technical performance, delivers genuinely valuable content, builds real authority, and keeps pace with the rise of AI-powered search experiences.</p>
+                        <p class="wow fadeInUp" data-wow-delay="0.2s">At DigifyNext, we do not chase shortcuts or rely on quick fixes. We focus on building long-term organic visibility that attracts the right audience, increases qualified traffic, and turns visitors into customers.</p>
+                        <p class="mb-0 wow fadeInUp" data-wow-delay="0.3s">Our approach brings together traditional SEO fundamentals with modern practices including AI Search Optimization, Generative Engine Optimization (GEO), semantic SEO, and user experience enhancements.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stat Strip -->
+        <section class="seo-stat-strip">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-lg-3">
+                        <div class="seo-stat-item wow fadeInUp">
+                            <h3>08</h3>
+                            <span>Core SEO Service Areas</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="seo-stat-item wow fadeInUp" data-wow-delay="0.1s">
+                            <h3>10</h3>
+                            <span>Industries Served</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="seo-stat-item wow fadeInUp" data-wow-delay="0.2s">
+                            <h3>100%</h3>
+                            <span>White-Hat, Ethical Practices</span>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-3">
+                        <div class="seo-stat-item wow fadeInUp" data-wow-delay="0.3s">
+                            <h3>Monthly</h3>
+                            <span>Transparent Performance Reports</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why SEO Matters - Icon Grid -->
+        <section class="seo-value-grid">
+            <div class="container">
+                <div class="section-title section-title-center">
+                    <span class="section-sub-title wow fadeInUp">Why It Matters</span>
+                    <h2 class="text-anime-style-3" data-cursor="-opaque">Why SEO Matters More Than Ever</h2>
+                    <p class="wow fadeInUp" data-wow-delay="0.2s">Most people do not make a purchase decision without researching online first. Your visibility has a direct impact on your revenue — SEO builds an asset that keeps generating visitors even after ad campaigns stop.</p>
+                </div>
+                <div class="seo-value-list">
+                    <div class="seo-value-card wow fadeInUp">
+                        <i class="bx bx-trending-up"></i>
+                        <h4>Qualified Traffic</h4>
+                        <p>Increase visitors who are genuinely searching for what you offer.</p>
+                    </div>
+                    <div class="seo-value-card wow fadeInUp" data-wow-delay="0.1s">
+                        <i class="bx bx-search-alt"></i>
+                        <h4>Search Visibility</h4>
+                        <p>Improve presence across Google, AI Overviews, and other search engines.</p>
+                    </div>
+                    <div class="seo-value-card wow fadeInUp" data-wow-delay="0.2s">
+                        <i class="bx bx-group"></i>
+                        <h4>Consistent Leads</h4>
+                        <p>Generate a steady flow of enquiries without relying on paid budgets.</p>
+                    </div>
+                    <div class="seo-value-card wow fadeInUp" data-wow-delay="0.3s">
+                        <i class="bx bx-shield-quarter"></i>
+                        <h4>Trust & Credibility</h4>
+                        <p>Build genuine authority that customers recognize and rely on.</p>
+                    </div>
+                    <div class="seo-value-card wow fadeInUp" data-wow-delay="0.1s">
+                        <i class="bx bx-wallet"></i>
+                        <h4>Lower Ad Dependence</h4>
+                        <p>Reduce your long-term cost of acquiring new customers.</p>
+                    </div>
+                    <div class="seo-value-card wow fadeInUp" data-wow-delay="0.2s">
+                        <i class="bx bx-happy-heart-eyes"></i>
+                        <h4>Better UX</h4>
+                        <p>Deliver a faster, smoother experience across your whole website.</p>
+                    </div>
+                    <div class="seo-value-card wow fadeInUp" data-wow-delay="0.3s">
+                        <i class="bx bx-target-lock"></i>
+                        <h4>More Conversions</h4>
+                        <p>Turn organic visitors into real enquiries and customers.</p>
+                    </div>
+                    <div class="seo-value-card wow fadeInUp" data-wow-delay="0.4s">
+                        <i class="bx bx-layer"></i>
+                        <h4>Compounding Asset</h4>
+                        <p>Build long-term digital equity that grows in value over time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Challenges - Timeline -->
+        <section class="seo-challenges bg-section">
+            <div class="container">
+                <div class="section-title section-title-center">
+                    <span class="section-sub-title wow fadeInUp">Common Challenges</span>
+                    <h2 class="text-anime-style-3" data-cursor="-opaque">The Challenges Businesses Face Today</h2>
+                    <p class="wow fadeInUp" data-wow-delay="0.2s">Many businesses invest in SEO without seeing meaningful results, usually because they rely on outdated or fragmented strategies.</p>
+                </div>
+                <div class="seo-challenge-track">
+                    <div class="seo-challenge-row left wow fadeInUp">
+                        <div class="seo-challenge-copy">
+                            <h4>Poor Search Visibility</h4>
+                            <p>Even businesses with excellent products struggle because customers simply cannot find them online.</p>
+                        </div>
+                        <div class="seo-node">01</div>
+                        <div></div>
+                    </div>
+                    <div class="seo-challenge-row right wow fadeInUp" data-wow-delay="0.1s">
+                        <div></div>
+                        <div class="seo-node">02</div>
+                        <div class="seo-challenge-copy">
+                            <h4>Declining Organic Traffic</h4>
+                            <p>Algorithm updates hit websites that fail to adapt, causing steady drops in organic traffic.</p>
+                        </div>
+                    </div>
+                    <div class="seo-challenge-row left wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="seo-challenge-copy">
+                            <h4>AI Is Changing Search</h4>
+                            <p>More users rely on AI-generated answers and conversational search instead of keyword search.</p>
+                        </div>
+                        <div class="seo-node">03</div>
+                        <div></div>
+                    </div>
+                    <div class="seo-challenge-row right wow fadeInUp" data-wow-delay="0.3s">
+                        <div></div>
+                        <div class="seo-node">04</div>
+                        <div class="seo-challenge-copy">
+                            <h4>Low-Quality Content</h4>
+                            <p>Content written only for algorithms rarely engages real readers or builds trust.</p>
+                        </div>
+                    </div>
+                    <div class="seo-challenge-row left wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="seo-challenge-copy">
+                            <h4>Technical Website Issues</h4>
+                            <p>Slow speeds, broken links, and poor mobile performance limit search potential.</p>
+                        </div>
+                        <div class="seo-node">05</div>
+                        <div></div>
+                    </div>
+                    <div class="seo-challenge-row right wow fadeInUp" data-wow-delay="0.5s">
+                        <div></div>
+                        <div class="seo-node">06</div>
+                        <div class="seo-challenge-copy">
+                            <h4>Increasing Competition</h4>
+                            <p>Publishing blog posts or inserting keywords is no longer enough to rank consistently.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy - Quote Panel -->
+        <section class="seo-philosophy">
+            <div class="container">
+                <div class="seo-philosophy-inner wow fadeInUp">
+                    <span class="seo-quote-mark">"</span>
+                    <span class="section-sub-title" style="color:#fff;">Our Philosophy</span>
+                    <p class="lead">SEO should serve your business growth — not just improve rankings. Before recommending any strategy, we invest time understanding your business, industry, competitors, target audience, and commercial goals. Every recommendation is grounded in research, real data, and genuine performance insights.</p>
+                    <div class="seo-philosophy-outcomes">
+                        <span>More qualified enquiries</span>
+                        <span>Stronger conversion rates</span>
+                        <span>Sustainable organic traffic</span>
+                        <span>Increased brand authority</span>
+                        <span>Long-term ROI</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services - Accordion + Sticky Media -->
+        <section class="seo-services">
+            <div class="container">
+                <div class="section-title section-title-center">
+                    <span class="section-sub-title wow fadeInUp">What We Offer</span>
+                    <h2 class="text-anime-style-3" data-cursor="-opaque">What Our SEO Services Include</h2>
+                </div>
+                <div class="seo-services-layout">
+                    <div class="seo-service-accordion" id="seoServiceAccordion">
+                        <div class="seo-service-item active">
+                            <div class="seo-service-head">
+                                <h4><span class="num">01</span>SEO Strategy & Consultation</h4>
+                                <i class="bx bx-plus"></i>
+                            </div>
+                            <div class="seo-service-body">
+                                <p>We identify your most valuable growth opportunities, set realistic goals, and build a customized strategy aligned with your business objectives.</p>
+                            </div>
+                        </div>
+                        <div class="seo-service-item">
+                            <div class="seo-service-head">
+                                <h4><span class="num">02</span>Technical SEO</h4>
+                                <i class="bx bx-plus"></i>
+                            </div>
+                            <div class="seo-service-body">
+                                <p>We optimize site speed, Core Web Vitals, mobile responsiveness, crawlability, sitemaps, structured data, HTTPS, and indexation issues.</p>
+                            </div>
+                        </div>
+                        <div class="seo-service-item">
+                            <div class="seo-service-head">
+                                <h4><span class="num">03</span>Keyword Research</h4>
+                                <i class="bx bx-plus"></i>
+                            </div>
+                            <div class="seo-service-body">
+                                <p>We identify commercial, informational, transactional, local, and long-tail opportunities along with AI search intent patterns.</p>
+                            </div>
+                        </div>
+                        <div class="seo-service-item">
+                            <div class="seo-service-head">
+                                <h4><span class="num">04</span>On-Page SEO</h4>
+                                <i class="bx bx-plus"></i>
+                            </div>
+                            <div class="seo-service-body">
+                                <p>Meta titles, descriptions, heading structure, internal linking, URL and image optimization, and UX improvements on every page.</p>
+                            </div>
+                        </div>
+                        <div class="seo-service-item">
+                            <div class="seo-service-head">
+                                <h4><span class="num">05</span>Content Optimization</h4>
+                                <i class="bx bx-plus"></i>
+                            </div>
+                            <div class="seo-service-body">
+                                <p>Content built around helpful content principles, topic clusters, semantic SEO, EEAT, and conversion-focused copywriting.</p>
+                            </div>
+                        </div>
+                        <div class="seo-service-item">
+                            <div class="seo-service-head">
+                                <h4><span class="num">06</span>AI Search Optimization</h4>
+                                <i class="bx bx-plus"></i>
+                            </div>
+                            <div class="seo-service-body">
+                                <p>Entity optimization, semantic content strategies, knowledge graph improvements, and Generative Engine Optimization (GEO).</p>
+                            </div>
+                        </div>
+                        <div class="seo-service-item">
+                            <div class="seo-service-head">
+                                <h4><span class="num">07</span>Local SEO</h4>
+                                <i class="bx bx-plus"></i>
+                            </div>
+                            <div class="seo-service-body">
+                                <p>Google Business Profile optimization, local citations, Maps visibility, review strategy, and NAP consistency.</p>
+                            </div>
+                        </div>
+                        <div class="seo-service-item">
+                            <div class="seo-service-head">
+                                <h4><span class="num">08</span>Authority Building</h4>
+                                <i class="bx bx-plus"></i>
+                            </div>
+                            <div class="seo-service-body">
+                                <p>High-quality backlinks, digital PR, topical authority development, and content partnerships — never spammy link-building.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="seo-services-media wow fadeInRight">
+                        <img width="1536" height="1024" src="images/branding/girlbranding.jpg" alt="SEO services and strategy team">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process - Horizontal Timeline -->
+        <section class="seo-process bg-section">
+            <div class="container">
+                <div class="section-title section-title-center">
+                    <span class="section-sub-title wow fadeInUp">How We Work</span>
+                    <h2 class="text-anime-style-3" data-cursor="-opaque">Our SEO Process</h2>
+                </div>
+                <div class="seo-process-track">
+                    <div class="seo-process-step wow fadeInUp">
+                        <div class="seo-process-circle">01</div>
+                        <h4>Discovery</h4>
+                        <p>Understanding your business, audience and goals.</p>
+                    </div>
+                    <div class="seo-process-step wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="seo-process-circle">02</div>
+                        <h4>SEO Audit</h4>
+                        <p>Analyzing technical issues and content gaps.</p>
+                    </div>
+                    <div class="seo-process-step wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="seo-process-circle">03</div>
+                        <h4>Strategy</h4>
+                        <p>Building a roadmap with clear priorities.</p>
+                    </div>
+                    <div class="seo-process-step wow fadeInUp" data-wow-delay="0.3s">
+                        <div class="seo-process-circle">04</div>
+                        <h4>Implementation</h4>
+                        <p>Optimizing your site and content.</p>
+                    </div>
+                    <div class="seo-process-step wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="seo-process-circle">05</div>
+                        <h4>Monitoring</h4>
+                        <p>Tracking rankings, traffic and behavior.</p>
+                    </div>
+                    <div class="seo-process-step wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="seo-process-circle">06</div>
+                        <h4>Reporting</h4>
+                        <p>Transparent monthly performance updates.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us - Checklist -->
+        <section class="seo-why">
+            <div class="container">
+                <div class="seo-why-layout">
+                    <div>
+                        <div class="section-title">
+                            <span class="section-sub-title wow fadeInUp">Our Advantage</span>
+                            <h2 class="text-anime-style-3" data-cursor="-opaque">Why Businesses Choose DigifyNext</h2>
+                        </div>
+                        <p class="wow fadeInUp" data-wow-delay="0.2s">Our goal is to work as an extension of your team — helping you build lasting online visibility and sustainable business growth.</p>
+                    </div>
+                    <div class="seo-check-grid">
+                        <div class="seo-check-item wow fadeInUp"><i class="bx bx-check-circle"></i><p>Tailored strategies, never one-size-fits-all</p></div>
+                        <div class="seo-check-item wow fadeInUp" data-wow-delay="0.1s"><i class="bx bx-check-circle"></i><p>Ethical, white-hat optimization throughout</p></div>
+                        <div class="seo-check-item wow fadeInUp" data-wow-delay="0.2s"><i class="bx bx-check-circle"></i><p>AI-ready SEO for the future of search</p></div>
+                        <div class="seo-check-item wow fadeInUp" data-wow-delay="0.3s"><i class="bx bx-check-circle"></i><p>Data-driven decisions, real insights</p></div>
+                        <div class="seo-check-item wow fadeInUp" data-wow-delay="0.1s"><i class="bx bx-check-circle"></i><p>Clear communication, honest updates</p></div>
+                        <div class="seo-check-item wow fadeInUp" data-wow-delay="0.2s"><i class="bx bx-check-circle"></i><p>Specialists across technical, content & strategy</p></div>
+                        <div class="seo-check-item wow fadeInUp" data-wow-delay="0.3s"><i class="bx bx-check-circle"></i><p>Focus on business outcomes, not vanity metrics</p></div>
+                        <div class="seo-check-item wow fadeInUp" data-wow-delay="0.4s"><i class="bx bx-check-circle"></i><p>Continuous optimization driven by data</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Industries - Tag Cloud -->
+        <section class="seo-industries bg-section">
+            <div class="container">
+                <div class="section-title section-title-center">
+                    <span class="section-sub-title wow fadeInUp">Who We Help</span>
+                    <h2 class="text-anime-style-3" data-cursor="-opaque">Industries We Work With</h2>
+                </div>
+                <div class="seo-tag-cloud wow fadeInUp" data-wow-delay="0.2s">
+                    <a href="#">Real Estate</a>
+                    <a href="#">Healthcare</a>
+                    <a href="#">Education</a>
+                    <a href="#">E-commerce</a>
+                    <a href="#">Manufacturing</a>
+                    <a href="#">Hospitality</a>
+                    <a href="#">Professional Services</a>
+                    <a href="#">Technology & SaaS</a>
+                    <a href="#">Finance</a>
+                    <a href="#">Local Businesses</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Closing CTA Banner -->
+        <section class="seo-cta-banner">
+            <div class="container">
+                <div class="seo-cta-inner wow fadeInUp">
+                    <div class="section-title section-title-center">
+                        <span class="section-sub-title">Get Started</span>
+                        <h2 class="text-anime-style-3" data-cursor="-opaque">Ready to Grow Organically?</h2>
+                    </div>
+                    <p class="lead">Great SEO is not about gaming algorithms — it is about understanding people. When your website delivers the right information and a seamless experience, search engines naturally reward it with stronger visibility.</p>
+                    <a href="#" class="btn-default" onclick="openDemoPopup(); return false;">Let's Grow Together</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Faq Section Start -->
+    <div class="our-faqs-gold">
+      <div class="container">
+        <div class="row section-row">
+          <div class="col-lg-12">
+            <!-- Section Title Start -->
+            <div class="section-title section-title-center">
+              <span class="section-sub-title wow fadeInUp"
+                >Frequently Asked Questions</span
+              >
+              <h2 class="text-anime-style-3" data-cursor="-opaque">
+                Clear Answers Before You Start Growing
+              </h2>
+            </div>
+            <!-- Section Title End -->
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4">
+            <!-- Faq Content Box Start -->
+            <div class="faq-cta-box-gold box-border-gradiant wow fadeInUp">
+              <!-- Icon Box Start -->
+              <div class="icon-box">
+                <img src="images/icon-headphone-black.svg" alt="" />
+              </div>
+              <!-- Icon Box End -->
+
+              <!-- Faq Cta Body Start -->
+              <div class="faq-cta-body-gold">
+                <!-- Faq Cta Content Start -->
+                <div class="faq-cta-content-gold">
+                  <h2>Still Have Questions?</h2>
+                  <p>
+                    Here are a few things businesses usually ask before
+                    starting an SEO campaign with us.
+                  </p>
+                </div>
+                <!-- Faq Cta Content End -->
+
+                <!-- Faq Cta Button Start -->
+                <div class="faq-cta-btn-gold">
+                  <a href="faq" class="btn-default">Talk To Us</a>
+                </div>
+                <!-- Faq Cta Button End -->
+              </div>
+              <!-- Faq Cta Body End -->
+            </div>
+            <!-- Faq Content Box End -->
+          </div>
+
+          <div class="col-lg-8">
+            <!-- FAQ Accordion Start -->
+            <div class="faq-accordion-gold box-border-gradiant" id="accordion">
+              <!-- FAQ Item Start -->
+              <div class="accordion-item wow fadeInUp">
+                <h2 class="accordion-header" id="heading1">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse1"
+                    aria-expanded="true"
+                    aria-controls="collapse1"
+                  >
+                    Q1. How long does SEO take to show results?
+                  </button>
+                </h2>
+                <div
+                  id="collapse1"
+                  class="accordion-collapse collapse show"
+                  role="region"
+                  aria-labelledby="heading1"
+                  data-bs-parent="#accordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      SEO is a long-term investment. While some improvements
+                      may be visible within the first few months, meaningful
+                      and sustainable results typically take between three to
+                      six months, depending on your industry, competition
+                      level, and the current state of your website.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- FAQ Item End -->
+
+              <!-- FAQ Item Start -->
+              <div class="accordion-item wow fadeInUp" data-wow-delay="0.1s">
+                <h2 class="accordion-header" id="heading2">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse2"
+                    aria-expanded="false"
+                    aria-controls="collapse2"
+                  >
+                    Q2. Do you guarantee first-page rankings?
+                  </button>
+                </h2>
+                <div
+                  id="collapse2"
+                  class="accordion-collapse collapse"
+                  role="region"
+                  aria-labelledby="heading2"
+                  data-bs-parent="#accordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      No. Any agency that promises guaranteed rankings is not
+                      being honest with you. Search engine algorithms
+                      constantly evolve, and no one can guarantee specific
+                      positions. What we do guarantee is consistent
+                      best-practice implementation that improves your
+                      visibility and long-term performance.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- FAQ Item End -->
+
+              <!-- FAQ Item Start -->
+              <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
+                <h2 class="accordion-header" id="heading3">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse3"
+                    aria-expanded="false"
+                    aria-controls="collapse3"
+                  >
+                    Q3. Is SEO better than paid advertising?
+                  </button>
+                </h2>
+                <div
+                  id="collapse3"
+                  class="accordion-collapse collapse"
+                  role="region"
+                  aria-labelledby="heading3"
+                  data-bs-parent="#accordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      They serve different purposes and work best together.
+                      Paid advertising delivers immediate visibility while
+                      SEO builds long-term organic traffic that does not stop
+                      when budgets are paused. For most businesses, a
+                      combination of both delivers the best overall results.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- FAQ Item End -->
+
+              <!-- FAQ Item Start -->
+              <div class="accordion-item wow fadeInUp" data-wow-delay="0.3s">
+                <h2 class="accordion-header" id="heading4">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse4"
+                    aria-expanded="false"
+                    aria-controls="collapse4"
+                  >
+                    Q4. Can you optimize an existing website?
+                  </button>
+                </h2>
+                <div
+                  id="collapse4"
+                  class="accordion-collapse collapse"
+                  role="region"
+                  aria-labelledby="heading4"
+                  data-bs-parent="#accordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Absolutely. We work with both new and existing
+                      websites. Our process always begins with a detailed
+                      audit to identify technical improvements, content
+                      opportunities, and performance enhancements specific to
+                      your site.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- FAQ Item End -->
+
+              <!-- FAQ Item Start -->
+              <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
+                <h2 class="accordion-header" id="heading5">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse5"
+                    aria-expanded="false"
+                    aria-controls="collapse5"
+                  >
+                    Q5. What is AI Search Optimization?
+                  </button>
+                </h2>
+                <div
+                  id="collapse5"
+                  class="accordion-collapse collapse"
+                  role="region"
+                  aria-labelledby="heading5"
+                  data-bs-parent="#accordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      AI Search Optimization prepares your website and
+                      content to perform well in AI-powered search
+                      environments, including Google AI Overviews and
+                      generative search platforms. It focuses on creating
+                      authoritative, structured, and context-rich content
+                      that AI systems can understand and cite.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- FAQ Item End -->
+
+              <!-- FAQ Item Start -->
+              <div class="accordion-item wow fadeInUp" data-wow-delay="0.5s">
+                <h2 class="accordion-header" id="heading6">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse6"
+                    aria-expanded="false"
+                    aria-controls="collapse6"
+                  >
+                    Q6. Do you offer Local SEO services?
+                  </button>
+                </h2>
+                <div
+                  id="collapse6"
+                  class="accordion-collapse collapse"
+                  role="region"
+                  aria-labelledby="heading6"
+                  data-bs-parent="#accordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Yes. We help businesses improve visibility in
+                      location-based searches by optimizing Google Business
+                      Profiles, building local citations, and creating
+                      location-specific landing pages.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- FAQ Item End -->
+
+              <!-- FAQ Item Start -->
+              <div class="accordion-item wow fadeInUp" data-wow-delay="0.6s">
+                <h2 class="accordion-header" id="heading7">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse7"
+                    aria-expanded="false"
+                    aria-controls="collapse7"
+                  >
+                    Q7. Will I receive regular performance reports?
+                  </button>
+                </h2>
+                <div
+                  id="collapse7"
+                  class="accordion-collapse collapse"
+                  role="region"
+                  aria-labelledby="heading7"
+                  data-bs-parent="#accordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Yes, every month without exception. Our reports include
+                      key metrics, completed work, performance trends, and
+                      clear recommendations. Full transparency, always.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- FAQ Item End -->
+
+              <!-- FAQ Item Start -->
+              <div class="accordion-item wow fadeInUp" data-wow-delay="0.7s">
+                <h2 class="accordion-header" id="heading8">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse8"
+                    aria-expanded="false"
+                    aria-controls="collapse8"
+                  >
+                    Q8. Can SEO help generate more leads?
+                  </button>
+                </h2>
+                <div
+                  id="collapse8"
+                  class="accordion-collapse collapse"
+                  role="region"
+                  aria-labelledby="heading8"
+                  data-bs-parent="#accordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Yes. Effective SEO attracts people actively searching
+                      for exactly what your business offers, which
+                      significantly increases the likelihood of generating
+                      qualified leads and meaningful conversions.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- FAQ Item End -->
+
+              <!-- FAQ Item Start -->
+              <div class="accordion-item wow fadeInUp" data-wow-delay="0.8s">
+                <h2 class="accordion-header" id="heading9">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse9"
+                    aria-expanded="false"
+                    aria-controls="collapse9"
+                  >
+                    Q9. Is SEO suitable for small businesses?
+                  </button>
+                </h2>
+                <div
+                  id="collapse9"
+                  class="accordion-collapse collapse"
+                  role="region"
+                  aria-labelledby="heading9"
+                  data-bs-parent="#accordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Absolutely. A focused, well-planned strategy can help
+                      small businesses compete effectively by targeting the
+                      right search opportunities and building strong local
+                      visibility.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- FAQ Item End -->
+
+              <!-- FAQ Item Start -->
+              <div class="accordion-item wow fadeInUp" data-wow-delay="0.9s">
+                <h2 class="accordion-header" id="heading10">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapse10"
+                    aria-expanded="false"
+                    aria-controls="collapse10"
+                  >
+                    Q10. Why choose DigifyNext for SEO?
+                  </button>
+                </h2>
+                <div
+                  id="collapse10"
+                  class="accordion-collapse collapse"
+                  role="region"
+                  aria-labelledby="heading10"
+                  data-bs-parent="#accordion"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      We combine technical depth, content expertise, AI-ready
+                      optimization, and a genuinely data-driven approach to
+                      build customized strategies focused on measurable
+                      business growth — not short-term ranking wins.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- FAQ Item End -->
+            </div>
+            <!-- FAQ Accordion End -->
+          </div>
+
+          <div class="col-lg-12">
+            <!-- Section Footer Text Start -->
+            <div class="section-footer-text wow fadeInUp" data-wow-delay="0.4s">
+              <p>
+                <span>Free</span> Talk to us about your goals and get a
+                practical growth direction.
+              </p>
+            </div>
+            <!-- Section Footer Text End -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Our Faq Section End -->
+
+    </main>
+
+    <!--#include virtual="/includes/footer.shtml" -->
+
+
+    <!--#include virtual="/includes/popup.shtml" -->
+
+    <!--#include virtual="/includes/scripts.shtml" -->
+  </body>
+</html>

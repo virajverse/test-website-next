@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zxx">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <meta name="description" content="Terms & Conditions for DigifyNext - Review the rules and guidelines for using our website and digital marketing services." />
+    <meta name="keywords" content="DigifyNext terms and conditions, terms of use, website terms, digital marketing services" />
+    <meta name="author" content="DigifyNext" />
+    <title>Terms & Conditions - DigifyNext</title>
+    <style>
+        /* Terms page: same DigifyNext theme, no extra section background blocks */
+        .policy-page{
+            padding:110px 0;
+            background:transparent !important;
+            position:relative;
+            overflow:visible;
+        }
+        .policy-page:before,
+        .policy-page:after{display:none !important;}
+        .policy-page .container{position:relative;z-index:2;}
+
+        .policy-layout{
+            display:grid;
+            grid-template-columns:290px 1fr;
+            gap:56px;
+            align-items:start;
+        }
+
+        /* Left side fixed / sticky clean navigation */
+        .policy-sidebar{
+            position:sticky;
+            top:120px;
+            background:transparent !important;
+            border:none;
+            border-left:1px solid rgba(255,255,255,.12);
+            border-radius:0;
+            padding:0 0 0 22px;
+            box-shadow:none;
+            backdrop-filter:none;
+            -webkit-backdrop-filter:none;
+        }
+        .policy-sidebar h3{
+            font-size:18px;
+            line-height:1.3;
+            margin:0 0 18px;
+            color:#fff;
+            letter-spacing:.2px;
+        }
+        .policy-sidebar ul{list-style:none;padding:0;margin:0;}
+        .policy-sidebar ul li{margin:0 0 6px;}
+        .policy-sidebar ul li a{
+            display:flex;
+            align-items:center;
+            gap:10px;
+            color:rgba(255,255,255,.64);
+            font-size:14px;
+            line-height:1.45;
+            text-decoration:none;
+            padding:9px 0;
+            border-radius:0;
+            transition:.25s ease;
+            border:none;
+        }
+        .policy-sidebar ul li a:before{
+            content:"";
+            width:6px;
+            height:6px;
+            border-radius:50%;
+            background:rgba(255,255,255,.24);
+            transition:.25s ease;
+            flex:0 0 auto;
+        }
+        .policy-sidebar ul li a:hover{
+            background:transparent;
+            border-color:transparent;
+            color:#fff;
+            transform:translateX(5px);
+        }
+        .policy-sidebar ul li a:hover:before{
+            background:#0366F9;
+            box-shadow:0 0 16px rgba(3,102,249,.7);
+        }
+
+        .policy-content{max-width:930px;}
+
+        /* No filled section cards — clean readable content blocks */
+        .policy-card{
+            background:transparent !important;
+            border:none;
+            border-bottom:1px solid rgba(255,255,255,.10);
+            border-radius:0;
+            padding:0 0 48px;
+            margin-bottom:48px;
+            box-shadow:none;
+            backdrop-filter:none;
+            -webkit-backdrop-filter:none;
+        }
+        .policy-card h2{
+            font-size:34px;
+            line-height:1.25;
+            margin-bottom:20px;
+            color:#fff;
+        }
+        .policy-card h3{
+            font-size:21px;
+            margin:30px 0 14px;
+            color:#eef5ff;
+        }
+        .policy-card p{
+            font-size:17px;
+            line-height:1.9;
+            color:rgba(255,255,255,.72);
+            margin-bottom:18px;
+        }
+        .policy-card ul{
+            margin:24px 0 0;
+            padding:0;
+            display:grid;
+            grid-template-columns:repeat(2, minmax(0,1fr));
+            gap:14px 18px;
+            list-style:none;
+        }
+        .policy-card ul li{
+            background:transparent !important;
+            border:1px solid rgba(255,255,255,.10);
+            border-radius:14px;
+            padding:13px 16px;
+            color:rgba(255,255,255,.78);
+            font-size:15px;
+            line-height:1.5;
+        }
+
+        .policy-note{
+            background:transparent !important;
+            border:1px solid rgba(3,102,249,.32);
+            border-radius:20px;
+            padding:24px 26px;
+            margin-bottom:52px;
+            box-shadow:none;
+        }
+        .policy-note p{margin:0;color:rgba(255,255,255,.76);line-height:1.8;}
+        .policy-note strong{color:#fff;}
+
+        .policy-contact-box{
+            background:linear-gradient(135deg,rgba(3,102,249,.16),rgba(252,109,16,.08)) !important;
+            border:1px solid rgba(255,255,255,.12);
+            border-radius:28px;
+            padding:40px;
+            color:#fff;
+            position:relative;
+            overflow:hidden;
+            box-shadow:none;
+        }
+        .policy-contact-box:before,
+        .policy-contact-box:after{display:none;}
+        .policy-contact-box h2{color:#fff;margin-bottom:18px;position:relative;}
+        .policy-contact-box p,.policy-contact-box li,.policy-contact-box a{color:rgba(255,255,255,.78);position:relative;}
+        .policy-contact-box ul{list-style:none;padding:0;margin:22px 0 0;display:block;}
+        .policy-contact-box ul li{
+            background:transparent !important;
+            border:1px solid rgba(255,255,255,.12);
+            border-radius:16px;
+            padding:15px 18px;
+            margin-bottom:12px;
+        }
+
+        .policy-meta{
+            display:inline-flex;
+            align-items:center;
+            gap:12px;
+            background:rgba(255,255,255,.06);
+            border:1px solid rgba(255,255,255,.12);
+            border-radius:100px;
+            padding:11px 20px;
+            margin-top:24px;
+            color:#fff;
+        }
+        .policy-hero-desc{
+            max-width:850px;
+            margin:24px auto 0;
+            color:rgba(255,255,255,.82);
+            font-size:18px;
+            line-height:1.8;
+        }
+
+        @media(max-width:991px){
+            .policy-layout{grid-template-columns:1fr;gap:36px;}
+            .policy-sidebar{position:relative;top:auto;border-left:none;border-top:1px solid rgba(255,255,255,.12);padding:22px 0 0;}
+            .policy-sidebar ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 18px;}
+            .policy-card ul{grid-template-columns:1fr;}
+            .policy-page{padding:70px 0;}
+            .policy-card{padding-bottom:38px;margin-bottom:38px;}
+            .policy-card h2{font-size:28px;}
+            .policy-contact-box{padding:30px;}
+        }
+        @media(max-width:575px){.policy-sidebar ul{grid-template-columns:1fr;}}
+    </style>
+    <!--#include virtual="/includes/head-css.shtml" -->
+  </head>
+<body>
+   <div class="preloader">
+      <div class="loading-container">
+        <div class="loading"></div>
+        <div id="loading-icon"><img width="204" height="163" alt="" src="images/favicon.png" /></div>
+      </div>
+    </div>
+
+    <!--#include virtual="/includes/header.shtml" -->
+
+<div class="page-header parallaxie">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-header-box">
+                        <h1 class="text-anime-style-3" data-cursor="-opaque">Terms & Conditions</h1>
+                        <p class="policy-hero-desc wow fadeInUp" data-wow-delay="0.2s">Please read these terms carefully before using the DigifyNext website or engaging with our digital marketing, branding, website development, ORM, SEO or performance marketing services.</p>
+                        <div class="policy-meta wow fadeInUp" data-wow-delay="0.4s"><i class="fa-regular fa-calendar"></i> Last Updated: July 2026</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <main class="policy-page">
+        <div class="container">
+            <div class="policy-layout">
+                <aside class="policy-sidebar wow fadeInUp">
+                    <h3>Terms Sections</h3>
+                    <ul>
+                        <li><a href="#intro">Introduction</a></li>
+                        <li><a href="#acceptance">Acceptance of Terms</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#responsibilities">Client Responsibilities</a></li>
+                        <li><a href="#payments">Payments & Fees</a></li>
+                        <li><a href="#deliverables">Deliverables</a></li>
+                        <li><a href="#ip">Intellectual Property</a></li>
+                        <li><a href="#third-party">Third-Party Tools</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </aside>
+
+                <div class="policy-content">
+                    <div class="policy-note wow fadeInUp">
+                        <p><strong>Note:</strong> By accessing the DigifyNext website, submitting an enquiry, requesting a proposal or using our services, you agree to follow these Terms & Conditions.</p>
+                    </div>
+
+                    <section class="policy-card wow fadeInUp" id="intro">
+                        <h2>1. Introduction</h2>
+                        <p>Welcome to <strong>DigifyNext</strong>. These Terms & Conditions outline the rules, responsibilities and conditions that apply when you use our website or work with us for digital marketing and creative services.</p>
+                        <p>DigifyNext provides services such as SEO, AI Search & GEO Optimization, performance marketing, branding and creative design, online reputation management, website design and development, campaign strategy and related digital growth solutions.</p>
+                    </section>
+
+                    <section class="policy-card wow fadeInUp" id="acceptance">
+                        <h2>2. Acceptance of Terms</h2>
+                        <p>By using this website, contacting DigifyNext or engaging our services, you confirm that you have read, understood and agreed to these Terms & Conditions.</p>
+                        <p>If you do not agree with any part of these terms, you should avoid using our website or services.</p>
+                    </section>
+
+                    <section class="policy-card wow fadeInUp" id="services">
+                        <h2>3. Our Services</h2>
+                        <p>DigifyNext offers digital marketing and creative services based on project scope, proposals, agreements or written communication shared with the client.</p>
+                        <ul>
+                            <li>Search Engine Optimization</li>
+                            <li>AI Search & GEO Optimization</li>
+                            <li>Performance Marketing</li>
+                            <li>Branding & Creative Design</li>
+                            <li>Online Reputation Management</li>
+                            <li>Website Design & Development</li>
+                            <li>Social Media & Campaign Creatives</li>
+                            <li>Digital Strategy & Consulting</li>
+                        </ul>
+                        <p>Service deliverables, timelines and responsibilities may vary depending on the agreed scope of work.</p>
+                    </section>
+
+                    <section class="policy-card wow fadeInUp" id="responsibilities">
+                        <h2>4. Client Responsibilities</h2>
+                        <p>To deliver services properly, DigifyNext may require timely information, approvals, access credentials, brand assets, content, feedback or business details from the client.</p>
+                        <ul>
+                            <li>Provide accurate business and contact information</li>
+                            <li>Share required access to websites, ad accounts or platforms</li>
+                            <li>Provide approvals and feedback within reasonable timelines</li>
+                            <li>Ensure supplied content, images and assets are legally usable</li>
+                            <li>Communicate project changes clearly and in writing</li>
+                            <li>Make payments according to the agreed terms</li>
+                        </ul>
+                        <p>Delays in sharing required information or approvals may affect project timelines and delivery schedules.</p>
+                    </section>
+
+                    <section class="policy-card wow fadeInUp" id="payments">
+                        <h2>5. Payments & Fees</h2>
+                        <p>Fees, billing cycles, payment milestones and service charges are agreed before project or campaign work begins. Payment terms may vary depending on the nature of the service.</p>
+                        <ul>
+                            <li>Project-based payments may require advance payment</li>
+                            <li>Monthly retainers are billed as per agreed billing terms</li>
+                            <li>Advertising budgets are separate from agency service fees</li>
+                            <li>Third-party tool, hosting or platform costs are billed separately</li>
+                            <li>Delayed payments may pause active work or campaign management</li>
+                        </ul>
+                        <p>All payments made for work already completed, hours invested, strategy prepared or campaigns managed may not be refundable unless otherwise agreed in writing.</p>
+                    </section>
+
+                    <section class="policy-card wow fadeInUp" id="deliverables">
+                        <h2>6. Deliverables, Timelines & Revisions</h2>
+                        <p>Deliverables are based on the approved proposal, scope of work or written agreement. Timelines are estimated based on project complexity, feedback cycles, client approvals and third-party dependencies.</p>
+                        <p>Reasonable revisions may be included depending on the agreed service scope. Additional changes, new requirements or work outside the original scope may require additional fees and revised timelines.</p>
+                    </section>
+
+                    <section class="policy-card wow fadeInUp" id="ip">
+                        <h2>7. Intellectual Property</h2>
+                        <p>Content, designs, strategies, documents, campaigns, graphics, website layouts or creative assets produced by DigifyNext remain the property of DigifyNext until full payment is received, unless otherwise agreed in writing.</p>
+                        <p>After full payment and final delivery, ownership of approved final deliverables may be transferred to the client. DigifyNext may retain the right to showcase completed work in portfolios, case studies or marketing material unless the client requests confidentiality in writing.</p>
+                    </section>
+
+                    <section class="policy-card wow fadeInUp" id="third-party">
+                        <h2>8. Third-Party Tools & Platforms</h2>
+                        <p>Our services may involve third-party platforms such as Google Ads, Meta Ads, LinkedIn, Google Analytics, Google Search Console, hosting providers, CRM systems, email platforms or website plugins.</p>
+                        <p>DigifyNext is not responsible for downtime, policy changes, account restrictions, pricing changes, technical issues or decisions made by third-party platforms.</p>
+                    </section>
+
+                    <section class="policy-card wow fadeInUp">
+                        <h2>9. Marketing Performance & Results</h2>
+                        <p>DigifyNext works with a strategic, data-driven approach to improve marketing performance, visibility, leads, conversions and brand presence. However, results can vary based on competition, market conditions, website quality, budget, platform algorithms, audience behavior and client cooperation.</p>
+                        <p>We do not guarantee specific rankings, exact lead volumes, sales figures, ad costs or fixed campaign outcomes unless clearly stated in a written agreement.</p>
+                    </section>
+
+                    <section class="policy-card wow fadeInUp">
+                        <h2>10. Confidentiality</h2>
+                        <p>Any confidential business information, login credentials, internal documents, campaign data or customer information shared with DigifyNext will be handled responsibly and used only for the purpose of delivering the agreed services.</p>
+                        <p>Clients are also expected to keep confidential any strategy documents, pricing details, internal processes or proprietary information shared by DigifyNext.</p>
+                    </section>
+
+                    <section class="policy-card wow fadeInUp">
+                        <h2>11. Limitation of Liability</h2>
+                        <p>DigifyNext will not be liable for indirect, incidental or consequential losses including loss of revenue, loss of data, loss of profit, business interruption, platform restrictions, third-party errors or campaign outcomes affected by external factors.</p>
+                        <p>Our liability, where applicable, is limited to the amount paid by the client for the specific service related to the claim.</p>
+                    </section>
+
+                    <section class="policy-card wow fadeInUp">
+                        <h2>12. Website Use</h2>
+                        <p>You agree not to misuse the DigifyNext website, attempt unauthorized access, copy content without permission, disrupt website functionality or use the website for unlawful purposes.</p>
+                        <p>All website content, branding, design elements, text, graphics and visuals belong to DigifyNext unless otherwise stated.</p>
+                    </section>
+
+                    <section class="policy-card wow fadeInUp">
+                        <h2>13. Changes to These Terms</h2>
+                        <p>DigifyNext may update these Terms & Conditions from time to time to reflect service changes, business updates or legal requirements. The latest version will always be available on this page with the updated revision date.</p>
+                    </section>
+
+                    <section class="policy-contact-box wow fadeInUp" id="contact">
+                        <h2>14. Contact Us</h2>
+                        <p>If you have any questions about these Terms & Conditions, you can contact DigifyNext using the details below.</p>
+                        <ul>
+                            <li><strong>DigifyNext</strong></li>
+                            <li><i class="fa-solid fa-location-dot"></i> Second Floor, E-177, E Block, Sector 63, Noida, Hazratpur Wajidpur, Uttar Pradesh 201301</li>
+                            <li><i class="fa-solid fa-phone"></i> <a href="tel:09599524455">+91 95995 24455</a></li>
+                            <li><i class="fa-solid fa-envelope"></i> <a href="mailto:hello@digifynext.com">hello@digifynext.com</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!--#include virtual="/includes/footer.shtml" -->
+
+    <!--#include virtual="/includes/popup.shtml" -->
+
+    <!--#include virtual="/includes/scripts.shtml" -->
+  </body>
+</html>

@@ -1,0 +1,23 @@
+[build]
+  publish = "."
+  command = "node build-static.js"
+
+[[redirects]]
+  from = "/blog/:slug"
+  to = "/blogdetail.html"
+  status = 200
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog.html"
+  status = 200
+
+[[redirects]]
+  from = "/blogdetail"
+  to = "/blogdetail.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/:splat.html"
+  status = 200
