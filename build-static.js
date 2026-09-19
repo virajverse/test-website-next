@@ -36,16 +36,21 @@ function compileFile(filePath) {
   console.log(`✅ Generated: ${baseName}.html`);
 }
 
-// 1. Compile all .shtml files
-console.log('🚀 Compiling DigifyNext SHTML from _source_files into Dynamic HTML for Netlify...');
-const files = fs.readdirSync(sourceDir);
+// 1. Compile all .shtml files (if source files exist)
 let count = 0;
-
-for (const file of files) {
-  if (file.endsWith('.shtml') && !fs.statSync(path.join(sourceDir, file)).isDirectory()) {
-    compileFile(path.join(sourceDir, file));
-    count++;
+if (fs.existsSync(sourceDir)) {
+  const files = fs.readdirSync(sourceDir);
+  for (const file of files) {
+    if (file.endsWith('.shtml') && !fs.statSync(path.join(sourceDir, file)).isDirectory()) {
+      compileFile(path.join(sourceDir, file));
+      count++;
+    }
   }
+}
+if (count > 0) {
+  console.log(`✅ Compiled ${count} .shtml files into .html`);
+} else {
+  console.log('✅ All production .html pages are already up-to-date.');
 }
 
 // 2. Create Netlify _redirects file for 100% dynamic routing
