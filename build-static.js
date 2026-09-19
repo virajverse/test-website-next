@@ -2,7 +2,8 @@ const fs = require('fs');
 const path = require('path');
 
 const rootDir = __dirname;
-const includesDir = path.join(rootDir, 'includes');
+const sourceDir = fs.existsSync(path.join(rootDir, '_source_files')) ? path.join(rootDir, '_source_files') : rootDir;
+const includesDir = path.join(sourceDir, 'includes');
 
 // Cache includes content
 const includeCache = {};
@@ -36,13 +37,13 @@ function compileFile(filePath) {
 }
 
 // 1. Compile all .shtml files
-console.log('🚀 Compiling DigifyNext SHTML into Dynamic HTML for Netlify...');
-const files = fs.readdirSync(rootDir);
+console.log('🚀 Compiling DigifyNext SHTML from _source_files into Dynamic HTML for Netlify...');
+const files = fs.readdirSync(sourceDir);
 let count = 0;
 
 for (const file of files) {
-  if (file.endsWith('.shtml') && !fs.statSync(path.join(rootDir, file)).isDirectory()) {
-    compileFile(path.join(rootDir, file));
+  if (file.endsWith('.shtml') && !fs.statSync(path.join(sourceDir, file)).isDirectory()) {
+    compileFile(path.join(sourceDir, file));
     count++;
   }
 }
@@ -53,6 +54,9 @@ const redirectsContent = `# Netlify Redirects Configuration for DigifyNext
 /blog/:slug    /blogdetail.html    200
 /blog          /blog.html          200
 /blogdetail    /blogdetail.html    200
+
+# Block direct access to internal source directory
+/_source_files/*   /               404
 
 # Legacy .shtml direct requests -> clean URLs
 /blog.shtml    /blog               301
@@ -84,6 +88,11 @@ const netlifyToml = `[build]
   from = "/blogdetail"
   to = "/blogdetail.html"
   status = 200
+
+[[redirects]]
+  from = "/_source_files/*"
+  to = "/"
+  status = 404
 
 [[redirects]]
   from = "/*"

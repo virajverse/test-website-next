@@ -4,6 +4,9 @@
 /blog          /blog.html          200
 /blogdetail    /blogdetail.html    200
 
+# Block direct access to internal source directory
+/_source_files/*   /               404
+
 # Legacy .shtml direct requests -> clean URLs
 /blog.shtml    /blog               301
 /about.shtml   /about              301
