@@ -16,7 +16,7 @@
   };
 
   var memoryCache = new Map();
-  var CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
+  var CACHE_TTL_MS = 10 * 1000; // 10 seconds (instant visibility on publish)
 
   function getBaseApiUrl() {
     return (config.apiUrl || 'https://blogary.jupsoft.com').replace(/\/+$/, '');
@@ -79,8 +79,8 @@
     var cacheKey = 'cms_blogs_' + websiteId + '_p' + page + '_l' + limit + '_' + (options.category || 'all');
 
     // 1. Instant cache check (0ms delay)
-    var cached = memoryCache.get(cacheKey);
-    if (!cached && typeof sessionStorage !== 'undefined') {
+    var cached = options.bypassCache ? null : memoryCache.get(cacheKey);
+    if (!cached && !options.bypassCache && typeof sessionStorage !== 'undefined') {
       try {
         var stored = sessionStorage.getItem(cacheKey);
         if (stored) {
