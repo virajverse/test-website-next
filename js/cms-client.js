@@ -126,6 +126,13 @@
         if (typeof sessionStorage !== 'undefined') {
           try {
             sessionStorage.setItem(cacheKey, JSON.stringify({ timestamp: Date.now(), data: result }));
+            // Cross-page instant preload: seed each article summary
+            var list = Array.isArray(result.data) ? result.data : (Array.isArray(result) ? result : []);
+            list.forEach(function (b) {
+              if (b && b.slug) {
+                sessionStorage.setItem('cms_summary_' + encodeURIComponent(b.slug), JSON.stringify(b));
+              }
+            });
           } catch (e) {}
         }
         return result;
@@ -153,9 +160,23 @@
     var cleanSlug = encodeURIComponent(slug);
     var cacheKey = 'cms_article_' + cleanSlug;
 
-    // Check instant cache
+    // Check instant in-memory cache
     if (memoryCache.has(cacheKey)) {
       return Promise.resolve(memoryCache.get(cacheKey));
+    }
+
+    // Check instant session cache (0 delay on back/forward or repeat visits)
+    if (typeof sessionStorage !== 'undefined') {
+      try {
+        var storedArticle = sessionStorage.getItem(cacheKey);
+        if (storedArticle) {
+          var parsedArticle = JSON.parse(storedArticle);
+          if (parsedArticle && parsedArticle.title) {
+            memoryCache.set(cacheKey, parsedArticle);
+            return Promise.resolve(parsedArticle);
+          }
+        }
+      } catch (e) {}
     }
 
     var primaryUrl = getBaseApiUrl() + '/v1/blogs/' + cleanSlug + '?website=' + encodeURIComponent(websiteId);
@@ -173,6 +194,9 @@
       .then(function (res) {
         var data = res.data || res;
         memoryCache.set(cacheKey, data);
+        if (typeof sessionStorage !== 'undefined') {
+          try { sessionStorage.setItem(cacheKey, JSON.stringify(data)); } catch (e) {}
+        }
         return data;
       })
       .catch(function (error) {
@@ -184,6 +208,9 @@
           .then(function (res) {
             var data = res.data || res;
             memoryCache.set(cacheKey, data);
+            if (typeof sessionStorage !== 'undefined') {
+              try { sessionStorage.setItem(cacheKey, JSON.stringify(data)); } catch (e) {}
+            }
             return data;
           });
       });
@@ -216,18 +243,36 @@
     if (Array.isArray(blog.categories) && blog.categories.length > 0) {
       return blog.categories[0].name || blog.categories[0];
     }
+    // Match by categoryIds (e.g. cat-growth-seo)
+    if (Array.isArray(blog.categoryIds) && blog.categoryIds.length > 0) {
+      var cid = String(blog.categoryIds[0]).toLowerCase();
+      if (cid.indexOf('seo') !== -1) return 'SEO';
+      if (cid.indexOf('ai') !== -1 || cid.indexOf('geo') !== -1) return 'AI Search & GEO';
+      if (cid.indexOf('content') !== -1) return 'Content Strategy';
+      if (cid.indexOf('cro') !== -1) return 'Conversion Optimization';
+      if (cid.indexOf('ppc') !== -1 || cid.indexOf('ads') !== -1) return 'PPC & Ads';
+      if (cid.indexOf('social') !== -1 || cid.indexOf('smo') !== -1) return 'Social Media';
+    }
+    // Match by keywords in title / slug
+    var text = ((blog.title || '') + ' ' + (blog.slug || '')).toLowerCase();
+    if (text.indexOf('seo') !== -1 || text.indexOf('search') !== -1) return 'SEO';
+    if (text.indexOf('ai') !== -1 || text.indexOf('agent') !== -1 || text.indexOf('mcp') !== -1 || text.indexOf('geo') !== -1) return 'AI Search & GEO';
+    if (text.indexOf('ppc') !== -1 || text.indexOf('ads') !== -1 || text.indexOf('google ads') !== -1) return 'PPC & Ads';
+    if (text.indexOf('social') !== -1 || text.indexOf('media') !== -1) return 'Social Media';
+    if (text.indexOf('brand') !== -1 || text.indexOf('creative') !== -1) return 'Branding';
+    if (text.indexOf('web') !== -1 || text.indexOf('dev') !== -1 || text.indexOf('api') !== -1) return 'Web Dev';
     return 'Digital Marketing';
   }
 
   function getCategoryKey(category) {
     var value = String(category || '').toLowerCase();
-    if (value.includes('seo')) return 'seo';
-    if (value.includes('geo') || value.includes('ai')) return 'geo';
-    if (value.includes('ppc') || value.includes('ads')) return 'ppc';
-    if (value.includes('social')) return 'social';
-    if (value.includes('brand')) return 'branding';
-    if (value.includes('web')) return 'web';
-    if (value.includes('orm') || value.includes('reputation')) return 'orm';
+    if (value.indexOf('seo') !== -1) return 'seo';
+    if (value.indexOf('geo') !== -1 || value.indexOf('ai') !== -1) return 'geo';
+    if (value.indexOf('ppc') !== -1 || value.indexOf('ad') !== -1) return 'ppc';
+    if (value.indexOf('social') !== -1) return 'social';
+    if (value.indexOf('brand') !== -1) return 'branding';
+    if (value.indexOf('web') !== -1 || value.indexOf('content') !== -1) return 'web';
+    if (value.indexOf('orm') !== -1 || value.indexOf('reputation') !== -1) return 'orm';
     return 'all';
   }
 

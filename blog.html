@@ -1867,7 +1867,7 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
                     '<span class="fx-badge fx-badge-cat">' + category + '</span>' +
                     (readTime ? '<span class="fx-badge fx-badge-time"><i class="fa-regular fa-clock"></i>' + readTime + '</span>' : '') +
                   '</div>' +
-                  '<figure><img width="1366" height="768" loading="lazy" src="' + image + '" alt="' + title + '" onerror="this.src=\'/images/blog1.jpg\'" /></figure>' +
+                  '<figure><img width="1366" height="768" ' + (index === 0 ? 'fetchpriority="high"' : 'loading="lazy"') + ' decoding="async" src="' + image + '" alt="' + title + '" onerror="this.src=\'/images/blog1.jpg\'" /></figure>' +
                 '</div>' +
                 '<div class="post-item-btn"><a aria-label="Read more" href="/blog/' + slug + '"><img src="/images/arrow-primary.svg" alt="" /></a></div>' +
                 '<div class="post-item-body"><div class="post-item-content"><h2><a href="/blog/' + slug + '">' + title + '</a></h2></div>' +
@@ -1887,7 +1887,33 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
             try { new WOW().init(); } catch (e) {}
           }
 
+          // Remember currently active filter
+          var currentActiveBtn = document.querySelector('.fx-filter-btn.active');
+          var activeFilter = currentActiveBtn ? currentActiveBtn.getAttribute('data-filter') : 'all';
+
           bindFilterEvents();
+
+          if (activeFilter && activeFilter !== 'all') {
+            var restoreBtn = document.querySelector('.fx-filter-btn[data-filter="' + activeFilter + '"]');
+            if (restoreBtn) restoreBtn.click();
+          }
+
+          // Update Popular Topics count chips dynamically based on actual CMS blogs
+          try {
+            var counts = { seo: 0, geo: 0, ppc: 0, social: 0, branding: 0, web: 0, orm: 0 };
+            blogs.forEach(function (b) {
+              var cat = DigifyCMS.getCategoryName(b);
+              var k = DigifyCMS.getCategoryKey(cat);
+              if (counts[k] !== undefined) counts[k]++;
+            });
+            document.querySelectorAll('.fx-topic-chip').forEach(function (chip) {
+              var topic = chip.getAttribute('data-topic');
+              var span = chip.querySelector('span');
+              if (span && counts[topic] !== undefined) {
+                span.textContent = counts[topic];
+              }
+            });
+          } catch (e) {}
         }
 
         function applyFilters() {
@@ -1974,7 +2000,21 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
         // Initialize with fallback cards first
         bindFilterEvents();
 
-        // Fetch published blogs from Centralized CMS (bypass stale cache for live visibility)
+        // 0ms Instant Hydration: If blogs are in session cache, render them immediately (no lazy load delay!)
+        try {
+          var websiteId = (DigifyCMS.config && DigifyCMS.config.websiteId) || 'site-growth';
+          var stored = sessionStorage.getItem('cms_blogs_' + websiteId + '_p1_l50_all');
+          if (stored) {
+            var parsed = JSON.parse(stored);
+            var cachedBlogs = (parsed && parsed.data && parsed.data.data) || (parsed && parsed.data) || [];
+            if (Array.isArray(cachedBlogs) && cachedBlogs.length > 0) {
+              renderBlogs(cachedBlogs);
+              renderFeaturedSlider(cachedBlogs);
+            }
+          }
+        } catch (e) {}
+
+        // Fetch live published blogs from Centralized CMS (auto-updates when new blogs are published!)
         DigifyCMS.fetchBlogs({ limit: 50, bypassCache: true })
           .then(function (result) {
             const blogs = Array.isArray(result.data) ? result.data : (Array.isArray(result) ? result : []);
@@ -1984,7 +2024,7 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
             }
           })
           .catch(function (error) {
-            console.warn('CMS listing unavailable; preserving fallback cards.', error);
+            console.warn('CMS listing unavailable; preserving cached/fallback cards.', error);
           });
       })();
     </script>

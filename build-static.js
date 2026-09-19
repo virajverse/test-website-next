@@ -8,7 +8,6 @@ const includesDir = path.join(rootDir, 'includes');
 const includeCache = {};
 
 function getIncludeContent(virtualPath) {
-  // Normalize path, remove leading slash or /includes/
   const filename = path.basename(virtualPath);
   if (!includeCache[filename]) {
     const fullPath = path.join(includesDir, filename);
@@ -37,7 +36,7 @@ function compileFile(filePath) {
 }
 
 // 1. Compile all .shtml files
-console.log('🚀 Compiling DigifyNext SHTML into Static HTML for Netlify...');
+console.log('🚀 Compiling DigifyNext SHTML into Dynamic HTML for Netlify...');
 const files = fs.readdirSync(rootDir);
 let count = 0;
 
@@ -48,18 +47,18 @@ for (const file of files) {
   }
 }
 
-// 2. Create Netlify _redirects file
+// 2. Create Netlify _redirects file for 100% dynamic routing
 const redirectsContent = `# Netlify Redirects Configuration for DigifyNext
-# Dynamic Blog Routing
+# Dynamic Single-File Blog Routing (All blogs dynamically served by blogdetail.html)
 /blog/:slug    /blogdetail.html    200
 /blog          /blog.html          200
 /blogdetail    /blogdetail.html    200
 
-# Legacy .shtml or .html direct requests -> clean URLs
+# Legacy .shtml direct requests -> clean URLs
 /blog.shtml    /blog               301
 /about.shtml   /about              301
 
-# Extensionless Pretty URLs for all pages
+# Extensionless Pretty URLs for all static pages
 /*             /:splat.html        200
 `;
 
@@ -95,4 +94,4 @@ const netlifyToml = `[build]
 fs.writeFileSync(path.join(rootDir, 'netlify.toml'), netlifyToml, 'utf8');
 console.log('✅ Generated: netlify.toml');
 
-console.log(`\n🎉 Successfully compiled ${count} pages for Netlify deployment!`);
+console.log(`\n🎉 Successfully prepared ${count} dynamic pages! Netlify will route any CMS blog automatically.`);

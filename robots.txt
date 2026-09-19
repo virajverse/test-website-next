@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /includes/
+Disallow: /api/
+
+Sitemap: https://digifynext.com/sitemap.xml

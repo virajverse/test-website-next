@@ -1,12 +1,12 @@
 # Netlify Redirects Configuration for DigifyNext
-# Dynamic Blog Routing
+# Dynamic Single-File Blog Routing (All blogs dynamically served by blogdetail.html)
 /blog/:slug    /blogdetail.html    200
 /blog          /blog.html          200
 /blogdetail    /blogdetail.html    200
 
-# Legacy .shtml or .html direct requests -> clean URLs
+# Legacy .shtml direct requests -> clean URLs
 /blog.shtml    /blog               301
 /about.shtml   /about              301
 
-# Extensionless Pretty URLs for all pages
+# Extensionless Pretty URLs for all static pages
 /*             /:splat.html        200

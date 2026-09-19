@@ -43,7 +43,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="page-header-box">
-              <h1 data-cursor="-opaque" id="postTitle">Loading article...</h1>
+              <h1 data-cursor="-opaque" id="postTitle"></h1>
               <div class="post-single-meta wow fadeInUp">
                 <ol class="breadcrumb">
                   <li><span class="fx-badge fx-badge-cat" id="postCategory">Digital Marketing</span></li>
@@ -68,7 +68,7 @@
               <!-- Post Featured Image Start -->
               <div class="post-image">
                 <figure class="image-anime reveal">
-                  <img width="1449" height="1086" id="postFeaturedImage" src="images/blog1.jpg" alt="SEO trends modern brands should watch" />
+                  <img width="1449" height="1086" id="postFeaturedImage" src="images/blog1.jpg" alt="SEO trends modern brands should watch" fetchpriority="high" decoding="async" />
                 </figure>
               </div>
               <!-- Post Featured Image End -->
@@ -76,9 +76,14 @@
               <!-- Post Single Content Start -->
               <div class="post-content">
                 <div class="post-entry" id="postContent">
-                  <div style="text-align: center; padding: 60px 20px;">
-                    <div class="loading" style="margin: 0 auto 20px; width: 50px; height: 50px; border: 3px solid transparent; border-top-color: var(--fx-accent, #a3e635); border-radius: 50%; animation: fxspin 0.8s linear infinite;"></div>
-                    <p style="color: #94a3b8; font-size: 16px;">Loading article from CMS...</p>
+                  <div class="fx-skeleton-wrap" id="fxContentSkeleton" style="padding: 10px 0;">
+                    <div class="fx-skeleton" style="width: 100%; height: 20px; margin-bottom: 14px;"></div>
+                    <div class="fx-skeleton" style="width: 92%; height: 16px; margin-bottom: 14px;"></div>
+                    <div class="fx-skeleton" style="width: 96%; height: 16px; margin-bottom: 14px;"></div>
+                    <div class="fx-skeleton" style="width: 84%; height: 16px; margin-bottom: 28px;"></div>
+                    <div class="fx-skeleton" style="width: 50%; height: 26px; margin-bottom: 18px;"></div>
+                    <div class="fx-skeleton" style="width: 98%; height: 16px; margin-bottom: 14px;"></div>
+                    <div class="fx-skeleton" style="width: 90%; height: 16px; margin-bottom: 14px;"></div>
                   </div>
                 </div>
 
@@ -198,7 +203,71 @@
           bar.style.width = scrolled + '%';
         });
 
+        var titleEl = document.getElementById('postTitle');
+
+        function wireShareButtons(title) {
+          var currentFullUrl = encodeURIComponent(window.location.href);
+          var currentTitle = encodeURIComponent(title || (titleEl ? titleEl.innerText : document.title) || '');
+          var fb = document.getElementById('fxShareFb');
+          if (fb) fb.href = 'https://www.facebook.com/sharer/sharer.php?u=' + currentFullUrl;
+          var li = document.getElementById('fxShareLi');
+          if (li) li.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + currentFullUrl;
+          var wa = document.getElementById('fxShareWa');
+          if (wa) wa.href = 'https://api.whatsapp.com/send?text=' + currentTitle + '%20' + currentFullUrl;
+          var tw = document.getElementById('fxShareX');
+          if (tw) tw.href = 'https://twitter.com/intent/tweet?text=' + currentTitle + '&url=' + currentFullUrl;
+          var copyBtn = document.getElementById('fxCopyLink');
+          if (copyBtn) {
+            copyBtn.onclick = function (e) {
+              e.preventDefault();
+              if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(window.location.href).then(function () {
+                  var ok = document.getElementById('fxCopyOk');
+                  if (ok) {
+                    ok.style.display = 'inline';
+                    setTimeout(function () { ok.style.display = 'none'; }, 2000);
+                  }
+                });
+              }
+            };
+          }
+        }
+
         var slug = DigifyCMS.getSlugFromCurrentUrl();
+
+        // 0ms Instant Hydration: If summary is already cached from /blog, show immediately!
+        if (slug && typeof sessionStorage !== 'undefined') {
+          try {
+            var rawSummary = sessionStorage.getItem('cms_summary_' + encodeURIComponent(slug)) ||
+                             sessionStorage.getItem('cms_article_' + encodeURIComponent(slug));
+            if (rawSummary) {
+              var cached = JSON.parse(rawSummary);
+              if (cached && cached.title) {
+                if (titleEl) titleEl.innerText = cached.title;
+                document.title = (cached.seo && cached.seo.metaTitle) || (cached.title + ' | DigifyNext Blog');
+                var imgEl = document.getElementById('postFeaturedImage');
+                if (imgEl && cached.featuredImage) {
+                  imgEl.src = cached.featuredImage;
+                  imgEl.alt = cached.title;
+                }
+                var catName = DigifyCMS.getCategoryName(cached);
+                var catEl = document.getElementById('postCategory');
+                if (catEl && catName) catEl.innerText = catName;
+                var authEl = document.getElementById('postAuthor');
+                if (authEl && cached.authorName) authEl.innerText = cached.authorName;
+                var dateEl = document.getElementById('postDate');
+                if (dateEl && cached.publishedAt) dateEl.innerText = DigifyCMS.formatDate(cached.publishedAt);
+                var timeEl = document.getElementById('postReadTime');
+                if (timeEl && cached.readTimeMinutes) timeEl.innerHTML = '<i class="fa-regular fa-clock"></i> ' + cached.readTimeMinutes + ' min read';
+                if (cached.content) {
+                  var contentEl = document.getElementById('postContent');
+                  if (contentEl) contentEl.innerHTML = cached.content;
+                }
+                wireShareButtons(cached.title);
+              }
+            }
+          } catch (e) {}
+        }
         var fetchPromise;
 
         if (slug) {
