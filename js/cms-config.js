@@ -20,5 +20,5 @@ window.CMS_CONFIG = {
   defaultLanguage: 'en',
 
   // Default Fallback Image
-  defaultFeaturedImage: 'images/blog1.jpg',
+  defaultFeaturedImage: '/images/blog1.jpg',
 };
