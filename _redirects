@@ -7,6 +7,9 @@
 # Block direct access to internal source directory
 /_source_files/*   /               404
 
+# Reverse proxy /api calls directly to centralized backend
+/api/*         https://blogary.jupsoft.com/v1/:splat   200
+
 # Legacy .shtml direct requests -> clean URLs
 /blog.shtml    /blog               301
 /about.shtml   /about              301

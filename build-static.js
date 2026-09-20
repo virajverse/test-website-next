@@ -63,6 +63,9 @@ const redirectsContent = `# Netlify Redirects Configuration for DigifyNext
 # Block direct access to internal source directory
 /_source_files/*   /               404
 
+# Reverse proxy /api calls directly to centralized backend
+/api/*         https://blogary.jupsoft.com/v1/:splat   200
+
 # Legacy .shtml direct requests -> clean URLs
 /blog.shtml    /blog               301
 /about.shtml   /about              301
@@ -78,6 +81,11 @@ console.log('✅ Generated: _redirects');
 const netlifyToml = `[build]
   publish = "."
   command = "node build-static.js"
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://blogary.jupsoft.com/v1/:splat"
+  status = 200
 
 [[redirects]]
   from = "/blog/:slug"

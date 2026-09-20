@@ -149,31 +149,36 @@
   }
 
   /**
-   * Fetch single blog article by slug with SEO metadata and caching
+   * Fetch single blog article by slug with SEO metadata and caching (Stale-While-Revalidate)
    */
-  function fetchBlogBySlug(slug) {
+  function fetchBlogBySlug(slug, options) {
     if (!slug) {
       return Promise.reject(new Error('Slug is required'));
     }
 
+    options = options || {};
     var websiteId = config.websiteId || 'site-growth';
     var cleanSlug = encodeURIComponent(slug);
     var cacheKey = 'cms_article_' + cleanSlug;
 
-    // Check instant in-memory cache
-    if (memoryCache.has(cacheKey)) {
-      return Promise.resolve(memoryCache.get(cacheKey));
-    }
+    var hasNoCacheQuery = typeof window !== 'undefined' && 
+      (window.location.search.indexOf('nocache=1') !== -1 || window.location.search.indexOf('refresh=1') !== -1);
+    var bypassCache = options.bypassCache || hasNoCacheQuery;
 
-    // Check instant session cache (0 delay on back/forward or repeat visits)
-    if (typeof sessionStorage !== 'undefined') {
+    var cached = bypassCache ? null : memoryCache.get(cacheKey);
+
+    // Check instant session cache with 10s TTL (0 delay on back/forward or repeat visits)
+    if (!cached && !bypassCache && typeof sessionStorage !== 'undefined') {
       try {
         var storedArticle = sessionStorage.getItem(cacheKey);
         if (storedArticle) {
-          var parsedArticle = JSON.parse(storedArticle);
-          if (parsedArticle && parsedArticle.title) {
-            memoryCache.set(cacheKey, parsedArticle);
-            return Promise.resolve(parsedArticle);
+          var parsed = JSON.parse(storedArticle);
+          if (parsed && parsed.timestamp && (Date.now() - parsed.timestamp < CACHE_TTL_MS)) {
+            cached = parsed.data;
+            memoryCache.set(cacheKey, cached);
+          } else if (parsed && parsed.title) {
+            // Backward-compat fallback if old un-timestamped cache format
+            cached = parsed;
           }
         }
       } catch (e) {}
@@ -182,7 +187,7 @@
     var primaryUrl = getBaseApiUrl() + '/v1/blogs/' + cleanSlug + '?website=' + encodeURIComponent(websiteId);
     var proxyUrl = '/api/blogs/' + cleanSlug;
 
-    return fetchWithTimeout(primaryUrl, {
+    var networkPromise = fetchWithTimeout(primaryUrl, {
       method: 'GET',
       headers: { 'Accept': 'application/json' },
       mode: 'cors'
@@ -191,29 +196,29 @@
         if (!response.ok) throw new Error('CMS API HTTP ' + response.status);
         return response.json();
       })
-      .then(function (res) {
-        var data = res.data || res;
-        memoryCache.set(cacheKey, data);
-        if (typeof sessionStorage !== 'undefined') {
-          try { sessionStorage.setItem(cacheKey, JSON.stringify(data)); } catch (e) {}
-        }
-        return data;
-      })
       .catch(function (error) {
         return fetchWithTimeout(proxyUrl, {}, 2500)
           .then(function (res) {
             if (!res.ok) throw new Error('CMS Proxy HTTP ' + res.status);
             return res.json();
-          })
-          .then(function (res) {
-            var data = res.data || res;
-            memoryCache.set(cacheKey, data);
-            if (typeof sessionStorage !== 'undefined') {
-              try { sessionStorage.setItem(cacheKey, JSON.stringify(data)); } catch (e) {}
-            }
-            return data;
           });
+      })
+      .then(function (res) {
+        var data = res.data || res;
+        memoryCache.set(cacheKey, data);
+        if (typeof sessionStorage !== 'undefined') {
+          try { sessionStorage.setItem(cacheKey, JSON.stringify({ timestamp: Date.now(), data: data })); } catch (e) {}
+        }
+        return data;
       });
+
+    // If fresh cache exists, return immediately; background revalidation updates cache
+    if (cached) {
+      networkPromise.catch(function () {});
+      return Promise.resolve(cached);
+    }
+
+    return networkPromise;
   }
 
   function escapeHtml(value) {

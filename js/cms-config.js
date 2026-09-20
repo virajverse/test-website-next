@@ -6,19 +6,39 @@
  * Public blog reads ke liye websiteId kaafi hota hai.
  * Server credentials sirf .env.local me rehte hain.
  */
-window.CMS_CONFIG = {
-  // Centralized CMS Backend API URL (bina trailing slash ke)
-  apiUrl: 'https://blogary.jupsoft.com',
+(function () {
+  var isLocal = typeof window !== 'undefined' && 
+    (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
 
-  // Tenant Website Identifier (Database me registered website id ya slug)
-  websiteId: 'site-growth',
+  var queryApi = '';
+  if (typeof window !== 'undefined' && window.location.search) {
+    try {
+      var params = new URLSearchParams(window.location.search);
+      queryApi = params.get('api') || params.get('cms_api') || '';
+    } catch (e) {}
+  }
 
-  // Site Base Domain
-  siteDomain: 'https://digifynext.com',
+  var apiUrl = 'https://blogary.jupsoft.com';
+  if (queryApi === 'local') {
+    apiUrl = 'http://localhost:4000';
+  } else if (queryApi && queryApi !== 'production') {
+    apiUrl = queryApi.replace(/\/+$/, '');
+  }
 
-  // Default Language
-  defaultLanguage: 'en',
+  window.CMS_CONFIG = {
+    // Centralized CMS Backend API URL (bina trailing slash ke)
+    apiUrl: apiUrl,
 
-  // Default Fallback Image
-  defaultFeaturedImage: '/images/blog1.jpg',
-};
+    // Tenant Website Identifier (Database me registered website id ya slug)
+    websiteId: 'site-growth',
+
+    // Site Base Domain
+    siteDomain: 'https://digifynext.com',
+
+    // Default Language
+    defaultLanguage: 'en',
+
+    // Default Fallback Image
+    defaultFeaturedImage: '/images/blog1.jpg',
+  };
+})();
