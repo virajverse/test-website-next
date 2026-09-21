@@ -56,7 +56,7 @@ if (count > 0) {
 // 2. Read Environment Variables (for Vercel, Netlify, or Local build)
 const apiUrl = (process.env.CMS_API_URL || process.env.NEXT_PUBLIC_CMS_API_URL || 'https://blogary.jupsoft.com').replace(/\/+$/, '');
 const websiteId = process.env.CMS_WEBSITE_ID || process.env.NEXT_PUBLIC_CMS_WEBSITE_ID || 'site-growth';
-const apiKey = process.env.CMS_TENANT_API_KEY || process.env.CMS_API_KEY || process.env.NEXT_PUBLIC_CMS_API_KEY || 'digi_live_sec_growth_8821ecde71a209';
+const apiKey = process.env.CMS_TENANT_API_KEY || process.env.CMS_API_KEY || process.env.NEXT_PUBLIC_CMS_API_KEY || '';
 const siteDomain = (process.env.SITE_DOMAIN || process.env.NEXT_PUBLIC_SITE_DOMAIN || 'https://digifynext.com').replace(/\/+$/, '');
 const defaultLanguage = process.env.DEFAULT_LANGUAGE || 'en';
 

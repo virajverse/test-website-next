@@ -24,7 +24,7 @@
   window.CMS_CONFIG = {
     apiUrl: apiUrl,
     websiteId: 'site-growth',
-    apiKey: 'digi_live_sec_growth_8821ecde71a209',
+    apiKey: '',
     siteDomain: 'https://digifynext.com',
     defaultLanguage: 'en',
     defaultFeaturedImage: '/images/blog1.jpg',
