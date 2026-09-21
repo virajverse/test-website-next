@@ -68,7 +68,9 @@
   }
 
   /**
-   * Fetch paginated list of published blogs with 0-delay cache
+   * Fetch paginated list of published blogs
+   * Always fetches fresh data from network so new/edited articles appear on 1st load!
+   * Gracefully falls back to cache if offline or network failure.
    */
   function fetchBlogs(options) {
     options = options || {};
@@ -78,19 +80,22 @@
 
     var cacheKey = 'cms_blogs_' + websiteId + '_p' + page + '_l' + limit + '_' + (options.category || 'all');
 
-    // 1. Instant cache check (0ms delay)
-    var cached = options.bypassCache ? null : memoryCache.get(cacheKey);
-    if (!cached && !options.bypassCache && typeof sessionStorage !== 'undefined') {
+    // Retrieve cached data for instant paint callback or offline fallback
+    var cached = memoryCache.get(cacheKey) || null;
+    if (!cached && typeof sessionStorage !== 'undefined') {
       try {
         var stored = sessionStorage.getItem(cacheKey);
         if (stored) {
           var parsed = JSON.parse(stored);
-          if (parsed && (Date.now() - parsed.timestamp < CACHE_TTL_MS)) {
-            cached = parsed.data;
-            memoryCache.set(cacheKey, cached);
-          }
+          cached = parsed && parsed.data ? parsed.data : parsed;
+          if (cached) memoryCache.set(cacheKey, cached);
         }
       } catch (e) {}
+    }
+
+    // Optional instant hydration callback (caller can render cached data before network completes)
+    if (cached && typeof options.onCache === 'function') {
+      try { options.onCache(cached); } catch (e) {}
     }
 
     var query = '?website=' + encodeURIComponent(websiteId) +
@@ -107,31 +112,29 @@
     var reqHeaders = { 'Accept': 'application/json' };
     if (config.apiKey) reqHeaders['x-api-key'] = config.apiKey;
 
-    var networkPromise = fetchWithTimeout(primaryUrl, {
-      method: 'GET',
-      headers: reqHeaders,
-      mode: 'cors'
-    }, 3000)
-      .then(function (response) {
+    function doFetch(url) {
+      return fetchWithTimeout(url, {
+        method: 'GET',
+        headers: reqHeaders,
+        mode: 'cors'
+      }, 4000).then(function (response) {
         if (!response.ok) throw new Error('CMS API HTTP ' + response.status);
         return response.json();
-      })
-      .catch(function (error) {
-        // If rate-limited (429) or network hiccup, return cached blogs immediately (0ms delay)
-        if (cached) return cached;
-        if (typeof sessionStorage !== 'undefined') {
-          try {
-            var stored = sessionStorage.getItem(cacheKey);
-            if (stored) {
-              var parsed = JSON.parse(stored);
-              if (parsed && (parsed.data || parsed.timestamp)) return parsed.data || parsed;
-            }
-          } catch (e) {}
+      });
+    }
+
+    return doFetch(primaryUrl)
+      .catch(function (primaryErr) {
+        // Fallback to /api proxy on custom deployment domains (e.g. Netlify / Vercel)
+        if (typeof window !== 'undefined' && window.location.origin && getBaseApiUrl() !== window.location.origin) {
+          return doFetch(proxyUrl).catch(function () {
+            throw primaryErr;
+          });
         }
-        throw error;
+        throw primaryErr;
       })
       .then(function (result) {
-        // Save to cache
+        // Update caches with fresh live data
         memoryCache.set(cacheKey, result);
         if (typeof sessionStorage !== 'undefined') {
           try {
@@ -146,20 +149,21 @@
           } catch (e) {}
         }
         return result;
+      })
+      .catch(function (error) {
+        // Offline / network failure fallback: if network fails, return cached blogs
+        if (cached) {
+          console.warn('CMS network fetch failed, serving from cache:', error);
+          return cached;
+        }
+        throw error;
       });
-
-    // If cache exists, return cached immediately (0 delay)
-    if (cached) {
-      // Revalidate in background without blocking render
-      networkPromise.catch(function () {});
-      return Promise.resolve(cached);
-    }
-
-    return networkPromise;
   }
 
   /**
-   * Fetch single blog article by slug with SEO metadata and caching (Stale-While-Revalidate)
+   * Fetch single blog article by slug with SEO metadata
+   * Always fetches fresh data from network so edits appear on 1st load!
+   * Gracefully falls back to cache if offline or network failure.
    */
   function fetchBlogBySlug(slug, options) {
     if (!slug) {
@@ -171,27 +175,22 @@
     var cleanSlug = encodeURIComponent(slug);
     var cacheKey = 'cms_article_' + cleanSlug;
 
-    var hasNoCacheQuery = typeof window !== 'undefined' && 
-      (window.location.search.indexOf('nocache=1') !== -1 || window.location.search.indexOf('refresh=1') !== -1);
-    var bypassCache = options.bypassCache || hasNoCacheQuery;
-
-    var cached = bypassCache ? null : memoryCache.get(cacheKey);
-
-    // Check instant session cache with 10s TTL (0 delay on back/forward or repeat visits)
-    if (!cached && !bypassCache && typeof sessionStorage !== 'undefined') {
+    // Retrieve cached article for instant paint callback or offline fallback
+    var cached = memoryCache.get(cacheKey) || null;
+    if (!cached && typeof sessionStorage !== 'undefined') {
       try {
         var storedArticle = sessionStorage.getItem(cacheKey);
         if (storedArticle) {
           var parsed = JSON.parse(storedArticle);
-          if (parsed && parsed.timestamp && (Date.now() - parsed.timestamp < CACHE_TTL_MS)) {
-            cached = parsed.data;
-            memoryCache.set(cacheKey, cached);
-          } else if (parsed && parsed.title) {
-            // Backward-compat fallback if old un-timestamped cache format
-            cached = parsed;
-          }
+          cached = parsed && parsed.data ? parsed.data : (parsed && parsed.title ? parsed : null);
+          if (cached) memoryCache.set(cacheKey, cached);
         }
       } catch (e) {}
+    }
+
+    // Optional instant hydration callback
+    if (cached && typeof options.onCache === 'function') {
+      try { options.onCache(cached); } catch (e) {}
     }
 
     var primaryUrl = getBaseApiUrl() + '/v1/blogs/' + cleanSlug + '?website=' + encodeURIComponent(websiteId) + (config.apiKey ? '&apiKey=' + encodeURIComponent(config.apiKey) : '');
@@ -200,18 +199,26 @@
     var reqHeaders = { 'Accept': 'application/json' };
     if (config.apiKey) reqHeaders['x-api-key'] = config.apiKey;
 
-    var networkPromise = fetchWithTimeout(primaryUrl, {
-      method: 'GET',
-      headers: reqHeaders,
-      mode: 'cors'
-    }, 3000)
-      .then(function (response) {
+    function doFetch(url) {
+      return fetchWithTimeout(url, {
+        method: 'GET',
+        headers: reqHeaders,
+        mode: 'cors'
+      }, 4000).then(function (response) {
         if (!response.ok) throw new Error('CMS API HTTP ' + response.status);
         return response.json();
-      })
-      .catch(function (error) {
-        if (cached) return cached;
-        throw error;
+      });
+    }
+
+    return doFetch(primaryUrl)
+      .catch(function (primaryErr) {
+        // Fallback to proxy on custom deployment domains
+        if (typeof window !== 'undefined' && window.location.origin && getBaseApiUrl() !== window.location.origin) {
+          return doFetch(proxyUrl).catch(function () {
+            throw primaryErr;
+          });
+        }
+        throw primaryErr;
       })
       .then(function (res) {
         var data = res.data || res;
@@ -223,15 +230,15 @@
           try { sessionStorage.setItem(cacheKey, JSON.stringify({ timestamp: Date.now(), data: data })); } catch (e) {}
         }
         return data;
+      })
+      .catch(function (error) {
+        // Offline / network failure fallback: if network fails, return cached article
+        if (cached) {
+          console.warn('CMS network fetch failed, serving article from cache:', error);
+          return cached;
+        }
+        throw error;
       });
-
-    // If fresh cache exists, return immediately; background revalidation updates cache
-    if (cached) {
-      networkPromise.catch(function () {});
-      return Promise.resolve(cached);
-    }
-
-    return networkPromise;
   }
 
   function escapeHtml(value) {

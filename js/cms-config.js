@@ -14,10 +14,12 @@
     } catch (e) {}
   }
 
-  var apiUrl = 'https://blogary.jupsoft.com';
+  var apiUrl = isLocal ? 'http://localhost:4000' : 'https://blogary.jupsoft.com';
   if (queryApi === 'local') {
     apiUrl = 'http://localhost:4000';
-  } else if (queryApi && queryApi !== 'production') {
+  } else if (queryApi === 'production') {
+    apiUrl = 'https://blogary.jupsoft.com';
+  } else if (queryApi) {
     apiUrl = queryApi.replace(/\/+$/, '');
   }
 

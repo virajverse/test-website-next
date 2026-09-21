@@ -77,10 +77,12 @@ const cmsConfigContent = `/**
     } catch (e) {}
   }
 
-  var apiUrl = '${apiUrl}';
+  var apiUrl = isLocal ? 'http://localhost:4000' : '${apiUrl}';
   if (queryApi === 'local') {
     apiUrl = 'http://localhost:4000';
-  } else if (queryApi && queryApi !== 'production') {
+  } else if (queryApi === 'production') {
+    apiUrl = '${apiUrl}';
+  } else if (queryApi) {
     apiUrl = queryApi.replace(/\\/+$/, '');
   }
 
