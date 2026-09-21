@@ -113,16 +113,20 @@ const vercelConfig = {
       "destination": `${apiUrl}/v1/:path*`
     },
     {
-      "source": "/blog/:slug",
-      "destination": "/blogdetail.html"
+      "source": "/blog",
+      "destination": "/blog"
     },
     {
-      "source": "/blog",
-      "destination": "/blog.html"
+      "source": "/blog/:slug",
+      "destination": "/blogdetail"
+    },
+    {
+      "source": "/blog/:slug/(.*)",
+      "destination": "/blogdetail"
     },
     {
       "source": "/blogdetail",
-      "destination": "/blogdetail.html"
+      "destination": "/blogdetail"
     }
   ],
   "redirects": [
