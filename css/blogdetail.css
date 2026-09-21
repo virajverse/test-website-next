@@ -138,6 +138,18 @@
   margin-bottom: 1.6em;
 }
 
+.post-entry p:empty,
+.post-entry p:has(> br:only-child) {
+  min-height: 1.5em;
+  display: block;
+  margin-bottom: 0.8em;
+}
+
+.post-entry p:empty::before {
+  content: "\00a0";
+  display: inline-block;
+}
+
 .post-entry a {
   color: var(--fx-accent, #a3e635);
   text-decoration: underline;

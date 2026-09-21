@@ -1423,7 +1423,9 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
                 }
                 if (cached.content) {
                   var contentEl = document.getElementById('postContent');
-                  if (contentEl) contentEl.innerHTML = cached.content;
+                  if (contentEl) {
+                    contentEl.innerHTML = cached.content.replace(/<p>(\s|&nbsp;|<br\s*\/?>)*<\/p>/gi, '<p><br></p>');
+                  }
                 }
                 wireShareButtons(cached.title);
               }
@@ -1680,7 +1682,7 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
                 htmlContent = '<p>' + DigifyCMS.escapeHtml(blog.excerpt) + '</p>';
               }
               if (htmlContent) {
-                contentEl.innerHTML = htmlContent;
+                contentEl.innerHTML = htmlContent.replace(/<p>(\s|&nbsp;|<br\s*\/?>)*<\/p>/gi, '<p><br></p>');
               }
             }
 
