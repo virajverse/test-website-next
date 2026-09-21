@@ -499,43 +499,13 @@
         </div>
 
         <div class="swiper fx-featured-slider wow fadeInUp" data-wow-delay="0.2s">
-          <div class="swiper-wrapper">
+          <div class="swiper-wrapper" id="fxFeaturedWrapper">
             <div class="swiper-slide">
-              <div class="fx-slide">
-                <img width="1449" height="1086" class="fx-slide-bg" src="images/blog1.jpg" alt="SEO trends for modern brands" />
-                <div class="fx-slide-content">
-                  <span class="fx-badge fx-badge-cat">SEO</span>
-                  <h3><a href="blogdetail">SEO Trends Modern Brands Should Watch Closely</a></h3>
-                  <div class="fx-slide-meta">
-                    <span><i class="fa-regular fa-calendar"></i>March 22, 2026</span>
-                    <span><i class="fa-regular fa-clock"></i>6 min read</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="fx-slide">
-                <img width="1449" height="1086" class="fx-slide-bg" src="images/blog2.jpg" alt="Paid search lead generation" />
-                <div class="fx-slide-content">
-                  <span class="fx-badge fx-badge-cat">PPC & Ads</span>
-                  <h3><a href="blogdetail">How Paid Search Turns Intent Into Qualified Leads</a></h3>
-                  <div class="fx-slide-meta">
-                    <span><i class="fa-regular fa-calendar"></i>March 20, 2026</span>
-                    <span><i class="fa-regular fa-clock"></i>5 min read</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="fx-slide">
-                <img width="1366" height="768" class="fx-slide-bg" src="images/post-1.jpg" alt="AI search and GEO optimization" />
-                <div class="fx-slide-content">
-                  <span class="fx-badge fx-badge-cat">AI Search & GEO</span>
-                  <h3><a href="blogdetail">AI Search & GEO: Getting Found in ChatGPT and Google AI Overviews</a></h3>
-                  <div class="fx-slide-meta">
-                    <span><i class="fa-regular fa-calendar"></i>March 16, 2026</span>
-                    <span><i class="fa-regular fa-clock"></i>8 min read</span>
-                  </div>
+              <div class="fx-slide" style="background: #0f172a; min-height: 380px; display: flex; align-items: flex-end; padding: 36px; border-radius: 20px;">
+                <div class="fx-slide-content" style="width: 100%;">
+                  <div class="fx-skeleton" style="width: 100px; height: 22px; border-radius: 12px; margin-bottom: 12px; background: rgba(255,255,255,0.08);"></div>
+                  <div class="fx-skeleton" style="width: 65%; height: 30px; border-radius: 6px; margin-bottom: 12px; background: rgba(255,255,255,0.08);"></div>
+                  <div class="fx-skeleton" style="width: 35%; height: 16px; border-radius: 4px; background: rgba(255,255,255,0.08);"></div>
                 </div>
               </div>
             </div>
@@ -595,327 +565,32 @@
         <!-- Sticky Search / Filter Toolbar End -->
 
         <div class="row" id="fxBlogGrid">
-          <div class="col-xl-4 col-md-6 fx-post" data-category="seo" data-catlabel="SEO" data-title="SEO Trends Modern Brands Should Watch Closely">
-            <div class="post-item box-border-gradiant wow fadeInUp">
-              <div class="post-item-image">
-                <div class="fx-card-badges">
-                  <span class="fx-badge fx-badge-cat">SEO</span>
-                  <span class="fx-badge fx-badge-time"><i class="fa-regular fa-clock"></i>6 min</span>
-                </div>
-                <figure>
-                  <img width="1449" height="1086" src="images/blog1.jpg" alt="SEO trends" />
-                </figure>
-              </div>
-              <div class="post-item-btn">
-                <a aria-label="Read more" href="blogdetail"><img src="images/arrow-primary.svg" alt="" /></a>
-              </div>
-              <div class="post-item-body">
-                <div class="post-item-content">
-                  <h2><a href="blogdetail">SEO Trends Modern Brands Should Watch Closely</a></h2>
-                </div>
-                <div class="post-item-meta">
-                  <ul>
-                    <li><img src="images/icon-calendar-date.svg" alt="" />March 22, 2026</li>
-                  </ul>
-                </div>
-              </div>
+          <!-- Shimmer Loading Skeletons (replaced 100% by real CMS blogs upon dynamic API hydration) -->
+          <div class="col-xl-4 col-md-6 fx-skeleton-card mb-4">
+            <div class="post-item box-border-gradiant" style="min-height: 400px; padding: 22px; border-radius: 16px; background: rgba(0,0,0,0.02);">
+              <div class="fx-skeleton" style="width: 100%; height: 210px; border-radius: 12px; margin-bottom: 16px; background: rgba(0,0,0,0.06);"></div>
+              <div class="fx-skeleton" style="width: 32%; height: 18px; border-radius: 8px; margin-bottom: 14px; background: rgba(0,0,0,0.06);"></div>
+              <div class="fx-skeleton" style="width: 92%; height: 22px; border-radius: 6px; margin-bottom: 10px; background: rgba(0,0,0,0.06);"></div>
+              <div class="fx-skeleton" style="width: 68%; height: 22px; border-radius: 6px; margin-bottom: 18px; background: rgba(0,0,0,0.06);"></div>
+              <div class="fx-skeleton" style="width: 38%; height: 14px; border-radius: 4px; background: rgba(0,0,0,0.06);"></div>
             </div>
           </div>
-
-          <div class="col-xl-4 col-md-6 fx-post" data-category="ppc" data-catlabel="PPC & Ads" data-title="How Paid Search Turns Intent Into Qualified Leads">
-            <div class="post-item box-border-gradiant wow fadeInUp" data-wow-delay="0.2s">
-              <div class="post-item-image">
-                <div class="fx-card-badges">
-                  <span class="fx-badge fx-badge-cat">PPC & Ads</span>
-                  <span class="fx-badge fx-badge-time"><i class="fa-regular fa-clock"></i>5 min</span>
-                </div>
-                <figure>
-                  <img width="1449" height="1086" src="images/blog2.jpg" alt="Paid search leads" />
-                </figure>
-              </div>
-              <div class="post-item-btn">
-                <a aria-label="Read more" href="blogdetail"><img src="images/arrow-primary.svg" alt="" /></a>
-              </div>
-              <div class="post-item-body">
-                <div class="post-item-content">
-                  <h2><a href="blogdetail">How Paid Search Turns Intent Into Qualified Leads</a></h2>
-                </div>
-                <div class="post-item-meta">
-                  <ul>
-                    <li><img src="images/icon-calendar-date.svg" alt="" />March 20, 2026</li>
-                  </ul>
-                </div>
-              </div>
+          <div class="col-xl-4 col-md-6 fx-skeleton-card mb-4">
+            <div class="post-item box-border-gradiant" style="min-height: 400px; padding: 22px; border-radius: 16px; background: rgba(0,0,0,0.02);">
+              <div class="fx-skeleton" style="width: 100%; height: 210px; border-radius: 12px; margin-bottom: 16px; background: rgba(0,0,0,0.06);"></div>
+              <div class="fx-skeleton" style="width: 32%; height: 18px; border-radius: 8px; margin-bottom: 14px; background: rgba(0,0,0,0.06);"></div>
+              <div class="fx-skeleton" style="width: 92%; height: 22px; border-radius: 6px; margin-bottom: 10px; background: rgba(0,0,0,0.06);"></div>
+              <div class="fx-skeleton" style="width: 68%; height: 22px; border-radius: 6px; margin-bottom: 18px; background: rgba(0,0,0,0.06);"></div>
+              <div class="fx-skeleton" style="width: 38%; height: 14px; border-radius: 4px; background: rgba(0,0,0,0.06);"></div>
             </div>
           </div>
-
-          <div class="col-xl-4 col-md-6 fx-post" data-category="social" data-catlabel="Social Media" data-title="Social Media Ideas That Build Trust And Demand">
-            <div class="post-item box-border-gradiant wow fadeInUp" data-wow-delay="0.4s">
-              <div class="post-item-image">
-                <div class="fx-card-badges">
-                  <span class="fx-badge fx-badge-cat">Social Media</span>
-                  <span class="fx-badge fx-badge-time"><i class="fa-regular fa-clock"></i>4 min</span>
-                </div>
-                <figure>
-                  <img width="1448" height="1086" src="images/blog3.jpg" alt="Social media trust" />
-                </figure>
-              </div>
-              <div class="post-item-btn">
-                <a aria-label="Read more" href="blogdetail"><img src="images/arrow-primary.svg" alt="" /></a>
-              </div>
-              <div class="post-item-body">
-                <div class="post-item-content">
-                  <h2><a href="blogdetail">Social Media Ideas That Build Trust And Demand</a></h2>
-                </div>
-                <div class="post-item-meta">
-                  <ul>
-                    <li><img src="images/icon-calendar-date.svg" alt="" />March 18, 2026</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-md-6 fx-post" data-category="geo" data-catlabel="AI Search & GEO" data-title="AI Search and GEO Getting Found in ChatGPT and Google AI Overviews">
-            <div class="post-item box-border-gradiant wow fadeInUp" data-wow-delay="0.6s">
-              <div class="post-item-image">
-                <div class="fx-card-badges">
-                  <span class="fx-badge fx-badge-cat">AI Search & GEO</span>
-                  <span class="fx-badge fx-badge-time"><i class="fa-regular fa-clock"></i>8 min</span>
-                </div>
-                <figure>
-                  <img width="1366" height="768" src="images/post-1.jpg" alt="AI search optimization" />
-                </figure>
-              </div>
-              <div class="post-item-btn">
-                <a aria-label="Read more" href="blogdetail"><img src="images/arrow-primary.svg" alt="" /></a>
-              </div>
-              <div class="post-item-body">
-                <div class="post-item-content">
-                  <h2><a href="blogdetail">AI Search & GEO: Getting Found in ChatGPT and Google AI Overviews</a></h2>
-                </div>
-                <div class="post-item-meta">
-                  <ul>
-                    <li><img src="images/icon-calendar-date.svg" alt="" />March 16, 2026</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-md-6 fx-post" data-category="branding" data-catlabel="Branding" data-title="How to Build a Strong Brand Identity from Scratch">
-            <div class="post-item box-border-gradiant wow fadeInUp" data-wow-delay="0.8s">
-              <div class="post-item-image">
-                <div class="fx-card-badges">
-                  <span class="fx-badge fx-badge-cat">Branding</span>
-                  <span class="fx-badge fx-badge-time"><i class="fa-regular fa-clock"></i>7 min</span>
-                </div>
-                <figure>
-                  <img width="1366" height="768" src="images/post-2.jpg" alt="Brand identity" />
-                </figure>
-              </div>
-              <div class="post-item-btn">
-                <a aria-label="Read more" href="blogdetail"><img src="images/arrow-primary.svg" alt="" /></a>
-              </div>
-              <div class="post-item-body">
-                <div class="post-item-content">
-                  <h2><a href="blogdetail">How to Build a Strong Brand Identity from Scratch</a></h2>
-                </div>
-                <div class="post-item-meta">
-                  <ul>
-                    <li><img src="images/icon-calendar-date.svg" alt="" />March 14, 2026</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-md-6 fx-post" data-category="web" data-catlabel="Web Development" data-title="Website Speed and UX Why Slow Pages Kill Your Leads">
-            <div class="post-item box-border-gradiant wow fadeInUp" data-wow-delay="1s">
-              <div class="post-item-image">
-                <div class="fx-card-badges">
-                  <span class="fx-badge fx-badge-cat">Web Development</span>
-                  <span class="fx-badge fx-badge-time"><i class="fa-regular fa-clock"></i>5 min</span>
-                </div>
-                <figure>
-                  <img width="1366" height="768" src="images/post-3.jpg" alt="Website speed and UX" />
-                </figure>
-              </div>
-              <div class="post-item-btn">
-                <a aria-label="Read more" href="blogdetail"><img src="images/arrow-primary.svg" alt="" /></a>
-              </div>
-              <div class="post-item-body">
-                <div class="post-item-content">
-                  <h2><a href="blogdetail">Website Speed & UX: Why Slow Pages Kill Your Leads</a></h2>
-                </div>
-                <div class="post-item-meta">
-                  <ul>
-                    <li><img src="images/icon-calendar-date.svg" alt="" />March 12, 2026</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-md-6 fx-post" data-category="orm" data-catlabel="ORM" data-title="Online Reputation Management A Playbook for Local Brands">
-            <div class="post-item box-border-gradiant wow fadeInUp">
-              <div class="post-item-image">
-                <div class="fx-card-badges">
-                  <span class="fx-badge fx-badge-cat">ORM</span>
-                  <span class="fx-badge fx-badge-time"><i class="fa-regular fa-clock"></i>6 min</span>
-                </div>
-                <figure>
-                  <img width="1366" height="768" src="images/post-4.jpg" alt="Online reputation management" />
-                </figure>
-              </div>
-              <div class="post-item-btn">
-                <a aria-label="Read more" href="blogdetail"><img src="images/arrow-primary.svg" alt="" /></a>
-              </div>
-              <div class="post-item-body">
-                <div class="post-item-content">
-                  <h2><a href="blogdetail">Online Reputation Management: A Playbook for Local Brands</a></h2>
-                </div>
-                <div class="post-item-meta">
-                  <ul>
-                    <li><img src="images/icon-calendar-date.svg" alt="" />March 10, 2026</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-md-6 fx-post" data-category="seo" data-catlabel="SEO" data-title="Technical SEO Checklist for 2026">
-            <div class="post-item box-border-gradiant wow fadeInUp" data-wow-delay="0.2s">
-              <div class="post-item-image">
-                <div class="fx-card-badges">
-                  <span class="fx-badge fx-badge-cat">SEO</span>
-                  <span class="fx-badge fx-badge-time"><i class="fa-regular fa-clock"></i>10 min</span>
-                </div>
-                <figure>
-                  <img width="1366" height="768" src="images/post-5.jpg" alt="Technical SEO checklist" />
-                </figure>
-              </div>
-              <div class="post-item-btn">
-                <a aria-label="Read more" href="blogdetail"><img src="images/arrow-primary.svg" alt="" /></a>
-              </div>
-              <div class="post-item-body">
-                <div class="post-item-content">
-                  <h2><a href="blogdetail">Technical SEO Checklist for 2026</a></h2>
-                </div>
-                <div class="post-item-meta">
-                  <ul>
-                    <li><img src="images/icon-calendar-date.svg" alt="" />March 08, 2026</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-md-6 fx-post" data-category="ppc" data-catlabel="PPC & Ads" data-title="Google Ads vs Meta Ads Where Should Your Budget Go">
-            <div class="post-item box-border-gradiant wow fadeInUp" data-wow-delay="0.4s">
-              <div class="post-item-image">
-                <div class="fx-card-badges">
-                  <span class="fx-badge fx-badge-cat">PPC & Ads</span>
-                  <span class="fx-badge fx-badge-time"><i class="fa-regular fa-clock"></i>6 min</span>
-                </div>
-                <figure>
-                  <img width="1366" height="768" src="images/post-6.jpg" alt="Google Ads vs Meta Ads" />
-                </figure>
-              </div>
-              <div class="post-item-btn">
-                <a aria-label="Read more" href="blogdetail"><img src="images/arrow-primary.svg" alt="" /></a>
-              </div>
-              <div class="post-item-body">
-                <div class="post-item-content">
-                  <h2><a href="blogdetail">Google Ads vs Meta Ads: Where Should Your Budget Go?</a></h2>
-                </div>
-                <div class="post-item-meta">
-                  <ul>
-                    <li><img src="images/icon-calendar-date.svg" alt="" />March 06, 2026</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-md-6 fx-post" data-category="web" data-catlabel="Web Development" data-title="Landing Pages That Convert CRO Basics for Growing Businesses">
-            <div class="post-item box-border-gradiant wow fadeInUp" data-wow-delay="0.6s">
-              <div class="post-item-image">
-                <div class="fx-card-badges">
-                  <span class="fx-badge fx-badge-cat">Web Development</span>
-                  <span class="fx-badge fx-badge-time"><i class="fa-regular fa-clock"></i>6 min</span>
-                </div>
-                <figure>
-                  <img width="1366" height="768" src="images/post-1.jpg" alt="Landing page conversion" />
-                </figure>
-              </div>
-              <div class="post-item-btn">
-                <a aria-label="Read more" href="blogdetail"><img src="images/arrow-primary.svg" alt="" /></a>
-              </div>
-              <div class="post-item-body">
-                <div class="post-item-content">
-                  <h2><a href="blogdetail">Landing Pages That Convert: CRO Basics for Growing Businesses</a></h2>
-                </div>
-                <div class="post-item-meta">
-                  <ul>
-                    <li><img src="images/icon-calendar-date.svg" alt="" />March 04, 2026</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-md-6 fx-post" data-category="social" data-catlabel="Social Media" data-title="Instagram vs LinkedIn Where Should B2B Brands Invest">
-            <div class="post-item box-border-gradiant wow fadeInUp" data-wow-delay="0.8s">
-              <div class="post-item-image">
-                <div class="fx-card-badges">
-                  <span class="fx-badge fx-badge-cat">Social Media</span>
-                  <span class="fx-badge fx-badge-time"><i class="fa-regular fa-clock"></i>5 min</span>
-                </div>
-                <figure>
-                  <img width="1366" height="768" src="images/post-2.jpg" alt="Instagram vs LinkedIn for B2B" />
-                </figure>
-              </div>
-              <div class="post-item-btn">
-                <a aria-label="Read more" href="blogdetail"><img src="images/arrow-primary.svg" alt="" /></a>
-              </div>
-              <div class="post-item-body">
-                <div class="post-item-content">
-                  <h2><a href="blogdetail">Instagram vs LinkedIn: Where Should B2B Brands Invest?</a></h2>
-                </div>
-                <div class="post-item-meta">
-                  <ul>
-                    <li><img src="images/icon-calendar-date.svg" alt="" />March 02, 2026</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-md-6 fx-post" data-category="branding" data-catlabel="Branding" data-title="Rebranding Without Losing Your Existing Customers">
-            <div class="post-item box-border-gradiant wow fadeInUp" data-wow-delay="1s">
-              <div class="post-item-image">
-                <div class="fx-card-badges">
-                  <span class="fx-badge fx-badge-cat">Branding</span>
-                  <span class="fx-badge fx-badge-time"><i class="fa-regular fa-clock"></i>6 min</span>
-                </div>
-                <figure>
-                  <img width="1366" height="768" src="images/post-3.jpg" alt="Rebranding strategy" />
-                </figure>
-              </div>
-              <div class="post-item-btn">
-                <a aria-label="Read more" href="blogdetail"><img src="images/arrow-primary.svg" alt="" /></a>
-              </div>
-              <div class="post-item-body">
-                <div class="post-item-content">
-                  <h2><a href="blogdetail">Rebranding Without Losing Your Existing Customers</a></h2>
-                </div>
-                <div class="post-item-meta">
-                  <ul>
-                    <li><img src="images/icon-calendar-date.svg" alt="" />February 28, 2026</li>
-                  </ul>
-                </div>
-              </div>
+          <div class="col-xl-4 col-md-6 fx-skeleton-card mb-4">
+            <div class="post-item box-border-gradiant" style="min-height: 400px; padding: 22px; border-radius: 16px; background: rgba(0,0,0,0.02);">
+              <div class="fx-skeleton" style="width: 100%; height: 210px; border-radius: 12px; margin-bottom: 16px; background: rgba(0,0,0,0.06);"></div>
+              <div class="fx-skeleton" style="width: 32%; height: 18px; border-radius: 8px; margin-bottom: 14px; background: rgba(0,0,0,0.06);"></div>
+              <div class="fx-skeleton" style="width: 92%; height: 22px; border-radius: 6px; margin-bottom: 10px; background: rgba(0,0,0,0.06);"></div>
+              <div class="fx-skeleton" style="width: 68%; height: 22px; border-radius: 6px; margin-bottom: 18px; background: rgba(0,0,0,0.06);"></div>
+              <div class="fx-skeleton" style="width: 38%; height: 14px; border-radius: 4px; background: rgba(0,0,0,0.06);"></div>
             </div>
           </div>
         </div>
@@ -947,51 +622,8 @@
             <h2>Trending Articles</h2>
           </div>
         </div>
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="fx-trend-item wow fadeInUp">
-              <div class="fx-trend-rank">01</div>
-              <div class="fx-trend-body">
-                <h4><a href="blogdetail">SEO Trends Modern Brands Should Watch Closely</a></h4>
-                <div class="fx-trend-meta">
-                  <span><i class="fa-regular fa-eye"></i>12.4K views</span>
-                  <span><i class="fa-regular fa-clock"></i>6 min read</span>
-                </div>
-              </div>
-            </div>
-            <div class="fx-trend-item wow fadeInUp" data-wow-delay="0.15s">
-              <div class="fx-trend-rank">02</div>
-              <div class="fx-trend-body">
-                <h4><a href="blogdetail">AI Search & GEO: Getting Found in ChatGPT and Google AI Overviews</a></h4>
-                <div class="fx-trend-meta">
-                  <span><i class="fa-regular fa-eye"></i>9.8K views</span>
-                  <span><i class="fa-regular fa-clock"></i>8 min read</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="fx-trend-item wow fadeInUp" data-wow-delay="0.3s">
-              <div class="fx-trend-rank">03</div>
-              <div class="fx-trend-body">
-                <h4><a href="blogdetail">Google Ads vs Meta Ads: Where Should Your Budget Go?</a></h4>
-                <div class="fx-trend-meta">
-                  <span><i class="fa-regular fa-eye"></i>8.1K views</span>
-                  <span><i class="fa-regular fa-clock"></i>6 min read</span>
-                </div>
-              </div>
-            </div>
-            <div class="fx-trend-item wow fadeInUp" data-wow-delay="0.45s">
-              <div class="fx-trend-rank">04</div>
-              <div class="fx-trend-body">
-                <h4><a href="blogdetail">Online Reputation Management: A Playbook for Local Brands</a></h4>
-                <div class="fx-trend-meta">
-                  <span><i class="fa-regular fa-eye"></i>7.3K views</span>
-                  <span><i class="fa-regular fa-clock"></i>6 min read</span>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="row" id="fxTrendingRow">
+          <!-- Dynamically populated from CMS top articles -->
         </div>
       </div>
     </div>
@@ -2000,6 +1632,36 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
         // Initialize with fallback cards first
         bindFilterEvents();
 
+        function renderTrendingArticles(blogs) {
+          const trendingContainer = document.getElementById('fxTrendingRow');
+          if (!trendingContainer || !blogs || !blogs.length) return;
+
+          const topTrending = blogs.slice(0, 4);
+          const col1 = topTrending.slice(0, 2);
+          const col2 = topTrending.slice(2, 4);
+
+          function renderCol(items, startIndex) {
+            return items.map(function (blog, i) {
+              const rank = String(startIndex + i + 1).padStart(2, '0');
+              const title = DigifyCMS.escapeHtml(blog.title || 'Untitled Article');
+              const slug = encodeURIComponent(blog.slug || '');
+              const readTime = DigifyCMS.escapeHtml(blog.readTimeMinutes ? blog.readTimeMinutes + ' min read' : '5 min read');
+              return '<div class="fx-trend-item wow fadeInUp" data-wow-delay="' + ((i + 1) * 0.15) + 's" style="visibility: visible; opacity: 1;">' +
+                '<div class="fx-trend-rank">' + rank + '</div>' +
+                '<div class="fx-trend-body">' +
+                  '<h4><a href="/blog/' + slug + '">' + title + '</a></h4>' +
+                  '<div class="fx-trend-meta">' +
+                    '<span><i class="fa-regular fa-clock"></i>' + readTime + '</span>' +
+                  '</div>' +
+                '</div>' +
+              '</div>';
+            }).join('');
+          }
+
+          trendingContainer.innerHTML = '<div class="col-lg-6">' + renderCol(col1, 0) + '</div>' +
+            (col2.length ? '<div class="col-lg-6">' + renderCol(col2, 2) + '</div>' : '');
+        }
+
         // 0ms Instant Hydration: If blogs are in session cache, render them immediately (no lazy load delay!)
         try {
           var websiteId = (DigifyCMS.config && DigifyCMS.config.websiteId) || 'site-growth';
@@ -2010,6 +1672,7 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
             if (Array.isArray(cachedBlogs) && cachedBlogs.length > 0) {
               renderBlogs(cachedBlogs);
               renderFeaturedSlider(cachedBlogs);
+              renderTrendingArticles(cachedBlogs);
             }
           }
         } catch (e) {}
@@ -2021,10 +1684,14 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
             if (blogs.length > 0) {
               renderBlogs(blogs);
               renderFeaturedSlider(blogs);
+              renderTrendingArticles(blogs);
+            } else {
+              grid.innerHTML = '<div class="col-12 text-center py-5"><div class="fx-noresults" style="display:block;"><i class="fa-solid fa-file-circle-question fa-3x text-muted mb-3"></i><h3>No blogs published yet</h3><p>New articles will appear here immediately once published from the CMS.</p></div></div>';
             }
           })
           .catch(function (error) {
-            console.warn('CMS listing unavailable; preserving cached/fallback cards.', error);
+            console.warn('CMS listing error:', error);
+            grid.innerHTML = '<div class="col-12 text-center py-5"><div class="fx-noresults" style="display:block;"><i class="fa-solid fa-triangle-exclamation fa-3x text-warning mb-3"></i><h3>Unable to connect to CMS</h3><p>Please check your connection or reload the page.</p><button onclick="location.reload()" class="btn-default mt-3" style="cursor:pointer;">Retry</button></div></div>';
           });
       })();
     </script>

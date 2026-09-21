@@ -99,13 +99,17 @@
 
     if (options.category) query += '&category=' + encodeURIComponent(options.category);
     if (options.tag) query += '&tag=' + encodeURIComponent(options.tag);
+    if (config.apiKey) query += '&apiKey=' + encodeURIComponent(config.apiKey);
 
     var primaryUrl = getBaseApiUrl() + '/v1/blogs' + query;
     var proxyUrl = '/api/blogs' + query;
 
+    var reqHeaders = { 'Accept': 'application/json' };
+    if (config.apiKey) reqHeaders['x-api-key'] = config.apiKey;
+
     var networkPromise = fetchWithTimeout(primaryUrl, {
       method: 'GET',
-      headers: { 'Accept': 'application/json' },
+      headers: reqHeaders,
       mode: 'cors'
     }, 3000)
       .then(function (response) {
@@ -184,12 +188,15 @@
       } catch (e) {}
     }
 
-    var primaryUrl = getBaseApiUrl() + '/v1/blogs/' + cleanSlug + '?website=' + encodeURIComponent(websiteId);
+    var primaryUrl = getBaseApiUrl() + '/v1/blogs/' + cleanSlug + '?website=' + encodeURIComponent(websiteId) + (config.apiKey ? '&apiKey=' + encodeURIComponent(config.apiKey) : '');
     var proxyUrl = '/api/blogs/' + cleanSlug;
+
+    var reqHeaders = { 'Accept': 'application/json' };
+    if (config.apiKey) reqHeaders['x-api-key'] = config.apiKey;
 
     var networkPromise = fetchWithTimeout(primaryUrl, {
       method: 'GET',
-      headers: { 'Accept': 'application/json' },
+      headers: reqHeaders,
       mode: 'cors'
     }, 3000)
       .then(function (response) {

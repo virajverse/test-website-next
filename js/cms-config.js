@@ -32,6 +32,9 @@
     // Tenant Website Identifier (Database me registered website id ya slug)
     websiteId: 'site-growth',
 
+    // Tenant API Key (Direct authentication bina domain check ke)
+    apiKey: 'digi_live_sec_growth_8821ecde71a209',
+
     // Site Base Domain
     siteDomain: 'https://digifynext.com',
 
