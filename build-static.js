@@ -103,6 +103,8 @@ if (fs.existsSync(jsDir)) {
 // 4. Create Vercel vercel.json configuration
 const vercelConfig = {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "outputDirectory": ".",
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
