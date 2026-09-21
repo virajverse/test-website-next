@@ -215,6 +215,9 @@
       })
       .then(function (res) {
         var data = res.data || res;
+        if (res.redirect) {
+          data.redirect = res.redirect;
+        }
         memoryCache.set(cacheKey, data);
         if (typeof sessionStorage !== 'undefined') {
           try { sessionStorage.setItem(cacheKey, JSON.stringify({ timestamp: Date.now(), data: data })); } catch (e) {}

@@ -1450,6 +1450,25 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
               throw new Error('Invalid blog data received');
             }
 
+            // ─── 301 Permanent Redirect Engine (TRD §7) ───
+            // If the requested slug was modified or redirected, immediately redirect the browser to the new slug!
+            var currentReqSlug = (slug || '').trim().toLowerCase();
+            var targetSlug = (blog.redirect && blog.redirect.toSlug)
+              ? blog.redirect.toSlug.trim()
+              : (blog.slug && currentReqSlug && blog.slug.toLowerCase() !== currentReqSlug ? blog.slug : null);
+
+            if (targetSlug && targetSlug.toLowerCase() !== currentReqSlug) {
+              var newPath = '/blog/' + encodeURIComponent(targetSlug);
+              if (window.location.search) {
+                newPath += window.location.search;
+              }
+              if (window.location.hash) {
+                newPath += window.location.hash;
+              }
+              window.location.replace(newPath);
+              return;
+            }
+
             // Sync URL if opened without slug
             if (!slug && blog.slug && window.history && window.history.replaceState) {
               window.history.replaceState({}, '', '/blog/' + encodeURIComponent(blog.slug));
