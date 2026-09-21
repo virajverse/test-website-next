@@ -1,0 +1,35 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://blogary.jupsoft.com/v1/:path*"
+    },
+    {
+      "source": "/blog/:slug",
+      "destination": "/blogdetail.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog.html"
+    },
+    {
+      "source": "/blogdetail",
+      "destination": "/blogdetail.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/blog.shtml",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/about.shtml",
+      "destination": "/about",
+      "permanent": true
+    }
+  ]
+}

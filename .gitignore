@@ -1,6 +1,20 @@
+# Environment files (CRITICAL: Do NOT commit secrets to git)
 .env
 .env.local
-.env.*
+.env.*.local
+.env.production
+.env.development
+!.env.example
+
+# Dependencies
 node_modules/
+
+# Vercel & Next build artifacts
+.vercel
+.next/
+dist/
+build/
+
+# Operating System Files
 .DS_Store
 Thumbs.db

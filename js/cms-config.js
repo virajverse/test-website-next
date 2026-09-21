@@ -1,10 +1,6 @@
 /**
  * Jupsoft Centralized CMS - DigifyNext Configuration
- * 
- * IMPORTANT: Security Best Practice
- * Private API Keys aur Webhook Secrets ko client-side JavaScript me expose NA karein.
- * Public blog reads ke liye websiteId kaafi hota hai.
- * Server credentials sirf .env.local me rehte hain.
+ * Generated dynamically at build time or using defaults.
  */
 (function () {
   var isLocal = typeof window !== 'undefined' && 
@@ -26,22 +22,11 @@
   }
 
   window.CMS_CONFIG = {
-    // Centralized CMS Backend API URL (bina trailing slash ke)
     apiUrl: apiUrl,
-
-    // Tenant Website Identifier (Database me registered website id ya slug)
     websiteId: 'site-growth',
-
-    // Tenant API Key (Direct authentication bina domain check ke)
     apiKey: 'digi_live_sec_growth_8821ecde71a209',
-
-    // Site Base Domain
     siteDomain: 'https://digifynext.com',
-
-    // Default Language
     defaultLanguage: 'en',
-
-    // Default Fallback Image
     defaultFeaturedImage: '/images/blog1.jpg',
   };
 })();
