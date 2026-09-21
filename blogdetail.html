@@ -474,6 +474,7 @@
           <div class="col-lg-12">
             <div class="page-header-box">
               <h1 data-cursor="-opaque" id="postTitle"></h1>
+              <p class="post-lead-intro" id="postExcerpt" style="display: none;"></p>
               <div class="post-single-meta wow fadeInUp">
                 <ol class="breadcrumb">
                   <li id="postCatItem" style="display: none;"><span class="fx-badge fx-badge-cat" id="postCategory"></span></li>
@@ -1373,11 +1374,16 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
               if (cached && cached.title) {
                 if (titleEl) titleEl.innerText = cached.title;
                 document.title = (cached.seo && cached.seo.metaTitle) || (cached.title + ' | DigifyNext Blog');
+                var excEl = document.getElementById('postExcerpt');
+                if (excEl && cached.excerpt) {
+                  excEl.innerText = cached.excerpt;
+                  excEl.style.display = 'block';
+                }
                 var imgEl = document.getElementById('postFeaturedImage');
                 var imgSkeleton = document.getElementById('postImageSkeleton');
                 if (imgEl && cached.featuredImage) {
                   imgEl.src = cached.featuredImage;
-                  imgEl.alt = cached.title;
+                  imgEl.alt = cached.featuredImageAlt || cached.title;
                   imgEl.style.display = 'block';
                   if (imgSkeleton) imgSkeleton.style.display = 'none';
                 }
@@ -1393,6 +1399,15 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
                 if (authEl && cached.authorName) {
                   authEl.innerText = cached.authorName;
                   if (authItem) authItem.style.display = '';
+                }
+                var authAvatarEl = document.getElementById('postAuthorAvatar');
+                if (authAvatarEl) {
+                  if (cached.authorAvatar) {
+                    authAvatarEl.innerHTML = '<img src="' + DigifyCMS.escapeHtml(cached.authorAvatar) + '" alt="' + DigifyCMS.escapeHtml(cached.authorName || 'Author') + '" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />';
+                  } else if (cached.authorName) {
+                    var inits = cached.authorName.split(' ').map(function (n) { return n[0]; }).filter(Boolean).slice(0, 2).join('').toUpperCase();
+                    authAvatarEl.innerText = inits || 'DN';
+                  }
                 }
                 var dateEl = document.getElementById('postDate');
                 var dateItem = document.getElementById('postDateItem');
@@ -1454,6 +1469,16 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
               metaKeywords.setAttribute('content', blog.seo.metaKeywords);
             }
 
+            if (blog.seo && blog.seo.robots) {
+              var metaRobots = document.querySelector('meta[name="robots"]');
+              if (!metaRobots) {
+                metaRobots = document.createElement('meta');
+                metaRobots.setAttribute('name', 'robots');
+                document.head.appendChild(metaRobots);
+              }
+              metaRobots.setAttribute('content', blog.seo.robots);
+            }
+
             var canonical = document.querySelector('link[rel="canonical"]');
             var cleanUrl = (blog.seo && blog.seo.canonicalUrl) || ('https://digifynext.com/blog/' + encodeURIComponent(blog.slug));
             if (canonical) {
@@ -1500,6 +1525,14 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
             var titleEl = document.getElementById('postTitle');
             if (titleEl) titleEl.innerText = blog.title;
 
+            var excerptEl = document.getElementById('postExcerpt');
+            if (excerptEl && blog.excerpt) {
+              excerptEl.innerText = blog.excerpt;
+              excerptEl.style.display = 'block';
+            } else if (excerptEl) {
+              excerptEl.style.display = 'none';
+            }
+
             var authorName = blog.authorName || 'DigifyNext Team';
             var authorEl = document.getElementById('postAuthor');
             var authorItem = document.getElementById('postAuthorItem');
@@ -1516,8 +1549,12 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
 
             var authorAvatar = document.getElementById('postAuthorAvatar');
             if (authorAvatar) {
-              var initials = authorName.split(' ').map(function (n) { return n[0]; }).filter(Boolean).slice(0, 2).join('').toUpperCase();
-              authorAvatar.innerText = initials || 'DN';
+              if (blog.authorAvatar) {
+                authorAvatar.innerHTML = '<img src="' + DigifyCMS.escapeHtml(blog.authorAvatar) + '" alt="' + DigifyCMS.escapeHtml(authorName) + '" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />';
+              } else {
+                var initials = authorName.split(' ').map(function (n) { return n[0]; }).filter(Boolean).slice(0, 2).join('').toUpperCase();
+                authorAvatar.innerText = initials || 'DN';
+              }
             }
 
             if (blog.authorBio) {
@@ -1536,7 +1573,8 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
             var catItem = document.getElementById('postCatItem');
             var catName = DigifyCMS.getCategoryName(blog);
             if (catEl && catName) {
-              catEl.innerText = catName;
+              var catSlug = (blog.categories && blog.categories[0] && blog.categories[0].slug) ? blog.categories[0].slug : encodeURIComponent(catName);
+              catEl.innerHTML = '<a href="/blog?category=' + catSlug + '" style="color: inherit; text-decoration: none;">' + DigifyCMS.escapeHtml(catName) + '</a>';
               if (catItem) catItem.style.display = '';
             }
 
@@ -1546,11 +1584,12 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
               if (blog.tags && Array.isArray(blog.tags) && blog.tags.length > 0) {
                 tagContainer.innerHTML = 'Tags: ' + blog.tags.map(function (t) {
                   var name = typeof t === 'string' ? t : (t.name || '');
-                  return '<a href="/blog">' + DigifyCMS.escapeHtml(name) + '</a>';
+                  var tagSlug = (t && t.slug) ? t.slug : encodeURIComponent(name);
+                  return '<a href="/blog?tag=' + DigifyCMS.escapeHtml(tagSlug) + '">#' + DigifyCMS.escapeHtml(name) + '</a>';
                 }).join(' ');
                 tagContainer.style.display = '';
               } else if (catName) {
-                tagContainer.innerHTML = 'Category: <a href="/blog">' + DigifyCMS.escapeHtml(catName) + '</a>';
+                tagContainer.innerHTML = 'Category: <a href="/blog?category=' + encodeURIComponent(catName) + '">' + DigifyCMS.escapeHtml(catName) + '</a>';
                 tagContainer.style.display = '';
               }
             }
@@ -1597,7 +1636,7 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
             var imgSkeleton = document.getElementById('postImageSkeleton');
             if (imgEl && blog.featuredImage) {
               imgEl.src = blog.featuredImage;
-              imgEl.alt = blog.title;
+              imgEl.alt = blog.featuredImageAlt || blog.title || '';
               imgEl.onload = function () {
                 imgEl.style.display = 'block';
                 if (imgSkeleton) imgSkeleton.style.display = 'none';
@@ -1676,6 +1715,8 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
                     var itemDate = DigifyCMS.escapeHtml(DigifyCMS.formatDate(item.publishedAt));
                     var itemTitle = DigifyCMS.escapeHtml(item.title || 'Related article');
                     var itemTime = DigifyCMS.escapeHtml(item.readTimeMinutes ? item.readTimeMinutes + ' min' : '');
+                    var itemAuthor = item.authorName ? DigifyCMS.escapeHtml(item.authorName) : '';
+                    var itemExcerpt = item.excerpt ? DigifyCMS.escapeHtml(item.excerpt) : '';
 
                     return '<div class="col-xl-4 col-md-6">' +
                       '<div class="post-item box-border-gradiant wow fadeInUp" data-wow-delay="' + (idx * 0.2) + 's">' +
@@ -1688,8 +1729,11 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
                         '</div>' +
                         '<div class="post-item-btn"><a aria-label="Read more" href="/blog/' + itemSlug + '"><img src="/images/arrow-primary.svg" alt="" /></a></div>' +
                         '<div class="post-item-body">' +
-                          '<div class="post-item-content"><h2><a href="/blog/' + itemSlug + '">' + itemTitle + '</a></h2></div>' +
-                          '<div class="post-item-meta"><ul><li><img src="/images/icon-calendar-date.svg" alt="" />' + itemDate + '</li></ul></div>' +
+                          '<div class="post-item-content"><h2><a href="/blog/' + itemSlug + '">' + itemTitle + '</a></h2>' +
+                          (itemExcerpt ? '<p class="fx-card-excerpt">' + itemExcerpt + '</p>' : '') + '</div>' +
+                          '<div class="post-item-meta"><ul><li><img src="/images/icon-calendar-date.svg" alt="" />' + itemDate + '</li>' +
+                          (itemAuthor ? '<li><i class="fa-regular fa-user" style="color: var(--fx-accent); margin-right: 5px;"></i>' + itemAuthor + '</li>' : '') +
+                          '</ul></div>' +
                         '</div>' +
                       '</div>' +
                     '</div>';
