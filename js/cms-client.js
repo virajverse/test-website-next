@@ -305,4 +305,8 @@
     getCategoryName: getCategoryName,
     getCategoryKey: getCategoryKey
   };
-})(window);
+
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports = global.DigifyCMS;
+  }
+})(typeof window !== 'undefined' ? window : (typeof global !== 'undefined' ? global : this));
