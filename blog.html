@@ -526,13 +526,13 @@
           </div>
         </div>
         <div class="wow fadeInUp" data-wow-delay="0.15s">
-          <button class="fx-topic-chip" data-topic="seo"><i class="fa-solid fa-magnifying-glass-chart"></i> SEO <span>2</span></button>
-          <button class="fx-topic-chip" data-topic="geo"><i class="fa-solid fa-robot"></i> AI Search & GEO <span>1</span></button>
-          <button class="fx-topic-chip" data-topic="ppc"><i class="fa-solid fa-rectangle-ad"></i> PPC & Ads <span>2</span></button>
-          <button class="fx-topic-chip" data-topic="social"><i class="fa-solid fa-hashtag"></i> Social Media <span>2</span></button>
-          <button class="fx-topic-chip" data-topic="branding"><i class="fa-solid fa-fingerprint"></i> Branding <span>2</span></button>
-          <button class="fx-topic-chip" data-topic="web"><i class="fa-solid fa-laptop-code"></i> Web Development <span>2</span></button>
-          <button class="fx-topic-chip" data-topic="orm"><i class="fa-solid fa-shield-halved"></i> ORM <span>1</span></button>
+          <button class="fx-topic-chip" data-topic="seo"><i class="fa-solid fa-magnifying-glass-chart"></i> SEO <span></span></button>
+          <button class="fx-topic-chip" data-topic="geo"><i class="fa-solid fa-robot"></i> AI Search & GEO <span></span></button>
+          <button class="fx-topic-chip" data-topic="ppc"><i class="fa-solid fa-rectangle-ad"></i> PPC & Ads <span></span></button>
+          <button class="fx-topic-chip" data-topic="social"><i class="fa-solid fa-hashtag"></i> Social Media <span></span></button>
+          <button class="fx-topic-chip" data-topic="branding"><i class="fa-solid fa-fingerprint"></i> Branding <span></span></button>
+          <button class="fx-topic-chip" data-topic="web"><i class="fa-solid fa-laptop-code"></i> Web Development <span></span></button>
+          <button class="fx-topic-chip" data-topic="orm"><i class="fa-solid fa-shield-halved"></i> ORM <span></span></button>
         </div>
       </div>
     </div>
@@ -647,7 +647,7 @@
               <h4>DigifyNext Team</h4>
               <div class="fx-author-role">SEO & AI Search</div>
               <div class="fx-author-stats">
-                <div><strong>4</strong>Articles</div>
+                <div><strong>Editorial</strong>Desk</div>
                 <div><strong>SEO</strong>Focus</div>
               </div>
               <div class="fx-author-social">
@@ -662,7 +662,7 @@
               <h4>DigifyNext Team</h4>
               <div class="fx-author-role">Performance Marketing</div>
               <div class="fx-author-stats">
-                <div><strong>3</strong>Articles</div>
+                <div><strong>Editorial</strong>Desk</div>
                 <div><strong>PPC</strong>Focus</div>
               </div>
               <div class="fx-author-social">
@@ -677,7 +677,7 @@
               <h4>DigifyNext Team</h4>
               <div class="fx-author-role">Branding & Creative</div>
               <div class="fx-author-stats">
-                <div><strong>2</strong>Articles</div>
+                <div><strong>Editorial</strong>Desk</div>
                 <div><strong>Brand</strong>Focus</div>
               </div>
               <div class="fx-author-social">
@@ -692,7 +692,7 @@
               <h4>DigifyNext Team</h4>
               <div class="fx-author-role">Web & CRO</div>
               <div class="fx-author-stats">
-                <div><strong>3</strong>Articles</div>
+                <div><strong>Editorial</strong>Desk</div>
                 <div><strong>Web</strong>Focus</div>
               </div>
               <div class="fx-author-social">
@@ -1661,21 +1661,6 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
           trendingContainer.innerHTML = '<div class="col-lg-6">' + renderCol(col1, 0) + '</div>' +
             (col2.length ? '<div class="col-lg-6">' + renderCol(col2, 2) + '</div>' : '');
         }
-
-        // 0ms Instant Hydration: If blogs are in session cache, render them immediately (no lazy load delay!)
-        try {
-          var websiteId = (DigifyCMS.config && DigifyCMS.config.websiteId) || 'site-growth';
-          var stored = sessionStorage.getItem('cms_blogs_' + websiteId + '_p1_l50_all');
-          if (stored) {
-            var parsed = JSON.parse(stored);
-            var cachedBlogs = (parsed && parsed.data && parsed.data.data) || (parsed && parsed.data) || [];
-            if (Array.isArray(cachedBlogs) && cachedBlogs.length > 0) {
-              renderBlogs(cachedBlogs);
-              renderFeaturedSlider(cachedBlogs);
-              renderTrendingArticles(cachedBlogs);
-            }
-          }
-        } catch (e) {}
 
         // Fetch live published blogs from Centralized CMS (auto-updates when new blogs are published!)
         DigifyCMS.fetchBlogs({ limit: 50, bypassCache: true })

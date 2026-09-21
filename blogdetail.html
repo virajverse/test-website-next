@@ -476,10 +476,10 @@
               <h1 data-cursor="-opaque" id="postTitle"></h1>
               <div class="post-single-meta wow fadeInUp">
                 <ol class="breadcrumb">
-                  <li><span class="fx-badge fx-badge-cat" id="postCategory">Digital Marketing</span></li>
-                  <li><i class="fa-regular fa-user"></i> <span id="postAuthor">DigifyNext Team</span></li>
-                  <li><i class="fa-regular fa-calendar"></i> <span id="postDate"></span></li>
-                  <li id="postReadTime"><i class="fa-regular fa-clock"></i> </li>
+                  <li id="postCatItem" style="display: none;"><span class="fx-badge fx-badge-cat" id="postCategory"></span></li>
+                  <li id="postAuthorItem" style="display: none;"><i class="fa-regular fa-user"></i> <span id="postAuthor"></span></li>
+                  <li id="postDateItem" style="display: none;"><i class="fa-regular fa-calendar"></i> <span id="postDate"></span></li>
+                  <li id="postReadTime" style="display: none;"><i class="fa-regular fa-clock"></i> </li>
                 </ol>
               </div>
             </div>
@@ -497,8 +497,9 @@
             <div class="fx-article">
               <!-- Post Featured Image Start -->
               <div class="post-image">
-                <figure class="image-anime reveal">
-                  <img width="1449" height="1086" id="postFeaturedImage" src="images/blog1.jpg" alt="SEO trends modern brands should watch" fetchpriority="high" decoding="async" />
+                <figure class="image-anime reveal" id="postFeaturedFigure" style="min-height: 280px; background: rgba(0,0,0,0.02); border-radius: 16px; overflow: hidden;">
+                  <img width="1449" height="1086" id="postFeaturedImage" alt="" style="display: none; width: 100%; height: auto;" fetchpriority="high" decoding="async" />
+                  <div class="fx-skeleton" id="postImageSkeleton" style="width: 100%; height: 420px; border-radius: 16px;"></div>
                 </figure>
               </div>
               <!-- Post Featured Image End -->
@@ -522,9 +523,7 @@
                   <div class="row align-items-center">
                     <div class="col-lg-8">
                       <div class="post-tags wow fadeInUp" data-wow-delay="0.2s">
-                        <span class="tag-links" id="postTags">
-                          Tags: <a href="/blog">Digital Marketing</a>
-                        </span>
+                        <span class="tag-links" id="postTags" style="display: none;"></span>
                       </div>
                     </div>
 
@@ -544,10 +543,10 @@
                 <!-- Post Tag Links End -->
 
                 <!-- Author box -->
-                <div class="fx-author-box wow fadeInUp">
+                <div class="fx-author-box wow fadeInUp" id="postAuthorBox" style="display: none;">
                   <div class="fx-avatar" id="postAuthorAvatar">DN</div>
                   <div>
-                    <h4 id="postAuthorName">DigifyNext Team</h4>
+                    <h4 id="postAuthorName"></h4>
                     <span class="fx-author-role" id="postAuthorRole">Author</span>
                     <p id="postAuthorBio">
                       Practical digital marketing, SEO, and growth strategies from the DigifyNext team.
@@ -1375,19 +1374,37 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
                 if (titleEl) titleEl.innerText = cached.title;
                 document.title = (cached.seo && cached.seo.metaTitle) || (cached.title + ' | DigifyNext Blog');
                 var imgEl = document.getElementById('postFeaturedImage');
+                var imgSkeleton = document.getElementById('postImageSkeleton');
                 if (imgEl && cached.featuredImage) {
                   imgEl.src = cached.featuredImage;
                   imgEl.alt = cached.title;
+                  imgEl.style.display = 'block';
+                  if (imgSkeleton) imgSkeleton.style.display = 'none';
                 }
                 var catName = DigifyCMS.getCategoryName(cached);
                 var catEl = document.getElementById('postCategory');
-                if (catEl && catName) catEl.innerText = catName;
+                var catItem = document.getElementById('postCatItem');
+                if (catEl && catName) {
+                  catEl.innerText = catName;
+                  if (catItem) catItem.style.display = '';
+                }
                 var authEl = document.getElementById('postAuthor');
-                if (authEl && cached.authorName) authEl.innerText = cached.authorName;
+                var authItem = document.getElementById('postAuthorItem');
+                if (authEl && cached.authorName) {
+                  authEl.innerText = cached.authorName;
+                  if (authItem) authItem.style.display = '';
+                }
                 var dateEl = document.getElementById('postDate');
-                if (dateEl && cached.publishedAt) dateEl.innerText = DigifyCMS.formatDate(cached.publishedAt);
+                var dateItem = document.getElementById('postDateItem');
+                if (dateEl && cached.publishedAt) {
+                  dateEl.innerText = DigifyCMS.formatDate(cached.publishedAt);
+                  if (dateItem) dateItem.style.display = '';
+                }
                 var timeEl = document.getElementById('postReadTime');
-                if (timeEl && cached.readTimeMinutes) timeEl.innerHTML = '<i class="fa-regular fa-clock"></i> ' + cached.readTimeMinutes + ' min read';
+                if (timeEl && cached.readTimeMinutes) {
+                  timeEl.innerHTML = '<i class="fa-regular fa-clock"></i> ' + cached.readTimeMinutes + ' min read';
+                  timeEl.style.display = '';
+                }
                 if (cached.content) {
                   var contentEl = document.getElementById('postContent');
                   if (contentEl) contentEl.innerHTML = cached.content;
@@ -1485,7 +1502,14 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
 
             var authorName = blog.authorName || 'DigifyNext Team';
             var authorEl = document.getElementById('postAuthor');
-            if (authorEl) authorEl.innerText = authorName;
+            var authorItem = document.getElementById('postAuthorItem');
+            if (authorEl) {
+              authorEl.innerText = authorName;
+              if (authorItem) authorItem.style.display = '';
+            }
+
+            var authorBox = document.getElementById('postAuthorBox');
+            if (authorBox) authorBox.style.display = '';
 
             var authorBoxName = document.getElementById('postAuthorName');
             if (authorBoxName) authorBoxName.innerText = authorName;
@@ -1502,14 +1526,18 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
             }
 
             var dateEl = document.getElementById('postDate');
+            var dateItem = document.getElementById('postDateItem');
             if (dateEl && blog.publishedAt) {
               dateEl.innerText = DigifyCMS.formatDate(blog.publishedAt);
+              if (dateItem) dateItem.style.display = '';
             }
 
             var catEl = document.getElementById('postCategory') || document.querySelector('.fx-badge-cat');
+            var catItem = document.getElementById('postCatItem');
             var catName = DigifyCMS.getCategoryName(blog);
-            if (catEl) {
+            if (catEl && catName) {
               catEl.innerText = catName;
+              if (catItem) catItem.style.display = '';
             }
 
             // Tags
@@ -1520,8 +1548,10 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
                   var name = typeof t === 'string' ? t : (t.name || '');
                   return '<a href="/blog">' + DigifyCMS.escapeHtml(name) + '</a>';
                 }).join(' ');
+                tagContainer.style.display = '';
               } else if (catName) {
                 tagContainer.innerHTML = 'Category: <a href="/blog">' + DigifyCMS.escapeHtml(catName) + '</a>';
+                tagContainer.style.display = '';
               }
             }
 
@@ -1564,9 +1594,23 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
 
             // 3. Hydrate Featured Image
             var imgEl = document.getElementById('postFeaturedImage');
+            var imgSkeleton = document.getElementById('postImageSkeleton');
             if (imgEl && blog.featuredImage) {
               imgEl.src = blog.featuredImage;
               imgEl.alt = blog.title;
+              imgEl.onload = function () {
+                imgEl.style.display = 'block';
+                if (imgSkeleton) imgSkeleton.style.display = 'none';
+              };
+              imgEl.onerror = function () {
+                if (imgSkeleton) imgSkeleton.style.display = 'none';
+              };
+              if (imgEl.complete && imgEl.naturalWidth > 0) {
+                imgEl.style.display = 'block';
+                if (imgSkeleton) imgSkeleton.style.display = 'none';
+              }
+            } else if (imgSkeleton) {
+              imgSkeleton.style.display = 'none';
             }
 
             // 4. Hydrate Article Content
