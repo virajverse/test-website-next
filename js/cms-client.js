@@ -117,12 +117,18 @@
         return response.json();
       })
       .catch(function (error) {
-        // Silent fast fallback to local PHP proxy if remote domain is inactive
-        return fetchWithTimeout(proxyUrl, {}, 2500)
-          .then(function (res) {
-            if (!res.ok) throw new Error('CMS Proxy HTTP ' + res.status);
-            return res.json();
-          });
+        // If rate-limited (429) or network hiccup, return cached blogs immediately (0ms delay)
+        if (cached) return cached;
+        if (typeof sessionStorage !== 'undefined') {
+          try {
+            var stored = sessionStorage.getItem(cacheKey);
+            if (stored) {
+              var parsed = JSON.parse(stored);
+              if (parsed && (parsed.data || parsed.timestamp)) return parsed.data || parsed;
+            }
+          } catch (e) {}
+        }
+        throw error;
       })
       .then(function (result) {
         // Save to cache
@@ -204,11 +210,8 @@
         return response.json();
       })
       .catch(function (error) {
-        return fetchWithTimeout(proxyUrl, {}, 2500)
-          .then(function (res) {
-            if (!res.ok) throw new Error('CMS Proxy HTTP ' + res.status);
-            return res.json();
-          });
+        if (cached) return cached;
+        throw error;
       })
       .then(function (res) {
         var data = res.data || res;
