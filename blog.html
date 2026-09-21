@@ -19,8 +19,10 @@
     <meta name="robots" content="index, follow" />
 
     <link rel="canonical" href="https://digifynext.com/blog" />
+    <link rel="preconnect" href="https://blogary.jupsoft.com" crossorigin />
+    <link rel="dns-prefetch" href="https://blogary.jupsoft.com" />
     <link rel="stylesheet" href="/css/blog.css">
-        <link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon" />
 
     <link href="/css/fonts.css" media="screen" rel="stylesheet" />
 
@@ -205,27 +207,37 @@
     <div class="preloader">
       <div class="loading-container">
         <div class="loading"></div>
-        <div id="loading-icon"><img width="204" height="163" alt="" src="images/favicon.png" /></div>
+        <div id="loading-icon"><img width="204" height="163" alt="DigifyNext" src="/images/favicon.png" /></div>
       </div>
     </div>
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TVPB14M7HH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVPB14M7HH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TVPB14M7HH');
+    </script>
 
-  gtag('config', 'G-TVPB14M7HH');
-</script>  
-  
-  
-  <div class="preloader">
-      <div class="loading-container">
-        <div class="loading"></div>
-        <div id="loading-icon"><img width="204" height="163" alt="" src="/images/favicon.png" /></div>
-      </div>
-    </div>
+    <script>
+      // Fast preloader dismissal (never blocks article display)
+      (function () {
+        function dismissPreloader() {
+          var p = document.querySelectorAll('.preloader');
+          for (var i = 0; i < p.length; i++) {
+            p[i].style.transition = 'opacity 0.35s ease';
+            p[i].style.opacity = '0';
+            setTimeout((function(el){ return function(){ el.style.display = 'none'; }; })(p[i]), 350);
+          }
+        }
+        if (document.readyState === 'interactive' || document.readyState === 'complete') {
+          setTimeout(dismissPreloader, 120);
+        } else {
+          document.addEventListener('DOMContentLoaded', function () { setTimeout(dismissPreloader, 120); });
+        }
+      })();
+    </script>
   
   
   <header class="main-header">
@@ -730,7 +742,7 @@
           <div class="col-xl-12">
             <div class="footer-header-prime">
               <div class="footer-logo-prime">
-                <img width="717" height="201" alt="" src="/images/logo.png" />
+                <img width="717" height="201" alt="DigifyNext" src="/images/logo.png" loading="lazy" decoding="async" />
               </div>
 
               <div class="section-title">

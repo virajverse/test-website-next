@@ -20,27 +20,38 @@
 
     <base href="/">
     <link rel="canonical" href="https://digifynext.com/blogdetail" />
-    <link rel="stylesheet" href="/css/blog.css">
-    <link rel="stylesheet" href="/css/blogdetail.css">
-        <link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon" />
+
+    <link rel="preconnect" href="https://blogary.jupsoft.com" crossorigin />
+    <link rel="dns-prefetch" href="https://blogary.jupsoft.com" />
+    <script src="/js/cms-config.js"></script>
+    <script src="/js/cms-client.js"></script>
+    <script>
+      // Early fetch kickoff: Start downloading blog data immediately in parallel with CSS/DOM parsing
+      (function () {
+        try {
+          var slug = DigifyCMS.getSlugFromCurrentUrl();
+          window.__cmsBlogPromise = slug
+            ? DigifyCMS.fetchBlogBySlug(slug)
+            : DigifyCMS.fetchBlogs({ limit: 1 }).then(function (res) {
+                var list = Array.isArray(res.data) ? res.data : (Array.isArray(res) ? res : []);
+                return (list[0] && list[0].slug) ? DigifyCMS.fetchBlogBySlug(list[0].slug) : null;
+              });
+        } catch (e) {}
+      })();
+    </script>
 
     <link href="/css/fonts.css" media="screen" rel="stylesheet" />
-
     <link href="/css/bootstrap.min.css" media="screen" rel="stylesheet" />
-
     <link href="/css/slicknav.min.css" rel="stylesheet" />
-
     <link href="/css/swiper-bundle.min.css" rel="stylesheet" />
-
     <link href="/css/all.min.css" media="screen" rel="stylesheet" />
-
     <link href="/css/animate.css" rel="stylesheet" />
-
     <link href="/css/magnific-popup.css" rel="stylesheet" />
-
     <link href="/css/mousecursor.css" rel="stylesheet" />
-
     <link href="/css/custom.css" media="screen" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/css/blogdetail.css">
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -210,27 +221,37 @@
     <div class="preloader">
       <div class="loading-container">
         <div class="loading"></div>
-        <div id="loading-icon"><img width="204" height="163" alt="" src="images/favicon.png" /></div>
+        <div id="loading-icon"><img width="204" height="163" alt="DigifyNext" src="/images/favicon.png" /></div>
       </div>
     </div>
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TVPB14M7HH"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVPB14M7HH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TVPB14M7HH');
+    </script>
 
-  gtag('config', 'G-TVPB14M7HH');
-</script>  
-  
-  
-  <div class="preloader">
-      <div class="loading-container">
-        <div class="loading"></div>
-        <div id="loading-icon"><img width="204" height="163" alt="" src="/images/favicon.png" /></div>
-      </div>
-    </div>
+    <script>
+      // Fast preloader dismissal (never blocks article display)
+      (function () {
+        function dismissPreloader() {
+          var p = document.querySelectorAll('.preloader');
+          for (var i = 0; i < p.length; i++) {
+            p[i].style.transition = 'opacity 0.35s ease';
+            p[i].style.opacity = '0';
+            setTimeout((function(el){ return function(){ el.style.display = 'none'; }; })(p[i]), 350);
+          }
+        }
+        if (document.readyState === 'interactive' || document.readyState === 'complete') {
+          setTimeout(dismissPreloader, 120);
+        } else {
+          document.addEventListener('DOMContentLoaded', function () { setTimeout(dismissPreloader, 120); });
+        }
+      })();
+    </script>
   
   
   <header class="main-header">
@@ -614,7 +635,7 @@
           <div class="col-xl-12">
             <div class="footer-header-prime">
               <div class="footer-logo-prime">
-                <img width="717" height="201" alt="" src="/images/logo.png" />
+                <img width="717" height="201" alt="DigifyNext" src="/images/logo.png" loading="lazy" decoding="async" />
               </div>
 
               <div class="section-title">
@@ -1316,9 +1337,6 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
     </script>
 
 
-    <script src="/js/cms-config.js"></script>
-    <script src="/js/cms-client.js"></script>
-
     <!-- Dynamic CMS Blog Detail Reader -->
     <script>
       (function () {
@@ -1364,7 +1382,7 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
 
         var slug = DigifyCMS.getSlugFromCurrentUrl();
 
-        // 0ms Instant Hydration: If summary is already cached from /blog, show immediately!
+        // 0ms Instant Hydration: If summary or article is already cached, show immediately!
         if (slug && typeof sessionStorage !== 'undefined') {
           try {
             var rawSummary = sessionStorage.getItem('cms_summary_' + encodeURIComponent(slug)) ||
@@ -1386,6 +1404,7 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
                   imgEl.src = cached.featuredImage;
                   imgEl.alt = cached.featuredImageAlt || cached.title;
                   imgEl.style.display = 'block';
+                  imgEl.classList.add('fx-fade-in');
                   if (imgSkeleton) imgSkeleton.style.display = 'none';
                 }
                 var catName = DigifyCMS.getCategoryName(cached);
@@ -1404,7 +1423,7 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
                 var authAvatarEl = document.getElementById('postAuthorAvatar');
                 if (authAvatarEl) {
                   if (cached.authorAvatar) {
-                    authAvatarEl.innerHTML = '<img src="' + DigifyCMS.escapeHtml(cached.authorAvatar) + '" alt="' + DigifyCMS.escapeHtml(cached.authorName || 'Author') + '" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />';
+                    authAvatarEl.innerHTML = '<img src="' + DigifyCMS.escapeHtml(cached.authorAvatar) + '" alt="' + DigifyCMS.escapeHtml(cached.authorName || 'Author') + '" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" />';
                   } else if (cached.authorName) {
                     var inits = cached.authorName.split(' ').map(function (n) { return n[0]; }).filter(Boolean).slice(0, 2).join('').toUpperCase();
                     authAvatarEl.innerText = inits || 'DN';
@@ -1424,7 +1443,15 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
                 if (cached.content) {
                   var contentEl = document.getElementById('postContent');
                   if (contentEl) {
-                    contentEl.innerHTML = cached.content.replace(/<p>(\s|&nbsp;|<br\s*\/?>)*<\/p>/gi, '<p><br></p>');
+                    var tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = cached.content.replace(/<p>(\s|&nbsp;|<br\s*\/?>)*<\/p>/gi, '<p><br></p>');
+                    var cImgs = tempDiv.querySelectorAll('img');
+                    for (var ci = 0; ci < cImgs.length; ci++) {
+                      if (!cImgs[ci].hasAttribute('loading')) cImgs[ci].setAttribute('loading', 'lazy');
+                      if (!cImgs[ci].hasAttribute('decoding')) cImgs[ci].setAttribute('decoding', 'async');
+                    }
+                    contentEl.innerHTML = tempDiv.innerHTML;
+                    contentEl.classList.add('fx-fade-in');
                   }
                 }
                 wireShareButtons(cached.title);
@@ -1432,20 +1459,16 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
             }
           } catch (e) {}
         }
-        var fetchPromise;
 
-        if (slug) {
-          fetchPromise = DigifyCMS.fetchBlogBySlug(slug);
-        } else {
-          // If no slug in URL (e.g. /blogdetail or /blogdetail.html), fetch latest blog dynamically
-          fetchPromise = DigifyCMS.fetchBlogs({ limit: 1 }).then(function (res) {
-            var list = Array.isArray(res.data) ? res.data : (Array.isArray(res) ? res : []);
-            if (list.length > 0 && list[0].slug) {
-              return DigifyCMS.fetchBlogBySlug(list[0].slug);
-            }
-            throw new Error('No blogs published in CMS');
-          });
-        }
+        var fetchPromise = window.__cmsBlogPromise || (slug
+          ? DigifyCMS.fetchBlogBySlug(slug)
+          : DigifyCMS.fetchBlogs({ limit: 1 }).then(function (res) {
+              var list = Array.isArray(res.data) ? res.data : (Array.isArray(res) ? res : []);
+              if (list.length > 0 && list[0].slug) {
+                return DigifyCMS.fetchBlogBySlug(list[0].slug);
+              }
+              throw new Error('No blogs published in CMS');
+            }));
 
         fetchPromise
           .then(function (blog) {
@@ -1659,22 +1682,23 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
             if (imgEl && blog.featuredImage) {
               imgEl.src = blog.featuredImage;
               imgEl.alt = blog.featuredImageAlt || blog.title || '';
-              imgEl.onload = function () {
+              var showFeatured = function () {
                 imgEl.style.display = 'block';
+                imgEl.classList.add('fx-fade-in');
                 if (imgSkeleton) imgSkeleton.style.display = 'none';
               };
+              imgEl.onload = showFeatured;
               imgEl.onerror = function () {
                 if (imgSkeleton) imgSkeleton.style.display = 'none';
               };
               if (imgEl.complete && imgEl.naturalWidth > 0) {
-                imgEl.style.display = 'block';
-                if (imgSkeleton) imgSkeleton.style.display = 'none';
+                showFeatured();
               }
             } else if (imgSkeleton) {
               imgSkeleton.style.display = 'none';
             }
 
-            // 4. Hydrate Article Content
+            // 4. Hydrate Article Content with Lazy Loading on all embedded images
             var contentEl = document.getElementById('postContent');
             if (contentEl) {
               var htmlContent = blog.content;
@@ -1682,87 +1706,105 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
                 htmlContent = '<p>' + DigifyCMS.escapeHtml(blog.excerpt) + '</p>';
               }
               if (htmlContent) {
-                contentEl.innerHTML = htmlContent.replace(/<p>(\s|&nbsp;|<br\s*\/?>)*<\/p>/gi, '<p><br></p>');
+                var tempDiv = document.createElement('div');
+                tempDiv.innerHTML = htmlContent.replace(/<p>(\s|&nbsp;|<br\s*\/?>)*<\/p>/gi, '<p><br></p>');
+                var contentImages = tempDiv.querySelectorAll('img');
+                for (var ci = 0; ci < contentImages.length; ci++) {
+                  if (!contentImages[ci].hasAttribute('loading')) contentImages[ci].setAttribute('loading', 'lazy');
+                  if (!contentImages[ci].hasAttribute('decoding')) contentImages[ci].setAttribute('decoding', 'async');
+                }
+                contentEl.innerHTML = tempDiv.innerHTML;
+                contentEl.classList.remove('fx-fade-in');
+                void contentEl.offsetWidth; // trigger reflow for smooth animation
+                contentEl.classList.add('fx-fade-in');
               }
             }
 
-            // 5. Fetch Other Blogs for Prev/Next Navigation & Related Articles
-            DigifyCMS.fetchBlogs({ limit: 50 })
-              .then(function (result) {
-                var list = Array.isArray(result.data) ? result.data : (Array.isArray(result) ? result : []);
-                if (!list || list.length === 0) return;
+            // 5. Defer fetch of Other Blogs for Prev/Next Navigation & Related Articles (Low Priority)
+            function loadRelatedAndNav() {
+              DigifyCMS.fetchBlogs({ limit: 12 })
+                .then(function (result) {
+                  var list = Array.isArray(result.data) ? result.data : (Array.isArray(result) ? result : []);
+                  if (!list || list.length === 0) return;
 
-                // Wire Prev / Next Navigation
-                var currentIdx = -1;
-                for (var i = 0; i < list.length; i++) {
-                  if (list[i].slug === blog.slug) {
-                    currentIdx = i;
-                    break;
+                  // Wire Prev / Next Navigation
+                  var currentIdx = -1;
+                  for (var i = 0; i < list.length; i++) {
+                    if (list[i].slug === blog.slug) {
+                      currentIdx = i;
+                      break;
+                    }
                   }
-                }
 
-                var prevBlog = currentIdx > 0 ? list[currentIdx - 1] : null;
-                var nextBlog = (currentIdx >= 0 && currentIdx < list.length - 1) ? list[currentIdx + 1] : null;
+                  var prevBlog = currentIdx > 0 ? list[currentIdx - 1] : null;
+                  var nextBlog = (currentIdx >= 0 && currentIdx < list.length - 1) ? list[currentIdx + 1] : null;
 
-                var navEl = document.getElementById('fxPostNav');
-                var prevEl = document.getElementById('fxPrevLink');
-                var nextEl = document.getElementById('fxNextLink');
+                  var navEl = document.getElementById('fxPostNav');
+                  var prevEl = document.getElementById('fxPrevLink');
+                  var nextEl = document.getElementById('fxNextLink');
 
-                if (prevBlog || nextBlog) {
-                  if (navEl) navEl.style.display = 'flex';
-                  if (prevBlog && prevEl) {
-                    prevEl.style.display = 'block';
-                    prevEl.href = '/blog/' + encodeURIComponent(prevBlog.slug);
-                    var prevTitleEl = document.getElementById('fxPrevTitle');
-                    if (prevTitleEl) prevTitleEl.innerText = prevBlog.title;
+                  if (prevBlog || nextBlog) {
+                    if (navEl) navEl.style.display = 'flex';
+                    if (prevBlog && prevEl) {
+                      prevEl.style.display = 'block';
+                      prevEl.href = '/blog/' + encodeURIComponent(prevBlog.slug);
+                      var prevTitleEl = document.getElementById('fxPrevTitle');
+                      if (prevTitleEl) prevTitleEl.innerText = prevBlog.title;
+                    }
+                    if (nextBlog && nextEl) {
+                      nextEl.style.display = 'block';
+                      nextEl.href = '/blog/' + encodeURIComponent(nextBlog.slug);
+                      var nextTitleEl = document.getElementById('fxNextTitle');
+                      if (nextTitleEl) nextTitleEl.innerText = nextBlog.title;
+                    }
                   }
-                  if (nextBlog && nextEl) {
-                    nextEl.style.display = 'block';
-                    nextEl.href = '/blog/' + encodeURIComponent(nextBlog.slug);
-                    var nextTitleEl = document.getElementById('fxNextTitle');
-                    if (nextTitleEl) nextTitleEl.innerText = nextBlog.title;
-                  }
-                }
 
-                // Wire Related Articles
-                var relatedSec = document.getElementById('fxRelatedSection');
-                var relatedRow = document.getElementById('fxRelatedRow');
-                var filtered = list.filter(function (item) { return item.slug !== blog.slug; }).slice(0, 3);
-                if (filtered.length > 0 && relatedRow && relatedSec) {
-                  relatedSec.style.display = 'block';
-                  relatedRow.innerHTML = filtered.map(function (item, idx) {
-                    var itemSlug = encodeURIComponent(item.slug || '');
-                    var itemCat = DigifyCMS.escapeHtml(DigifyCMS.getCategoryName(item));
-                    var itemImg = DigifyCMS.escapeHtml(item.featuredImage || '/images/blog1.jpg');
-                    var itemDate = DigifyCMS.escapeHtml(DigifyCMS.formatDate(item.publishedAt));
-                    var itemTitle = DigifyCMS.escapeHtml(item.title || 'Related article');
-                    var itemTime = DigifyCMS.escapeHtml(item.readTimeMinutes ? item.readTimeMinutes + ' min' : '');
-                    var itemAuthor = item.authorName ? DigifyCMS.escapeHtml(item.authorName) : '';
-                    var itemExcerpt = item.excerpt ? DigifyCMS.escapeHtml(item.excerpt) : '';
+                  // Wire Related Articles
+                  var relatedSec = document.getElementById('fxRelatedSection');
+                  var relatedRow = document.getElementById('fxRelatedRow');
+                  var filtered = list.filter(function (item) { return item.slug !== blog.slug; }).slice(0, 3);
+                  if (filtered.length > 0 && relatedRow && relatedSec) {
+                    relatedSec.style.display = 'block';
+                    relatedRow.innerHTML = filtered.map(function (item, idx) {
+                      var itemSlug = encodeURIComponent(item.slug || '');
+                      var itemCat = DigifyCMS.escapeHtml(DigifyCMS.getCategoryName(item));
+                      var itemImg = DigifyCMS.escapeHtml(item.featuredImage || '/images/blog1.jpg');
+                      var itemDate = DigifyCMS.escapeHtml(DigifyCMS.formatDate(item.publishedAt));
+                      var itemTitle = DigifyCMS.escapeHtml(item.title || 'Related article');
+                      var itemTime = DigifyCMS.escapeHtml(item.readTimeMinutes ? item.readTimeMinutes + ' min' : '');
+                      var itemAuthor = item.authorName ? DigifyCMS.escapeHtml(item.authorName) : '';
+                      var itemExcerpt = item.excerpt ? DigifyCMS.escapeHtml(item.excerpt) : '';
 
-                    return '<div class="col-xl-4 col-md-6">' +
-                      '<div class="post-item box-border-gradiant wow fadeInUp" data-wow-delay="' + (idx * 0.2) + 's">' +
-                        '<div class="post-item-image">' +
-                          '<div class="fx-card-badges">' +
-                            '<span class="fx-badge fx-badge-cat">' + itemCat + '</span>' +
-                            (itemTime ? '<span class="fx-badge fx-badge-time"><i class="fa-regular fa-clock"></i>' + itemTime + '</span>' : '') +
+                      return '<div class="col-xl-4 col-md-6">' +
+                        '<div class="post-item box-border-gradiant wow fadeInUp" data-wow-delay="' + (idx * 0.2) + 's">' +
+                          '<div class="post-item-image">' +
+                            '<div class="fx-card-badges">' +
+                              '<span class="fx-badge fx-badge-cat">' + itemCat + '</span>' +
+                              (itemTime ? '<span class="fx-badge fx-badge-time"><i class="fa-regular fa-clock"></i>' + itemTime + '</span>' : '') +
+                            '</div>' +
+                            '<figure><img width="1366" height="768" loading="lazy" decoding="async" src="' + itemImg + '" alt="' + itemTitle + '" onerror="this.src=\'/images/blog1.jpg\'" /></figure>' +
                           '</div>' +
-                          '<figure><img width="1366" height="768" src="' + itemImg + '" alt="' + itemTitle + '" onerror="this.src=\'/images/blog1.jpg\'" /></figure>' +
+                          '<div class="post-item-btn"><a aria-label="Read more" href="/blog/' + itemSlug + '"><img src="/images/arrow-primary.svg" alt="" /></a></div>' +
+                          '<div class="post-item-body">' +
+                            '<div class="post-item-content"><h2><a href="/blog/' + itemSlug + '">' + itemTitle + '</a></h2>' +
+                            (itemExcerpt ? '<p class="fx-card-excerpt">' + itemExcerpt + '</p>' : '') + '</div>' +
+                            '<div class="post-item-meta"><ul><li><img src="/images/icon-calendar-date.svg" alt="" />' + itemDate + '</li>' +
+                            (itemAuthor ? '<li><i class="fa-regular fa-user" style="color: var(--fx-accent); margin-right: 5px;"></i>' + itemAuthor + '</li>' : '') +
+                            '</ul></div>' +
+                          '</div>' +
                         '</div>' +
-                        '<div class="post-item-btn"><a aria-label="Read more" href="/blog/' + itemSlug + '"><img src="/images/arrow-primary.svg" alt="" /></a></div>' +
-                        '<div class="post-item-body">' +
-                          '<div class="post-item-content"><h2><a href="/blog/' + itemSlug + '">' + itemTitle + '</a></h2>' +
-                          (itemExcerpt ? '<p class="fx-card-excerpt">' + itemExcerpt + '</p>' : '') + '</div>' +
-                          '<div class="post-item-meta"><ul><li><img src="/images/icon-calendar-date.svg" alt="" />' + itemDate + '</li>' +
-                          (itemAuthor ? '<li><i class="fa-regular fa-user" style="color: var(--fx-accent); margin-right: 5px;"></i>' + itemAuthor + '</li>' : '') +
-                          '</ul></div>' +
-                        '</div>' +
-                      '</div>' +
-                    '</div>';
-                  }).join('');
-                }
-              })
-              .catch(function () {});
+                      '</div>';
+                    }).join('');
+                  }
+                })
+                .catch(function () {});
+            }
+
+            if ('requestIdleCallback' in window) {
+              window.requestIdleCallback(loadRelatedAndNav, { timeout: 1200 });
+            } else {
+              setTimeout(loadRelatedAndNav, 200);
+            }
           })
           .catch(function (error) {
             console.error('CMS Reader Error:', error);
