@@ -392,13 +392,28 @@
 /* Images & Figures */
 .post-entry img,
 #postContent img {
-  max-width: 100% !important;
-  height: auto !important;
-  border-radius: 14px !important;
+  max-width: 100%;
+  height: auto;
+  border-radius: 14px;
+  margin: 24px auto;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: opacity 0.35s ease;
+}
+
+.post-entry img[data-align="left"],
+#postContent img[data-align="left"] {
+  margin: 24px auto 24px 0 !important;
+}
+
+.post-entry img[data-align="right"],
+#postContent img[data-align="right"] {
+  margin: 24px 0 24px auto !important;
+}
+
+.post-entry img[data-align="center"],
+#postContent img[data-align="center"] {
   margin: 24px auto !important;
-  display: block !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
-  transition: opacity 0.35s ease !important;
 }
 
 .post-entry figure,
