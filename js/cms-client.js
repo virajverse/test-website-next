@@ -12,8 +12,30 @@
     apiUrl: 'https://blogary.jupsoft.com',
     websiteId: 'site-growth',
     siteDomain: 'https://digifynext.com',
+    apiKey: 'digi_live_sec_growth_8821ecde71a209',
     defaultFeaturedImage: 'images/blog1.jpg'
   };
+  if (!config.apiKey && global.CMS_CONFIG && global.CMS_CONFIG.apiKey) {
+    config.apiKey = global.CMS_CONFIG.apiKey;
+  }
+  if (!config.apiKey) {
+    config.apiKey = 'digi_live_sec_growth_8821ecde71a209';
+  }
+
+  // On page reload or navigation reload, clear stale session cache for immediate updates
+  if (typeof window !== 'undefined' && window.performance) {
+    try {
+      var navEntries = window.performance.getEntriesByType && window.performance.getEntriesByType('navigation');
+      var isReload = (navEntries && navEntries[0] && navEntries[0].type === 'reload') ||
+                     (window.performance.navigation && window.performance.navigation.type === 1);
+      if (isReload && typeof sessionStorage !== 'undefined') {
+        for (var i = sessionStorage.length - 1; i >= 0; i--) {
+          var k = sessionStorage.key(i);
+          if (k && k.indexOf('cms_') === 0) sessionStorage.removeItem(k);
+        }
+      }
+    } catch (e) {}
+  }
 
   var memoryCache = new Map();
   var CACHE_TTL_MS = 10 * 1000; // 10 seconds (instant visibility on publish)
@@ -104,6 +126,7 @@
 
     if (options.category) query += '&category=' + encodeURIComponent(options.category);
     if (options.tag) query += '&tag=' + encodeURIComponent(options.tag);
+    if (options.bypassCache) query += '&fresh=1';
     if (config.apiKey) query += '&apiKey=' + encodeURIComponent(config.apiKey);
 
     var primaryUrl = getBaseApiUrl() + '/v1/blogs' + query;
@@ -111,6 +134,10 @@
 
     var reqHeaders = { 'Accept': 'application/json' };
     if (config.apiKey) reqHeaders['x-api-key'] = config.apiKey;
+    if (options.bypassCache) {
+      reqHeaders['Cache-Control'] = 'no-cache';
+      reqHeaders['Pragma'] = 'no-cache';
+    }
 
     function doFetch(url) {
       return fetchWithTimeout(url, {
@@ -193,11 +220,15 @@
       try { options.onCache(cached); } catch (e) {}
     }
 
-    var primaryUrl = getBaseApiUrl() + '/v1/blogs/' + cleanSlug + '?website=' + encodeURIComponent(websiteId) + (config.apiKey ? '&apiKey=' + encodeURIComponent(config.apiKey) : '');
-    var proxyUrl = '/api/blogs/' + cleanSlug;
+    var primaryUrl = getBaseApiUrl() + '/v1/blogs/' + cleanSlug + '?website=' + encodeURIComponent(websiteId) + (options.bypassCache ? '&fresh=1' : '') + (config.apiKey ? '&apiKey=' + encodeURIComponent(config.apiKey) : '');
+    var proxyUrl = '/api/blogs/' + cleanSlug + (options.bypassCache ? '?fresh=1' : '');
 
     var reqHeaders = { 'Accept': 'application/json' };
     if (config.apiKey) reqHeaders['x-api-key'] = config.apiKey;
+    if (options.bypassCache) {
+      reqHeaders['Cache-Control'] = 'no-cache';
+      reqHeaders['Pragma'] = 'no-cache';
+    }
 
     function doFetch(url) {
       return fetchWithTimeout(url, {

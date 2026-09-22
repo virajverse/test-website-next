@@ -1465,11 +1465,11 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
         }
 
         var fetchPromise = window.__cmsBlogPromise || (slug
-          ? DigifyCMS.fetchBlogBySlug(slug)
-          : DigifyCMS.fetchBlogs({ limit: 1 }).then(function (res) {
+          ? DigifyCMS.fetchBlogBySlug(slug, { bypassCache: true })
+          : DigifyCMS.fetchBlogs({ limit: 1, bypassCache: true }).then(function (res) {
               var list = Array.isArray(res.data) ? res.data : (Array.isArray(res) ? res : []);
               if (list.length > 0 && list[0].slug) {
-                return DigifyCMS.fetchBlogBySlug(list[0].slug);
+                return DigifyCMS.fetchBlogBySlug(list[0].slug, { bypassCache: true });
               }
               throw new Error('No blogs published in CMS');
             }));
