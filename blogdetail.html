@@ -497,11 +497,15 @@
               <h1 data-cursor="-opaque" id="postTitle"></h1>
               <p class="post-lead-intro" id="postExcerpt" style="display: none;"></p>
               <div class="post-single-meta wow fadeInUp">
-                <ol class="breadcrumb">
+                <ol class="breadcrumb" style="display: flex; align-items: center; flex-wrap: wrap; gap: 10px;">
                   <li id="postCatItem" style="display: none;"><span class="fx-badge fx-badge-cat" id="postCategory"></span></li>
                   <li id="postAuthorItem" style="display: none;"><i class="fa-regular fa-user"></i> <span id="postAuthor"></span></li>
                   <li id="postDateItem" style="display: none;"><i class="fa-regular fa-calendar"></i> <span id="postDate"></span></li>
                   <li id="postReadTime" style="display: none;"><i class="fa-regular fa-clock"></i> </li>
+                  <li id="postLangSwitcher" style="display: none;">
+                    <i class="fa-solid fa-language" style="color: var(--fx-accent);"></i>
+                    <select id="langSelect" onchange="if(this.value) window.location.href='/blog/'+this.value" style="background: transparent; border: 1px solid rgba(0,0,0,0.1); border-radius: 4px; padding: 2px 5px; font-size: 13px; color: #64748b; outline: none; cursor: pointer;"></select>
+                  </li>
                 </ol>
               </div>
             </div>
@@ -1675,6 +1679,32 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
                 readTimeEl.style.display = 'none';
               }
             }
+
+            // Language Switcher Logic
+            var langSwitcher = document.getElementById('postLangSwitcher');
+            var langSelect = document.getElementById('langSelect');
+            if (langSwitcher && langSelect && blog.translations && blog.translations.length > 1) {
+              langSelect.innerHTML = '';
+              var langNames = {
+                'en': 'English', 'hi': 'Hindi', 'bn': 'Bengali', 'te': 'Telugu',
+                'mr': 'Marathi', 'ta': 'Tamil', 'ur': 'Urdu', 'gu': 'Gujarati',
+                'kn': 'Kannada', 'ml': 'Malayalam', 'pa': 'Punjabi', 'or': 'Odia',
+                'as': 'Assamese', 'ma': 'Maithili', 'ne': 'Nepali'
+              };
+              blog.translations.forEach(function (t) {
+                var opt = document.createElement('option');
+                opt.value = encodeURIComponent(t.slug);
+                opt.text = langNames[t.lang] || t.lang.toUpperCase();
+                // Find current active translation by slug or default to 'en'
+                var currentPathSlug = window.location.pathname.split('/').pop();
+                if (currentPathSlug === t.slug || (!currentPathSlug && t.lang === 'en') || blog.slug === t.slug) {
+                  opt.selected = true;
+                }
+                langSelect.appendChild(opt);
+              });
+              langSwitcher.style.display = '';
+            }
+
 
             // 3. Hydrate Featured Image
             var imgEl = document.getElementById('postFeaturedImage');
