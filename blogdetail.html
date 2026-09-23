@@ -504,7 +504,7 @@
                   <li id="postReadTime" style="display: none;"><i class="fa-regular fa-clock"></i> </li>
                   <li id="postLangSwitcher" style="display: none;">
                     <i class="fa-solid fa-language" style="color: var(--fx-accent);"></i>
-                    <select id="langSelect" onchange="if(this.value) window.location.href='/blog/'+this.value" style="background: transparent; border: 1px solid rgba(0,0,0,0.1); border-radius: 4px; padding: 2px 5px; font-size: 13px; color: #64748b; outline: none; cursor: pointer;"></select>
+                    <select id="langSelect" style="background: transparent; border: 1px solid rgba(0,0,0,0.1); border-radius: 4px; padding: 2px 5px; font-size: 13px; color: #64748b; outline: none; cursor: pointer;"></select>
                   </li>
                 </ol>
               </div>
@@ -1481,15 +1481,16 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
             }
 
             // ─── 301 Permanent Redirect Engine (TRD §7) ───
-            // If the requested slug was modified or redirected, immediately redirect the browser to the new slug!
+            // If the server explicitly declared a redirect rule for this slug, redirect to the canonical target
             var currentReqSlug = (slug || '').trim().toLowerCase();
-            var targetSlug = (blog.redirect && blog.redirect.toSlug)
-              ? blog.redirect.toSlug.trim()
-              : (blog.slug && currentReqSlug && blog.slug.toLowerCase() !== currentReqSlug ? blog.slug : null);
+            var targetSlug = (blog.redirect && blog.redirect.toSlug) ? blog.redirect.toSlug.trim() : null;
 
             if (targetSlug && targetSlug.toLowerCase() !== currentReqSlug) {
-              var newPath = '/blog/' + encodeURIComponent(targetSlug);
-              if (window.location.search) {
+              var isQueryRouting = window.location.pathname.indexOf('blogdetail') !== -1;
+              var newPath = isQueryRouting
+                ? '/blogdetail.html?slug=' + encodeURIComponent(targetSlug)
+                : '/blog/' + encodeURIComponent(targetSlug);
+              if (window.location.search && !isQueryRouting) {
                 newPath += window.location.search;
               }
               if (window.location.hash) {
@@ -1689,19 +1690,53 @@ document.getElementById('hidden6246157000002137002Frame').addEventListener('load
                 'en': 'English', 'hi': 'Hindi', 'bn': 'Bengali', 'te': 'Telugu',
                 'mr': 'Marathi', 'ta': 'Tamil', 'ur': 'Urdu', 'gu': 'Gujarati',
                 'kn': 'Kannada', 'ml': 'Malayalam', 'pa': 'Punjabi', 'or': 'Odia',
-                'as': 'Assamese', 'ma': 'Maithili', 'ne': 'Nepali'
+                'as': 'Assamese', 'ma': 'Maithili', 'ne': 'Nepali', 'fr': 'French',
+                'es': 'Spanish', 'de': 'German'
               };
+
+              var currentSearch = new URLSearchParams(window.location.search);
+              var urlLang = currentSearch.get('lang');
+              var currentSlug = (DigifyCMS.getSlugFromCurrentUrl() || '').toLowerCase();
+
               blog.translations.forEach(function (t) {
                 var opt = document.createElement('option');
-                opt.value = encodeURIComponent(t.slug);
+                opt.value = t.slug;
+                opt.setAttribute('data-lang', t.lang);
                 opt.text = langNames[t.lang] || t.lang.toUpperCase();
-                // Find current active translation by slug or default to 'en'
-                var currentPathSlug = window.location.pathname.split('/').pop();
-                if (currentPathSlug === t.slug || (!currentPathSlug && t.lang === 'en') || blog.slug === t.slug) {
+
+                // Select current active translation
+                var isSelected = false;
+                if (blog.lang && blog.lang === t.lang) {
+                  isSelected = true;
+                } else if (currentSlug && (currentSlug === (t.slug || '').toLowerCase())) {
+                  isSelected = true;
+                } else if (urlLang && urlLang === t.lang) {
+                  isSelected = true;
+                } else if (!urlLang && !blog.lang && t.lang === 'en') {
+                  isSelected = true;
+                }
+
+                if (isSelected) {
                   opt.selected = true;
                 }
                 langSelect.appendChild(opt);
               });
+
+              // Clean navigation handler
+              langSelect.onchange = function () {
+                var sel = this.options[this.selectedIndex];
+                if (!sel) return;
+                var targetSlug = sel.value;
+                var targetLang = sel.getAttribute('data-lang');
+                var isQueryRoute = window.location.pathname.indexOf('blogdetail') !== -1;
+
+                if (isQueryRoute) {
+                  window.location.href = '/blogdetail.html?slug=' + encodeURIComponent(targetSlug) + '&lang=' + encodeURIComponent(targetLang);
+                } else {
+                  window.location.href = '/blog/' + encodeURIComponent(targetSlug) + '?lang=' + encodeURIComponent(targetLang);
+                }
+              };
+
               langSwitcher.style.display = '';
             }
 

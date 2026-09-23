@@ -200,7 +200,8 @@
     options = options || {};
     var websiteId = config.websiteId || 'site-growth';
     var cleanSlug = encodeURIComponent(slug);
-    var cacheKey = 'cms_article_' + cleanSlug;
+    var urlLang = options.lang || (typeof window !== 'undefined' ? new URLSearchParams(window.location.search).get('lang') : null);
+    var cacheKey = 'cms_article_' + cleanSlug + (urlLang ? '_' + urlLang : '');
 
     // Retrieve cached article for instant paint callback or offline fallback
     var cached = memoryCache.get(cacheKey) || null;
@@ -220,8 +221,9 @@
       try { options.onCache(cached); } catch (e) {}
     }
 
-    var primaryUrl = getBaseApiUrl() + '/v1/blogs/' + cleanSlug + '?website=' + encodeURIComponent(websiteId) + (options.bypassCache ? '&fresh=1' : '') + (config.apiKey ? '&apiKey=' + encodeURIComponent(config.apiKey) : '');
-    var proxyUrl = '/api/blogs/' + cleanSlug + (options.bypassCache ? '?fresh=1' : '');
+    var langParam = urlLang ? '&lang=' + encodeURIComponent(urlLang) : '';
+    var primaryUrl = getBaseApiUrl() + '/v1/blogs/' + cleanSlug + '?website=' + encodeURIComponent(websiteId) + langParam + (options.bypassCache ? '&fresh=1' : '') + (config.apiKey ? '&apiKey=' + encodeURIComponent(config.apiKey) : '');
+    var proxyUrl = '/api/blogs/' + cleanSlug + '?website=' + encodeURIComponent(websiteId) + langParam + (options.bypassCache ? '&fresh=1' : '');
 
     var reqHeaders = { 'Accept': 'application/json' };
     if (config.apiKey) reqHeaders['x-api-key'] = config.apiKey;
