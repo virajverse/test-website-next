@@ -6,6 +6,10 @@
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/api/revalidate",
+      "destination": "/api/revalidate"
+    },
+    {
       "source": "/api/:path*",
       "destination": "https://blogary.jupsoft.com/v1/:path*"
     },

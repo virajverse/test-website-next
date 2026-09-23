@@ -111,6 +111,10 @@ const vercelConfig = {
   "trailingSlash": false,
   "rewrites": [
     {
+      "source": "/api/revalidate",
+      "destination": "/api/revalidate"
+    },
+    {
       "source": "/api/:path*",
       "destination": `${apiUrl}/v1/:path*`
     },

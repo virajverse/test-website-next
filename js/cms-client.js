@@ -12,15 +12,10 @@
     apiUrl: 'https://blogary.jupsoft.com',
     websiteId: 'site-growth',
     siteDomain: 'https://digifynext.com',
-    apiKey: 'digi_live_sec_growth_8821ecde71a209',
     defaultFeaturedImage: 'images/blog1.jpg'
   };
-  if (!config.apiKey && global.CMS_CONFIG && global.CMS_CONFIG.apiKey) {
-    config.apiKey = global.CMS_CONFIG.apiKey;
-  }
-  if (!config.apiKey) {
-    config.apiKey = 'digi_live_sec_growth_8821ecde71a209';
-  }
+  // Zero API key exposure: client-side public reads authenticate via origin domain scope
+  config.apiKey = (global.CMS_CONFIG && global.CMS_CONFIG.apiKey) || '';
 
   // On page reload or navigation reload, clear stale session cache for immediate updates
   if (typeof window !== 'undefined' && window.performance) {
