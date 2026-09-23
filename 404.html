@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | DigifyNext</title>
+    <meta name="description" content="The page you are looking for does not exist or has been moved. Explore DigifyNext digital marketing and SEO services.">
+    <meta name="robots" content="noindex, follow">
+
+    <link href="/images/favicon.png" rel="shortcut icon" type="image/x-icon" />
+    <link href="/css/fonts.css" media="screen" rel="stylesheet" />
+    <link href="/css/bootstrap.min.css" media="screen" rel="stylesheet" />
+    <link href="/css/all.min.css" media="screen" rel="stylesheet" />
+    <link href="/css/custom.css" media="screen" rel="stylesheet" />
+
+    <style>
+      .error-page-wrapper {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: radial-gradient(circle at 50% 20%, #151d30 0%, #080c16 80%);
+        color: #ffffff;
+        padding: 40px 20px;
+        text-align: center;
+      }
+      .error-card {
+        max-width: 620px;
+        width: 100%;
+        background: rgba(18, 26, 45, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 28px;
+        padding: 50px 35px;
+        backdrop-filter: blur(16px);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+        position: relative;
+        overflow: hidden;
+      }
+      .error-glow {
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        background: radial-gradient(circle, rgba(235, 22, 60, 0.25) 0%, transparent 70%);
+        top: -60px;
+        right: -60px;
+        border-radius: 50%;
+        pointer-events-none;
+      }
+      .error-glow-cyan {
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        background: radial-gradient(circle, rgba(14, 165, 233, 0.2) 0%, transparent 70%);
+        bottom: -60px;
+        left: -60px;
+        border-radius: 50%;
+        pointer-events-none;
+      }
+      .error-code {
+        font-size: clamp(80px, 16vw, 130px);
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: -3px;
+        background: linear-gradient(135deg, #ffffff 30%, #eb163c 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 12px;
+      }
+      .error-tag {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #eb163c;
+        background: rgba(235, 22, 60, 0.12);
+        border: 1px solid rgba(235, 22, 60, 0.3);
+        padding: 6px 16px;
+        border-radius: 30px;
+        margin-bottom: 20px;
+      }
+      .error-title {
+        font-size: clamp(22px, 3.5vw, 28px);
+        font-weight: 800;
+        color: #ffffff;
+        margin-bottom: 15px;
+      }
+      .error-desc {
+        font-size: 14px;
+        color: #94a3b8;
+        line-height: 1.6;
+        margin-bottom: 35px;
+      }
+      .btn-glow-primary {
+        background: #eb163c;
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 13px;
+        padding: 13px 28px;
+        border-radius: 12px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 18px rgba(235, 22, 60, 0.4);
+      }
+      .btn-glow-primary:hover {
+        background: #d00e30;
+        color: #ffffff;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 24px rgba(235, 22, 60, 0.6);
+      }
+      .btn-outline-custom {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: #e2e8f0;
+        font-weight: 600;
+        font-size: 13px;
+        padding: 13px 26px;
+        border-radius: 12px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: all 0.3s ease;
+      }
+      .btn-outline-custom:hover {
+        background: rgba(255, 255, 255, 0.12);
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="error-page-wrapper">
+      <div class="mb-4">
+        <a href="/">
+          <img src="/images/logo.png" alt="DigifyNext" style="height: 44px; width: auto; object-fit: contain;">
+        </a>
+      </div>
+
+      <div class="error-card">
+        <div class="error-glow"></div>
+        <div class="error-glow-cyan"></div>
+
+        <div class="error-tag">Error 404 &bull; Page Not Found</div>
+        <div class="error-code">404</div>
+        <h1 class="error-title">Lost in Cyberspace?</h1>
+        <p class="error-desc">
+          The link you clicked may be broken, or the page may have been relocated.
+          Don't worry, our growth strategists are still active!
+        </p>
+
+        <div class="d-flex flex-wrap justify-content-center gap-3">
+          <a href="/" class="btn-glow-primary">
+            <i class="fas fa-home"></i> Back to Homepage
+          </a>
+          <a href="/blog" class="btn-outline-custom">
+            <i class="fas fa-book-open"></i> Read Blogs
+          </a>
+          <a href="/contact" class="btn-outline-custom">
+            <i class="fas fa-envelope"></i> Contact Us
+          </a>
+        </div>
+      </div>
+
+      <p class="mt-4 text-secondary small">
+        &copy; DigifyNext. Centralized Editorial &amp; Digital Growth Engine.
+      </p>
+    </div>
+  </body>
+</html>
